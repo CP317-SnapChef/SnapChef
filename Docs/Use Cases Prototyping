@@ -10,8 +10,9 @@ Profile = Users who created accounts
 Admin = Site monitors 
 
 Create ingredient list (all)
-	-Add ingredients via via text input/ search function
+	-Add ingredients via text input/ search function
 	-Add ingredients via taking picture
+	-Add ingredients via product barcodes
   -Search ingredients by tags, ratings, popularity etc.
 
 	-Make list of suggested recipes using said ingredients
@@ -30,6 +31,9 @@ Forum Interactions (Profile)
 
 	-Interact with other users
 		-Forum stuff
+		-Recipe requests
+		-FAQs
+		-Reviews of products related to cooking (appliances, tools, books?)
 		-??
 	
 	-View/ edit profile		
