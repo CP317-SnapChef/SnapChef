@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Analysis</title>
+  </head>
+  <body>
+    <h1>Analysis</h1>
+
+    <ol>
+      <strong>
+        <u>
+          <a href="#1.0"><font size="+2"><li>Introduction</h3></li></font></a>
+      <font size="+1">
+        <i>
+          <ul style="list-style-type:none">
+            <a href="#1.1"><li>1.1 Project Summary</li></a>
+            <a href="#1.2"><li>1.2 Project Purpose</li></a>
+          </ul>
+        </i>
+      </font>
+
+      <br>
+
+      <a href="#2.0"><font size="+2"><li>Object Classificationn</li></font></a>
+      <font size="+1">
+        <i>
+          <ul style="list-style-type:none">
+            <a href="#2.1"><li>2.1 Object Diagram</li></a>
+            <a href="#2.2"><li>2.2 Entity Objects</li></a>
+            <a href="#2.3"><li>2.3 Control Objects</li></a>
+            <a href="#2.4"><li>2.4 Boundary Objects</li></a>
+          </ul>
+        </i>
+      </font>
+      <br>
+
+      <a href="#3.0"><font size="+2"><li>Further Steps</li></font></a>
+      <font size="+1">
+        <i>
+          <ul style="list-style-type:none">
+            <a href="#3.1"><li>3.1 User Event Loop</li></a>
+            <a href="#3.2"><li>3.2 Device Controller Event Loop</li></a>
+            <a href="#3.3"><li>3.3 Security</li></a>
+            <a href="#3.4"><li>3.4 Portability</li></a>
+            <a href="#3.5"><li>3.5 User Controls</li></a>
+          </ul>
+        </i>
+      </font>
+      <br>
+
+      <a href="#4.0"><font size="+2"><li>Classes</li></font></a>
+      <font size="+1">
+        <i>
+          <ul style="list-style-type:none">
+            <a href="#4.1"><li>4.1 User Class</li></a>
+            <a href="#4.2"><li>4.2 Database UML</li></a>
+          </ul>
+        </i>
+      </font>
+      <br>
+
+      <a href="#5.0"><font size="+2"><li>Non-Functional Requirements</li></font></a>
+      <br>
+
+
+      <a href="#6.0"><font size="+2"><li>Versions</li></font></a>
+      <br>
+      
+      <a href="#7.0"><font size="+2"><li>Authors</li></font></a>
+      <br>
+
+    </ol>
+    </strong>
+  </u>
+<hr>
+
+<ol>
+  <span id="1.0"><font size="+2"><strong><li>Introduction</li></strong></font></span></span>
+<br>
+
+<ul style="list-style-type:none">
+  <span id="1.1"><font size="+1"><strong><i><li>1.1 Project Summary</li></i></strong></font></span>
+  <p>Snapchef is a phone application that will be on Android and iOS platforms. It creates recipes for users based on various inputs such as pictures of ingredients, UPC barcodes, and text of ingredients.
+  </p>
+
+  <span id="1.2"><font size="+1"><strong><i><li>1.2 Project Purpose</li></i></strong></font></span>
+  <p>The Analysis Document will describe the features and platforms or SnapChef and will describe how they work. </p>
+
+ 
+
+</ul>
+<br>
+
+<span id="2.0"><font size="+2"><strong><li>Object Classification
+  </li></strong></font></span>
+<br>
+
+<ul style="list-style-type:none">
+  <span id="2.1"><font size="+1"><strong><i> <li>2.1 Object Diagram</li></i></strong></font></span>
+  <img src="/AnalysisImages/Object_Diagram.png">
+
+  <span id="2.2"><font size="+1"><strong><i><li>2.2 Entity Objects
+    </li></i></strong></font></span>
+  <table>
+    <tr>
+      <th>Users</th>
+      <th>The User of the SnapChef App</th>
+    </tr>
+    <tr>
+      <td>Guest</td>
+      <td>Temporary User</td>
+    </tr>
+    <tr>
+      <td>Device</td>
+      <td>The Phone is used</td>
+    </tr>
+    <tr>
+      <td>Recipes</td>
+      <td>The desired output</td>
+    </tr>
+  </table>
+  <br>
+  
+  <span id="2.3"><font size="+1"><strong><i><li>2.3 Control Objects</li></i></strong></font></span>
+  <table>
+    <tr>
+      <th>User Controller</th>
+      <th>Controls all areas related to user input data</th>
+    </tr>
+    <tr>
+      <td>Database Connection</td>
+      <td>establishes a connection between the device input and database</td>
+    </tr>
+  </table>
+  <br>
+  
+  <span id="2.4"><font size="+1"><strong><i><li>2.4 Boundary Objects
+    </li></i></strong></font></span>
+  <table>
+    <tr>
+      <th>Guest login view</th>
+      <th>The screen seen by a guest user</th>
+    </tr>
+    <tr>
+      <td>Home View</td>
+      <td>The home screen</td>
+    </tr>
+    <tr>
+      <td>Database</td>
+      <td>A database of all recipes</td>
+    </tr>
+    <tr>
+      <td>oAuthLogin</td>
+      <td>User login</td>
+    </tr>
+    <tr>
+      <td>Camera</td>
+      <td>Used to input ingredients</td>
+    </tr>
+  </table>
+  <br>
+
+<br>
+
+  <span id="3.0"><u><font size="+2"><strong><li>Further Steps
+    </li></strong></font></u></span>
+<br>
+
+<ul style="list-style-type:none">
+  <span id="3.1"><font size="+1"><strong><i><li>3.1 User Event Loop
+    </li></i></strong></font></span>
+  <img src="/AnalysisImages/User_Event_Loop.png">
+
+  <span id="3.2"><font size="+1"><strong><i><li>3.2 User Controller Loop
+    </li></i></strong></font></span>
+  <img src="/AnalysisImages/User_Controller_Loop.png">
+
+  <span id="3.3"><font size="+1"><strong><i><li>3.3 Database Connection
+    </li></i></strong></font></span>
+  <img src="/AnalysisImages/User_Controller_Loop.png">
+
+</ul>
+<br>
+
+  <span id="4.0"><u><font size="+2"><strong><li>Further Steps
+    </li></strong></font></u></span>
+  <br>
+
+  <ul style="list-style-type:none">
+    <span id="4.1"><font size="+1"><strong><i><li>3.1 User Event Loop
+      </li></i></strong></font></span>
+    <img src="/AnalysisImages/User_Class.png">
+
+    <span id="4.2"><font size="+1"><strong><i><li>3.2 User Controller Loop
+      </li></i></strong></font></span>
+    <img src="/AnalysisImages/Database_UML.png">
+
+  </ul>
+  <br>
+
+  <span id="5.0"><font size="+2"><strong><li>Non-Functional Requirements</li></strong></font></span>
+  <ul>
+    <li>User will see a loading screen while app searches for matching recipes
+    </li>
+    <li>Users will be updated when a recipe has been saved
+    </li>
+    <li>User Will search through a list of recipes for the one they wish to choose from the output list.
+    </li>
+  </ul>
+<br>
+
+
+  <span id="6.0"><font size="+2"><strong><li> Versions</li></strong></font></span>
+
+  <p>0.1 Will be presented in class (2018/10/15)
+  </p>
+  
+  <span id="7.0"><font size="+2"><strong><li> Authors</li></strong></font></span>
+
+  <ul>
+    <li>Dylan Clarry
+    </li>
+    <li>Brian Hane
+    </li>
+    <li>Bryan Mietkiewicz
+    </li>
+    <li>Aayush Sheth
+    </li>
+    <li>Sriram Vasuthevan
+    </li>
+  </ul>
+<br>
+
+</ol>
+
+</body>
+</html>
