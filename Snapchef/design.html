@@ -1,0 +1,490 @@
+<!DOCTPYE html>
+<!-- author: mike armstrong -->
+
+<h1>User Interface Design</h1>
+
+<h2>Colours</h2>
+<p> 
+	<table border="1">
+		<tr>
+			<th>Colour</th>
+			<th>HTML colour code</th>
+			<th>Usage</th>
+		</tr>
+		<tr>
+			<td bgcolor="#bc1818">          </td>
+			<td>BC1818</td>
+			<td>
+				<ul>
+					<li>Logo</li>
+					<li>Clickable or tappable text on white background</li>
+					<li>Login background colour</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td bgcolor="#FFFFFF">          </td>
+			<td>FFFFFF</td>
+			<td>
+				<ul>
+					<li>Main Background</li>
+					<li>Text with red(BC1818) or grey(5D5D5D) background</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td bgcolor="#e5e5e5">          </td>
+			<td>E5E5E5</td>
+			<td>
+				<ul>
+					<li>Taskbar Background</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td bgcolor="#000000">          </td>
+			<td>000000</td>
+			<td>
+				<ul>
+					<li>Regular text</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td bgcolor="#5d5d5d">          </td>
+			<td>5D5D5D</td>
+			<td>
+				<ul>
+					<li>Currently selected tab</li>
+					<li>Subtext/Descriptions</li>
+					<li>Buttons on red(BC1818) background</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td bgcolor="#b3b3b3">          </td>
+			<td>B3B3B3</td>
+			<td>
+				<ul>
+					<li>Deselected tabs</li>
+					<li>Dividers</li>
+				</ul>
+			</td>
+		</tr>
+	</table>
+</p>
+
+<h2>Font</h2>
+<ul>
+	<li>iOS: San Francisco</li>
+	<li>Android: Roboto</li>
+</ul>
+
+<h2>App Icon and Logo</h2>
+<p>
+	<div style="overflow:hidden;"><img src="snapchef-icon.png" align="left" hspace="50" style="clear:both;"></div>
+</p>
+
+<h2>Module Interface</h2>
+<p>The following are examples of what the final product may look like along with short descriptions of interactive fields from left to right, top to bottom. These are prototypes only and the final product is subject to change</p>
+	<h3>Login Screen</h3>
+	<p>This is the screen the user sees when first opening the app or after signing out</p>
+	<div style="overflow:hidden;">
+		<img src="sample-login.png" width="200" align="left" hspace="50" style="clear:both;">
+		<table border="1">
+			<tr>
+				<th>Item name</th>
+				<th>Type</th>
+				<th>Function</th>
+			</tr>
+			<tr>
+				<td>Username input</td>
+				<td>Text box</td>
+				<td>This is where the user enters their username to login</td>
+			</tr>
+			<tr>
+				<td>Password input</td>
+				<td>Text box</td>
+				<td>This is where the user enters their password to login</td>
+			</tr>
+			<tr>
+				<td>Register button</td>
+				<td>Button</td>
+				<td>Brings up the register menu for new users when clicked/tapped</td>
+			</tr>
+			<tr>
+				<td>Login button</td>
+				<td>Button</td>
+				<td>Attempts a login given what is currently in Username input and Password input</td>
+			</tr>
+			<tr>
+				<td>Privacy Policy button</td>
+				<td>Text button</td>
+				<td>Brings up a document containing the terms of service and privacy policy</td>
+			</tr>
+		</table>
+	</div>
+
+	<h3>Taskbar</h3>
+	<p>The taskbar allows the user to switch between different sections of the application. This is displayed at all times for logged in users</p>
+	<div style="overflow:hidden;">
+		<img src="sample-taskbar.png" width="300" align="left" hspace="50" style="clear:both;">
+		<table border="1">
+			<tr>
+				<th>Item Name</th>
+				<th>Type</th>
+				<th>Function</th>
+			</tr>
+			<tr>
+				<td>Profile tab</td>
+				<td>Button</td>
+				<td>Switches to the users profile page</td>
+			</tr>
+			<tr>
+				<td>Add recipe tab</td>
+				<td>Button</td>
+				<td>Switches to the add recipe page</td>
+			</tr>
+			<tr>
+				<td>Homepage tab</td>
+				<td>Button</td>
+				<td>Switches to the home page</td>
+			</tr>
+			<tr bgcolor="red">
+				<td>Camera tab</td>
+				<td>Button</td>
+				<td>Switches to the photo upload page</td>
+			</tr>
+			<tr>
+				<td>Search tab</td>
+				<td>Button</td>
+				<td>Switches to the search page where users may choose to search for recipes or users</td>
+			</tr>
+		</table>
+	</div>
+	<p>Current tab denoted by a dark grey(5D5D5D) color fill, deselected tabs denoted by a light grey(B3B3B3) outline</p>
+	<p>NOTE: Camera tab useless due to the ability to post from homepage and add recipe through a taskbar button, will be excluded in future iterations</p>
+
+	<h3>Profile screen</h3>
+	<p>This is the screen displayed when the user clicks/taps on Profile tab</p>
+	<div style="overflow:hidden;">
+		<img src="sample-profile.png" width="200" align="left" hspace="50" style"clear:both;">
+		<table border="1">
+			<tr>
+				<th>Item name</th>
+				<th>Type</th>
+				<th>Function</th>
+			</tr>
+			<tr>
+				<td>Settings button</td>
+				<td>Button</td>
+				<td>Brings up the settings menu</td>
+			</tr>
+			<tr>
+				<td>Notifications button</td>
+				<td>Button</td>
+				<td>Brings up the notifications menu</td>
+			</tr>
+			<tr>
+				<td>User options button</td>
+				<td>Button</td>
+				<td>Brings up a pop up menu asking if the user would like to flag the current profile, block the user or cancel the operation</td>
+			</tr>
+			<tr>
+				<td>Following button</td>
+				<td>Text button</td>
+				<td>Shows a list of all users that the current profile follows</td>
+			</tr>
+			<tr>
+				<td>Followers button</td>
+				<td>Text button</td>
+				<td>Shows a list of all users that follow the current profile</td>
+			</tr>
+			<tr>
+				<td>Posts button</td>
+				<td>Text button</td>
+				<td>Shows a list of all posts made by the current user</td>
+			</tr>
+		</table>
+	</div>
+
+	<h3>Recipe upload screen</h3>
+	<p>This is the screen the user sees when attempting to upload a recipe to the database</p>
+	<div style="overflow:hidden;">
+		<img src="sample-recipe-upload.png" width="200" align="left" hspace="50" style"clear:both;">
+		<table border="1">
+			<tr>
+				<th>Item name</th>
+				<th>Type</th>
+				<th>Function</th>
+			</tr>
+			<tr>
+				<td>Cancel button</td>
+				<td>Button</td>
+				<td>Returns to the previous menu</td>
+			</tr>
+			<tr>
+				<td>Upload button</td>
+				<td>Button</td>
+				<td>Finalizes all data, collects it and adds to the users profile</td>
+			</tr>
+			<tr>
+				<td>Following tab</td>
+				<td>Button</td>
+				<td>Brings up the feed from only followed users</td>
+			</tr>
+			<tr>
+				<td>Recipe name change button</td>
+				<td>Text button</td>
+				<td>Brings up the keyboard so the user may edit the name of the recipe</td>
+			</tr>
+			<tr>
+				<td>Image tab</td>
+				<td>Button</td>
+				<td>Brings up pop up menu asking the user if they would rather choose from the device gallery, take a photo with the device camera or cancel the operation</td>
+			</tr>
+			<tr>
+				<td>Ingredients tab</td>
+				<td>Button</td>
+				<td>Switches to ingredients tab (seen here in prototype)</td>
+			</tr>
+			<tr>
+				<td>Recipe tab</td>
+				<td>Button</td>
+				<td>Switches to recipe tab (contains a simple text box for the user to type the recipe)</td>
+			</tr>
+			<tr>
+				<td>Description tab</td>
+				<td>Button</td>
+				<td>Switches to Description tab (contains a simple text box for the user to describe the dish)</td>
+			</tr>
+			<tr>
+				<td>Add ingredients button</td>
+				<td>Text button</td>
+				<td>Brings up a temporary menu where the user types the name, brand and quantity of the ingredient</td>
+			</tr>
+			<tr>
+				<td>Edit ingredient button</td>
+				<td>Text button</td>
+				<td>Brings up the same temporary menu when the ingredient was added, where the user may change the data</td>
+			</tr>
+		</table>
+	</div>
+	<p>NOTE: taskbar is excluded, duplicate buttons not listed in table</p>
+
+	<h3>Homepage screen</h3>
+	<p>This is the screen the user sees after logging in or when the app is opened and the user has previously logged in</p>
+	<div style="overflow:hidden;">
+		<img src="sample-homepage.png" width="200" align="left" hspace="50" style="clear:both;">
+		<table border="1">
+			<tr>
+				<th>Item name</th>
+				<th>Type</th>
+				<th>Function</th>
+			</tr>
+			<tr>
+				<td>Settings button</td>
+				<td>Button</td>
+				<td>Brings up the settings menu</td>
+			</tr>
+			<tr>
+				<td>Title button</td>
+				<td>Button</td>
+				<td>Refreshes the current feed (community/following) and returns to the top of the feed (newest posts)</td>
+			</tr>
+			<tr>
+				<td>Notifications button</td>
+				<td>Button</td>
+				<td>Brings up the notifications menu</td>
+			</tr>
+			<tr>
+				<td>Following tab</td>
+				<td>Button</td>
+				<td>Brings up the feed from only followed users</td>
+			</tr>
+			<tr>
+				<td>Community tab</td>
+				<td>Button</td>
+				<td>Brings up the feed from all users</td>
+			</tr>
+			<tr>
+				<td>Post text box</td>
+				<td>Text box</td>
+				<td>User can type text to be posted</td>
+			</tr>
+			<tr>
+				<td>Add photo button</td>
+				<td>Button</td>
+				<td>Brings up pop up menu asking the user if they would rather choose from the device gallery, take a photo with the device camera or cancel the operation</td>
+			</tr>
+			<tr>
+				<td>Post button</td>
+				<td>Button</td>
+				<td>Takes the text in Post text box and the image from Add photo button and attempts to add the post to the user profile</td>
+			</tr>
+			<tr>
+				<td>Username button</td>
+				<td>Text button</td>
+				<td>Brings up the associated users account page</td>
+			</tr>
+			<tr>
+				<td>Post options button</td>
+				<td>Button</td>
+				<td>Brings up a pop up menu asking if the user would like to flag the post, block the user who uploaded it or cancel the operation</td>
+			</tr>
+			<tr>
+				<td>Like post button</td>
+				<td>Button</td>
+				<td>Adds a "like" to the post</td>
+			</tr>
+			<tr>
+				<td>Comment post button</td>
+				<td>Button</td>
+				<td>Changes view to post view and the user may begin typing in a provided text box</td>
+			</tr>
+		</table>
+	</div>
+	<p>NOTE: taskbar is excluded, duplicate buttons not listed in table</p>
+	
+	<h3>Photo screen</h3>
+	<p>This is the screen displayed when the user clicks/taps on Add photo button</p>
+	<div style="overflow:hidden;">
+		<img src="sample-camera.png" width="200" align="left" hspace="50" style"clear:both;">
+		<table border="1">
+			<tr>
+				<th>Item name</th>
+				<th>Type</th>
+				<th>Function</th>
+			</tr>
+			<tr>
+				<td>Flash button</td>
+				<td>Button</td>
+				<td>Enable camera flash, disable camera flash or set camera flash to automatic</td>
+			</tr>
+			<tr>
+				<td>Cancel button</td>
+				<td>Text button</td>
+				<td>Returns to previous screen</td>
+			</tr>
+			<tr>
+				<td>Take photo button</td>
+				<td>Button</td>
+				<td>Takes a photo to be used, and returns to the previous page with the image inserted/added</td>
+			</tr>
+			<tr>
+				<td>Reverse camera button</td>
+				<td>Button</td>
+				<td>Toggles between front facing and rear facing camera</td>
+			</tr>
+		</table>
+	</div>
+
+	<h3>Search screen</h3>
+	<p>This is the screen displayed when the user clicks/taps on Search tab</p>
+	<div style="overflow:hidden;">
+		<img src="sample-search.png" width="200" align="left" hspace="50" style"clear:both;">
+		<table border="1">
+			<tr>
+				<th>Item name</th>
+				<th>Type</th>
+				<th>Function</th>
+			</tr>
+			<tr>
+				<td>Back button</td>
+				<td>Text button</td>
+				<td>Return to previous screen</td>
+			</tr>
+			<tr>
+				<td>Search field</td>
+				<td>Text box</td>
+				<td>Brings up keyboard where the user may type the name of another user or a recipe name</td>
+			</tr>
+			<tr>
+				<td>Cancel search button</td>
+				<td>Text button</td>
+				<td>Hides the keyboard</td>
+			</tr>
+			<tr>
+				<td>People tab</td>
+				<td>Text button</td>
+				<td>While this is selected, a search will return all users who match the criteria</td>
+			</tr>
+			<tr>
+				<td>Recipe tab</td>
+				<td>Text button</td>
+				<td>While this is selected, a search will return all recipes that match the criteria</td>
+			</tr>
+		</table>
+	</div>
+
+	<h3>View post screen</h3>
+	<p>This is the screen displayed when the user clicks/taps on a community post</p>
+	<div style="overflow:hidden;">
+		<img src="sample-post.png" width="200" align="left" hspace="50" style"clear:both;">
+		<table border="1">
+			<tr>
+				<th>Item name</th>
+				<th>Type</th>
+				<th>Function</th>
+			</tr>
+			<tr>
+				<td>Back button</td>
+				<td>Text button</td>
+				<td>Return to previous screen</td>
+			</tr>
+			<tr>
+				<td>Notifications button</td>
+				<td>Button</td>
+				<td>Brings up notifications screen</td>
+			</tr>
+			<tr>
+				<td>Username button</td>
+				<td>Text button</td>
+				<td>Brings up the associated users account page</td>
+			</tr>
+			<tr>
+				<td>Post options button</td>
+				<td>Button</td>
+				<td>Brings up a pop up menu asking if the user would like to flag the post, block the user who uploaded it or cancel the operation</td>
+			</tr>
+			<tr>
+				<td>Add comment text box</td>
+				<td>Text box</td>
+				<td>Brings up the keyboard for a user to type a comment with</td>
+			</tr>
+			<tr>
+				<td>Comment options button</td>
+				<td>Button</td>
+				<td>Brings up a pop up menu asking if the user would like to flag the comment, block the user who uploaded it or cancel the operation</td>
+			</tr>
+		</table>
+	</div>
+	<p>NOTE: taskbar is excluded, duplicate buttons not listed in table</p>
+
+	<h3>Notifications screen</h3>
+	<p>This is the screen displayed when the user clicks/taps on Notifications button</p>
+	<div style="overflow:hidden;">
+		<img src="sample-notifications.png" width="200" align="left" hspace="50" style"clear:both;">
+		<table border="1">
+			<tr>
+				<th>Item name</th>
+				<th>Type</th>
+				<th>Function</th>
+			</tr>
+			<tr>
+				<td>Back button</td>
+				<td>Text button</td>
+				<td>Return to previous screen</td>
+			</tr>
+			<tr>
+				<td>View notification button</td>
+				<td>Text button</td>
+				<td>Brings up the post or recipe associated with the notification</td>
+			</tr>
+			
+		</table>
+	</div>
+	<p>NOTE: taskbar is excluded, duplicate buttons not listed in table</p>
+
+<!-- /author: mike armstrong -->
+</html>
