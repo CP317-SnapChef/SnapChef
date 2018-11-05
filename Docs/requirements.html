@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Markup by Dylan Clarry -->
+	<!-- title -->
+	<title>Software Requirements Specifications</title>
+
+	<!-- links -->
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<a class="back-btn" href="index.html"><u><- back</u></a>
+
+	<h1>Requirements</h1>
+
+	<div class="table-of-contents">
+		<ol>
+			<li><a href="#1.0">1. Introduction</a></li>
+			<ul>
+				<li><a href="#1.1">1.1 Purpose</a></li>
+				<li><a href="#1.2">1.2 Scope</a></li>
+				<li><a href="#1.3">1.3 Definitions, acronyms, and abbreviation</a></li>
+				<li><a href="#1.4">1.4 References</a></li>
+				<li><a href="#1.5">1.5 Overview</a></li>
+			</ul>
+
+			<li><a href="#2.0">2. Overall Description</a></li>
+			<ul>
+				<li><a href="#2.1">2.1 Product Perspective</a></li>
+				<li><a href="#2.2">2.2 Product Functions</a></li>
+				<li><a href="#2.3">2.3 User Characteristics</a></li>
+				<li><a href="#2.4">2.4 Constraints</a></li>
+				<li><a href="#2.5">2.5 Assumptions and dependencies</a></li>
+			</ul>
+
+			<li><a href="#3.0">3. Technical Requirements</a></li>
+			<ul>
+				<li><a href="#3.1">3.1 External Interfaces</a></li>
+				<li><a href="#3.2">3.2 Performance Requirements</a></li>
+				<li><a href="#3.3">3.3 Security</a></li>
+				<li><a href="#3.4">3.4 Portability</a></li>
+				<li><a href="#3.5">3.5 Data Storage</a></li>
+			</ul>
+
+			<li><a href="#4.0">4. Interface Requirements</a></li>
+
+			<li><a href="#5.0">5. Versions</a></li>
+
+			<li><a href="#6.0">6. Authors</a></li>
+		</ol>
+	</div><!-- /table-of-contents -->
+
+	<hr>
+
+	<div class="contents">
+		<!-- 1.0 -->
+		<h2 id="1.0">1. Introduction</h2>
+		<ul>
+			<!-- 1.1 -->
+			<h3 id="1.1">1.1 <i>Purpose</i></h3>
+			<p>The purpose of this document is outline the requirements for SnapChef. The document will describe the features of the app. The intended audience is project team and David Brown. The document will also be useful to our classmates and those who take the class in the future.</p>
+
+			<!-- 1.2 -->
+			<h3 id="1.2">1.2 <i>Scope</i></h3>
+			<p>The general aim will be towards those who are unfamiliar with cooking or want to expand their horizons in cooking by finding new uses for different ingredients. Students especially may gain quick cooking experience and understanding through this app. The recipes available will be sorted or restricted by budget and/or servings to allow easier use. Those who have interesting or original recipes, will be able to share on a message board feature.</p>
+
+			<!-- 1.3 -->
+			<h3 id="1.3">1.3 <i>Definitions, acronyms, and abbreviation</i></h3>
+			<p><u>API</u>: Application Program Interface. External software containing sets of r>outines, protocols, and tools for building software.</p>
+
+			<p><u>GUI</u>: Graphical User Interface. Type of interface that allows users to interact with electronics and software.</p>
+
+			<p><u>SRS</u>: Software Requirements Specifications</p>
+
+			<p><u>POST</u>: A request method that allows for the transfer of data via HTTP headers</p>
+
+			<p><u>iOS</u>: I Operating System (apple mobile device software)</p>
+
+			<p><u>SQL</u>: Structured Query Language. A language used for managing data held in a relational database system.</p>
+
+			<!-- 1.4 -->
+			<h3 id="1.4">1.4 <i>References</i></h3>
+			<p>This SRS document is based on IEEE Std 830-1998.</p>
+
+			<a href="https://bohr.wlu.ca/cp317/notes/IEEE_830.pdf ">https://bohr.wlu.ca/cp317/notes/IEEE_830.pdf </a>
+
+			<p>Used the following to define SQL injection and how to overcome it.</p>
+
+			<a href="https://bohr.wlu.ca/cp363/notes/practice/15_sql_security.php  ">https://bohr.wlu.ca/cp363/notes/practice/15_sql_security.php  </a>
+
+			<!-- 1.5 -->
+			<h3 id="1.5">1.5 <i>Overview</i></h3>
+			<p>The remainder of the document contains details on the functionality and appearance of SnapChef.</p>
+		</ul>
+
+		<!-- 2.0 -->
+		<h2 id="2.0">2. Overall Description</h2>
+		<ul>
+			<!-- 2.1 -->
+			<h3 id="2.1">2.1 <i>Product Perspective</i></h3>
+			<p>SnapChef is an app with two major components. There is a frontend interface for the user to interact with, and database containing recipes.</p>
+
+			<!-- 2.2 -->
+			<h3 id="2.2">2.2 <i>Product Functions</i></h3>
+			<p>SnapChef is a mobile application. Users will input the ingredients they they have on hand and mark down any dietary restrictions they may have. They will be able to upload their ingredients in three ways. They can input as text, scan the barcode on the packaging or take a picture and let the app’s algorithm determine the ingredients.The app will then give pull a recipe matching those ingredients and restrictions.</p>
+
+			<!-- 2.3 -->
+			<h3 id="2.3">2.3 <i>User Characteristics</i></h3>
+			<p>Generally, our users will be on a budget and not experienced with cooking</p>
+
+			<!-- 2.4 -->
+			<h3 id="2.4">2.4 <i>Constraints</i></h3>
+			<ul>
+				<li>Fake Recipes / Marketing Spam</li>
+				<li>Only for modern android and ios devices</li>
+				<li>Requires access to camera</li>
+				<li>Requires internet connectivity</li>
+				<li>Needs to rely on others for recipes in message boards</li>
+				<li>Cost restraint</li>
+			</ul>
+
+			<!-- 2.5 -->
+			<h3 id="2.5">2.5 <i>Assumptions and Dependencies</i></h3>
+			<ul>
+				<li>internet connection</li>
+				<li>Peer review</li>
+				<li>Responsible imagery</li>
+				<li>Device has camera</li>
+			</ul>
+		</ul>
+
+		<!-- 3.0 -->
+		<h2 id="3.0">3. Technical Requirements</h2>
+		<ul>
+			<!-- 3.1 -->
+			<h3 id="3.1">3.1 <i>External Interfaces</i></h3>
+			<p>** based on GUI **</p>
+
+			<!-- 3.2 -->
+			<h3 id="3.2">3.2 <i>Performance Requirements</i></h3>
+			<p>Android Version: 7.0+</p>
+			<p>iOS Version: 8.0+</p>
+			<p>**depending on teams to decide which version they want to build for**</p>
+
+			<!-- 3.3 -->
+			<h3 id="3.3">3.3 <i>Security</i></h3>
+			<p>The SnapChef app will be robust against SQL injection. This will be accomplished by parameterizing any input that is passed into the SQL statement. As well as opening and closing php connection for querying against the database.</p>
+
+			<!-- 3.4 -->
+			<h3 id="3.4">3.4 <i>Portability</i></h3>
+			<p>There will be an Android and iOS version. There will be shared text input, barcode, ML and recommendation api. If we wanted to expand, then will only need to create a new frontend.</p>
+
+			<!-- 3.5 -->
+			<h3 id="3.5">3.5 <i>Data Storage</i></h3>
+			<p>All of the recipes will be stored in a MySQL Database. MySQL was chosen because of its ability to connect to both IOS and Android applications. There will be a single table containing the recipes. The table will include various columns such as Name, Ingredients, Dietary Restrictions etc. We will query the database through PHP scripts which implement the POST method.</p>
+		</ul>
+
+		<!-- 4.0 -->
+		<h2 id="4.0">4. Interface Requirements</h2>
+		<ul>
+			<p>We will be attempting to make the application on both platforms as similar as possible however due to the differences they experience in both code and hardware, some differences may occur.</p>
+		</ul>
+
+		<!-- 5.0 -->
+		<h2 id="5.0">5. Versions</h2>
+		<ul>
+			<p>0.1: Presented in class on Monday</p>
+			<p>0.2: html document revision & SQA - Dylan Clarry (2018/11/05)</p>
+		</ul>
+
+		<!-- 6.0 -->
+		<h2 id="6.0">6. Authors</h2>
+		<ul class="styled-list">
+			<li>Dylan Clarry</li>
+			<li>Brian Hane</li>
+			<li>Bryan Mietkiewicz</li>
+			<li>Aayush Sheth</li>
+			<li>Sriram Vasuthevan</li>
+		</ul>
+	</div><!-- /contents -->
+
+
+</body>
+</html>
+<!-- didn't I tell you to leave? -->
