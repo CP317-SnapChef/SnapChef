@@ -2,7 +2,7 @@
 https://htmlpreview.github.io/?https://github.com/CP317-SnapChef/SnapChef/blob/master/Design/FrontEnd/design.html
 
 
-Its an applications that gives you recipes with the available ingredients you have on hand. The base model will only search a database using either pictures of ingredients, their barcodes, or the name of the ingredients. In a later implementation it may include users uploading recipes, however that is not our current focus.
+SnapChef is mobile application for IOS and Android that gives you recipes with the available ingredients you have on hand. The base model will only search a database using either pictures of ingredients, their barcodes, or the name of the ingredients. In a later implementation it may include users uploading recipes, however that is not our current focus.
 
 Base Model:
 
