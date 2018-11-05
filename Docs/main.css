@@ -1,0 +1,18 @@
+.back-btn{
+	padding-bottom: 50px;
+}
+.table-of-contents li{
+	font-size: 1.15em;
+}
+.styled-list{
+	list-style-type: disc;
+}
+ol, ul{
+	list-style-type: none;
+}
+td:nth-child(1){
+	padding-left: 0;
+}
+td{
+	padding-left: 25px;
+}
