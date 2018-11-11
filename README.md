@@ -12,7 +12,7 @@ Base Model:
 - Setup and connect backend
 - Design
 
-We are aiming to have the base model done by **November 16th 2018 @ 11:59**
+We are aiming to have the base model done by **November 18th 2018 @ 11:59PM**
 
 ## Future Implementation
 Functions to be later implemented (in order of priority):
