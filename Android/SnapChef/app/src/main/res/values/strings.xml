@@ -1,5 +1,18 @@
 <resources>
     <string name="app_name">SnapChef</string>
+    <string name="login_name">Login</string>
+    <string name="home_name">Home</string>
+    <string name="account_name">Account</string>
+
+
+    <!-- AccountView Strings -->
+    <string name="user_name">User</string>
+
+    <!-- Strings for buttons -->
+    <string name="logout_button">Logout</string>
+    <string name="error_button">Report Error</string>
+    <string name="pw_button">Change Password</string>
+
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
