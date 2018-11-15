@@ -10,9 +10,13 @@
 ol, ul{
 	list-style-type: none;
 }
+table, th, td {
+	border: 1px solid #000;
+}
 td:nth-child(1){
 	padding-left: 0;
 }
 td{
 	padding-left: 25px;
+	padding-right: 25px;
 }
