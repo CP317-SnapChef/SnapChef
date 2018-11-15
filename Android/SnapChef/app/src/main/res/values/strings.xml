@@ -25,4 +25,10 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <!-- Strings related to bottom navigation bar -->
+    <string name="title_account">Account</string>
+    <string name="title_home">Home</string>
+    <string name="title_search">Search Image</string>
+    <string name="title_text_search">Search</string>
+    <string name="title_add">New Recipe</string>
 </resources>

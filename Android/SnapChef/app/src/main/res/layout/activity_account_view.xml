@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AccountView">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
 
     <View
         android:layout_width="match_parent"
@@ -58,54 +59,60 @@
             </android.support.v7.widget.CardView>
 
             <!--<LinearLayout-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginTop="20dp"-->
-                <!--android:orientation="vertical"-->
-                <!--android:weightSum="3">-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--android:orientation="vertical"-->
+            <!--android:weightSum="3">-->
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/logoutBtn"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="15dp"
 
-                    <Button
-                        android:id="@+id/logoutBtn"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="40dp"
-                        android:layout_marginBottom="15dp"
-                        android:background="@drawable/element_outline"
-                        android:text="@string/logout_button" />
+                    android:text="@string/logout_button" />
 
-                    <Button
-                        android:id="@+id/changePwBtn"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="25dp"
-                        android:layout_marginBottom="15dp"
-                        android:background="@drawable/element_outline"
-                        android:text="@string/pw_button" />
+                <Button
+                    android:id="@+id/changePwBtn"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="15dp"
 
-                    <Button
-                        android:id="@+id/reportErrorBtn"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="25dp"
-                        android:layout_marginBottom="40dp"
-                        android:background="@drawable/element_outline"
-                        android:text="@string/error_button" />
-                </LinearLayout>
+                    android:text="@string/pw_button" />
+
+                <Button
+                    android:id="@+id/reportErrorBtn"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="40dp"
+
+                    android:text="@string/error_button" />
+            </LinearLayout>
             <!--</LinearLayout>-->
         </LinearLayout>
     </RelativeLayout>
 
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        app:menu="@menu/bottom_navigation"
+        tools:layout_editor_absoluteX="0dp" />
 
-</RelativeLayout><!--android:background="@color/grayLight"--><!--android:orientation="vertical">--><!--<RelativeLayout--><!--android:layout_width="match_parent"--><!--android:layout_height="405dp">--><!--<LinearLayout--><!--android:background="@drawable/gradientbackground"--><!--android:layout_width="match_parent"--><!--android:layout_height="350dp">--><!--<ImageView--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:src=--><!--</LinearLayout>--><!--</RelativeLayout>-->
-
-    <!--</LinearLayout>-->
+</RelativeLayout>
