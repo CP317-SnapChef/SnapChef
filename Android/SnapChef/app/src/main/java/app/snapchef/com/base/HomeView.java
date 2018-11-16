@@ -22,7 +22,6 @@ public class HomeView extends AppCompatActivity {
         bottomNav.setOnNavigationItemSelectedListener(navListener);
         bottomNav.getMenu().getItem(2).setChecked(true);
     }
-
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener(){
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -41,7 +40,7 @@ public class HomeView extends AppCompatActivity {
                     break;
 
                 case R.id.navigation_add:
-                    //intent = new Intent(getApplicationContext(), NewRecipeView.class);
+                    intent = new Intent(getApplicationContext(), CreateRecipeView.class);
                     break;
 
 
@@ -54,4 +53,5 @@ public class HomeView extends AppCompatActivity {
             return true;
         }
     };
+
 }

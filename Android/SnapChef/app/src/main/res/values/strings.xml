@@ -3,6 +3,7 @@
     <string name="login_name">Login</string>
     <string name="home_name">Home</string>
     <string name="account_name">Account</string>
+    <string name="create_recipe_name">Create Recipe</string>
 
 
     <!-- AccountView Strings -->
