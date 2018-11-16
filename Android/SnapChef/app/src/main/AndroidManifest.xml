@@ -28,12 +28,9 @@
         <activity
             android:name=".AccountView"
             android:label="@string/account_name"></activity>
-        <activity android:name=".CreateRecipeView"
-            android:label="@string/create_recipe_name"></activity>
-
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+        <activity
+            android:name=".CreateRecipeView"
+            android:label="CreateRecipe"></activity>
     </application>
 
 </manifest>

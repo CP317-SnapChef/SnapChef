@@ -21,7 +21,19 @@ public class HomeView extends AppCompatActivity {
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
         bottomNav.getMenu().getItem(2).setChecked(true);
+
+        Button toCreateRecipe = (Button) findViewById(R.id.CreateRecipeButton);
+
+        toCreateRecipe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent btnIntent = new Intent(HomeView.this,CreateRecipeView.class);
+                startActivity(btnIntent);
+
+            }
+        });
     }
+
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener(){
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -40,7 +52,7 @@ public class HomeView extends AppCompatActivity {
                     break;
 
                 case R.id.navigation_add:
-                    intent = new Intent(getApplicationContext(), CreateRecipeView.class);
+                    //intent = new Intent(getApplicationContext(), CreateRecipeView.class);
                     break;
 
 
@@ -53,5 +65,4 @@ public class HomeView extends AppCompatActivity {
             return true;
         }
     };
-
 }
