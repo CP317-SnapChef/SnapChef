@@ -18,9 +18,7 @@ public class CreateRecipeView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_recipe);
 
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
-        bottomNav.setOnNavigationItemSelectedListener(navListener);
-        bottomNav.getMenu().getItem(1).setChecked(true);
+
 
         Log.d(TAG, "onCreate: Starting");
 
