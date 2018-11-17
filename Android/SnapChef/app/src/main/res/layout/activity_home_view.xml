@@ -26,20 +26,4 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp" />
 
-    <Button
-        android:id="@+id/CreateRecipeButton"
-        android:layout_width="wrap_content"
-        android:layout_height="86dp"
-        android:layout_marginStart="148dp"
-        android:layout_marginLeft="148dp"
-        android:layout_marginTop="110dp"
-        android:layout_marginEnd="148dp"
-        android:layout_marginRight="148dp"
-        android:layout_marginBottom="59dp"
-        android:text="@string/go_to_create_recipe_view_test_button"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/homeViewtext" />
 </android.support.constraint.ConstraintLayout>

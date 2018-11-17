@@ -21,17 +21,6 @@ public class HomeView extends AppCompatActivity {
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
         bottomNav.getMenu().getItem(2).setChecked(true);
-
-        Button toCreateRecipe = (Button) findViewById(R.id.CreateRecipeButton);
-
-        toCreateRecipe.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent btnIntent = new Intent(HomeView.this,CreateRecipeView.class);
-                startActivity(btnIntent);
-
-            }
-        });
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener(){

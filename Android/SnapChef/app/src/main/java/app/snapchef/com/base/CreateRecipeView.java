@@ -24,15 +24,6 @@ public class CreateRecipeView extends AppCompatActivity {
 
         Log.d(TAG, "onCreate: Starting");
 
-        Button toHomeScreen = (Button) findViewById(R.id.HomeButton);
-        toHomeScreen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent btnIntent = new Intent(CreateRecipeView.this,HomeView.class);
-                startActivity(btnIntent);
-            }
-        });
-
         
     }
 
