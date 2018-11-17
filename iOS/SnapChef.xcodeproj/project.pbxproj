@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		6987DF1621913061000BB4B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6987DF1521913061000BB4B5 /* AppDelegate.swift */; };
 		6987DF1821913061000BB4B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6987DF1721913061000BB4B5 /* ViewController.swift */; };
-		6987DF1B21913061000BB4B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6987DF1921913061000BB4B5 /* Main.storyboard */; };
 		6987DF1D21913063000BB4B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6987DF1C21913063000BB4B5 /* Assets.xcassets */; };
 		6987DF2021913063000BB4B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6987DF1E21913063000BB4B5 /* LaunchScreen.storyboard */; };
 		6987DF2B21913063000BB4B5 /* SnapChefTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6987DF2A21913063000BB4B5 /* SnapChefTests.swift */; };
 		6987DF3621913063000BB4B5 /* SnapChefUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6987DF3521913063000BB4B5 /* SnapChefUITests.swift */; };
+		699C6DD5219FE4D8001587A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 699C6DD3219FE4D8001587A7 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,6 @@
 		6987DF1221913061000BB4B5 /* SnapChef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapChef.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6987DF1521913061000BB4B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6987DF1721913061000BB4B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6987DF1A21913061000BB4B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6987DF1C21913063000BB4B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6987DF1F21913063000BB4B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6987DF2121913063000BB4B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		6987DF3121913063000BB4B5 /* SnapChefUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnapChefUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6987DF3521913063000BB4B5 /* SnapChefUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapChefUITests.swift; sourceTree = "<group>"; };
 		6987DF3721913063000BB4B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		699C6DD4219FE4D8001587A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +99,7 @@
 			children = (
 				6987DF1521913061000BB4B5 /* AppDelegate.swift */,
 				6987DF1721913061000BB4B5 /* ViewController.swift */,
-				6987DF1921913061000BB4B5 /* Main.storyboard */,
+				699C6DD3219FE4D8001587A7 /* Main.storyboard */,
 				6987DF1C21913063000BB4B5 /* Assets.xcassets */,
 				6987DF1E21913063000BB4B5 /* LaunchScreen.storyboard */,
 				6987DF2121913063000BB4B5 /* Info.plist */,
@@ -229,9 +229,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				699C6DD5219FE4D8001587A7 /* Main.storyboard in Resources */,
 				6987DF2021913063000BB4B5 /* LaunchScreen.storyboard in Resources */,
 				6987DF1D21913063000BB4B5 /* Assets.xcassets in Resources */,
-				6987DF1B21913061000BB4B5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,20 +293,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		6987DF1921913061000BB4B5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6987DF1A21913061000BB4B5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6987DF1E21913063000BB4B5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				6987DF1F21913063000BB4B5 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		699C6DD3219FE4D8001587A7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				699C6DD4219FE4D8001587A7 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
