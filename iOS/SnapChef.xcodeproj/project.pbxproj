@@ -14,6 +14,8 @@
 		6987DF2B21913063000BB4B5 /* SnapChefTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6987DF2A21913063000BB4B5 /* SnapChefTests.swift */; };
 		6987DF3621913063000BB4B5 /* SnapChefUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6987DF3521913063000BB4B5 /* SnapChefUITests.swift */; };
 		699C6DD5219FE4D8001587A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 699C6DD3219FE4D8001587A7 /* Main.storyboard */; };
+		699C6DD721A09846001587A7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699C6DD621A09846001587A7 /* LoginViewController.swift */; };
+		699C6DD921A098F1001587A7 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699C6DD821A098F1001587A7 /* SignupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		6987DF3521913063000BB4B5 /* SnapChefUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapChefUITests.swift; sourceTree = "<group>"; };
 		6987DF3721913063000BB4B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		699C6DD4219FE4D8001587A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		699C6DD621A09846001587A7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		699C6DD821A098F1001587A7 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 			children = (
 				6987DF1521913061000BB4B5 /* AppDelegate.swift */,
 				6987DF1721913061000BB4B5 /* ViewController.swift */,
+				699C6DD621A09846001587A7 /* LoginViewController.swift */,
+				699C6DD821A098F1001587A7 /* SignupViewController.swift */,
 				699C6DD3219FE4D8001587A7 /* Main.storyboard */,
 				6987DF1C21913063000BB4B5 /* Assets.xcassets */,
 				6987DF1E21913063000BB4B5 /* LaunchScreen.storyboard */,
@@ -256,7 +262,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				699C6DD721A09846001587A7 /* LoginViewController.swift in Sources */,
 				6987DF1821913061000BB4B5 /* ViewController.swift in Sources */,
+				699C6DD921A098F1001587A7 /* SignupViewController.swift in Sources */,
 				6987DF1621913061000BB4B5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
