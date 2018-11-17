@@ -53,7 +53,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginView_SignupBtn:" destination="09H-85-gPU" eventType="touchUpInside" id="hXu-c4-SH9"/>
-                                    <segue destination="39g-u7-DwU" kind="modal" id="rK9-4C-s7a"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0AQ-Hh-90p">
@@ -69,7 +68,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginView_LoginBtn:" destination="09H-85-gPU" eventType="touchUpInside" id="ai9-9E-rb2"/>
-                                    <segue destination="tW6-r4-FRL" kind="modal" id="cpQ-J0-WPe"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nx1-x4-TR5">
@@ -119,12 +117,14 @@
                     <connections>
                         <outlet property="loginView_PasswordInputField" destination="fLv-R1-Q21" id="EsM-pZ-bTs"/>
                         <outlet property="loginView_UsernameInputField" destination="nx1-x4-TR5" id="Bwi-yT-niW"/>
+                        <segue destination="39g-u7-DwU" kind="show" identifier="segue_Login-&gt;Signup" id="ncy-MB-I02"/>
+                        <segue destination="tW6-r4-FRL" kind="show" identifier="segue_Login-&gt;Homepage" id="zmo-t1-dEi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v8q-O2-Dif" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="09H-85-gPU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1829.5999999999999" y="155.17241379310346"/>
+            <point key="canvasLocation" x="2044" y="152"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="hVw-oT-h0K">
@@ -200,7 +200,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ddG-IV-uBY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1829.5999999999999" y="890.10494752623697"/>
+            <point key="canvasLocation" x="2828" y="153"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="VRy-Mk-nUV">
@@ -255,6 +255,9 @@
                                         <integer key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signupView_SignupBtn:" destination="39g-u7-DwU" eventType="touchUpInside" id="jlx-jr-6dr"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUD-L5-C5V">
                                 <rect key="frame" x="30" y="45" width="26" height="23"/>
@@ -264,7 +267,7 @@
                                 </constraints>
                                 <state key="normal" image="BackArrow"/>
                                 <connections>
-                                    <segue destination="4RF-uV-nfj" kind="presentation" id="DS2-xL-lEl"/>
+                                    <action selector="signupView_BackBtn:" destination="39g-u7-DwU" eventType="touchUpInside" id="Qil-hY-KKT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -296,11 +299,13 @@
                         <outlet property="signupView_ConfirmPasswordInputField" destination="jG0-k3-aHf" id="7cb-EV-Tvn"/>
                         <outlet property="signupView_PasswordInputField" destination="ow6-J4-WZj" id="0HT-p8-8Pk"/>
                         <outlet property="signupView_UsernameInputField" destination="g24-mN-iSZ" id="h83-Ew-hYG"/>
+                        <segue destination="4RF-uV-nfj" kind="show" identifier="segue_Signup-&gt;Login" id="VuZ-xb-maI"/>
+                        <segue destination="tW6-r4-FRL" kind="show" identifier="segue_Signup-&gt;Homepage" id="8Zw-E4-bHK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K2v-pY-f4H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2621.5999999999999" y="154.27286356821591"/>
+            <point key="canvasLocation" x="2828" y="-619"/>
         </scene>
     </scenes>
     <resources>
@@ -308,4 +313,7 @@
         <image name="LogoNoBackground" width="364" height="599"/>
         <image name="Search" width="148" height="148"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="8Zw-E4-bHK"/>
+    </inferredMetricsTieBreakers>
 </document>

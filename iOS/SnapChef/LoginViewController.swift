@@ -37,10 +37,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     // MARK: actions
     @IBAction func loginView_LoginBtn(_ sender: UIButton) {
         Keyboard.hideKeyboard(inputField: loginView_UsernameInputField)
+        performSegue(withIdentifier: "segue_Login->Homepage", sender: self)
     }
     
     @IBAction func loginView_SignupBtn(_ sender: UIButton) {
-      
+        performSegue(withIdentifier: "segue_Login->Signup", sender: self)
     }
     
     // MARK: functions
@@ -49,7 +50,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         guard let keyboardRect = (notification.userInfo?[key] as? NSValue)?.cgRectValue else { return }
         
         if notification.name == UIResponder.keyboardWillShowNotification || notification.name == UIResponder.keyboardWillChangeFrameNotification {
-            view.frame.origin.y = -keyboardRect.height
+            view.frame.origin.y = -keyboardRect.height / 2
         } else {
             view.frame.origin.y = 0
         }
