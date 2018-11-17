@@ -52,6 +52,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="loginView_SignupBtn:" destination="4RF-uV-nfj" eventType="touchUpInside" id="e1P-cF-bYW"/>
                                     <action selector="loginView_SignupBtn:" destination="09H-85-gPU" eventType="touchUpInside" id="hXu-c4-SH9"/>
                                 </connections>
                             </button>
@@ -67,6 +68,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="loginView_LoginBtn:" destination="4RF-uV-nfj" eventType="touchUpInside" id="Rfk-3s-zNR"/>
                                     <action selector="loginView_LoginBtn:" destination="09H-85-gPU" eventType="touchUpInside" id="ai9-9E-rb2"/>
                                 </connections>
                             </button>
@@ -314,6 +316,6 @@
         <image name="Search" width="148" height="148"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8Zw-E4-bHK"/>
+        <segue reference="zmo-t1-dEi"/>
     </inferredMetricsTieBreakers>
 </document>
