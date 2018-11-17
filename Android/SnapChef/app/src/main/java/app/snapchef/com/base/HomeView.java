@@ -52,7 +52,7 @@ public class HomeView extends AppCompatActivity {
                     break;
 
                 case R.id.navigation_add:
-                    //intent = new Intent(getApplicationContext(), CreateRecipeView.class);
+                    intent = new Intent(getApplicationContext(), CreateRecipeView.class);
                     break;
 
 
