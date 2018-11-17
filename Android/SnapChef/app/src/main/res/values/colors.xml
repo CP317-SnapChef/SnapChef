@@ -6,4 +6,6 @@
     <color name="startOrange">#ffd699</color>
     <color name="endOrange">#ff9900</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="colorButtonBackground">#FF5C08</color>
+    <color name="colorButtonAccent">#FF7800</color>
 </resources>
