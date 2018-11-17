@@ -8,7 +8,13 @@
 
 import UIKit
 
-class SignupViewController: UIViewController {
+class SignupViewController: UIViewController, UITextFieldDelegate {
+    
+    // MARK: outlets
+    @IBOutlet weak var signupView_UsernameInputField: UITextField!
+    @IBOutlet weak var signupView_PasswordInputField: UITextField!
+    @IBOutlet weak var signupView_ConfirmPasswordInputField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

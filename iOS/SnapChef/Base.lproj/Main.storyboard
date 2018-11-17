@@ -202,10 +202,10 @@
             </objects>
             <point key="canvasLocation" x="1829.5999999999999" y="890.10494752623697"/>
         </scene>
-        <!--View Controller-->
+        <!--Signup View Controller-->
         <scene sceneID="VRy-Mk-nUV">
             <objects>
-                <viewController id="39g-u7-DwU" sceneMemberID="viewController">
+                <viewController id="39g-u7-DwU" customClass="SignupViewController" customModule="SnapChef" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Umx-ne-VZe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -292,6 +292,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bFg-cR-GgL"/>
                     </view>
+                    <connections>
+                        <outlet property="signupView_ConfirmPasswordInputField" destination="jG0-k3-aHf" id="7cb-EV-Tvn"/>
+                        <outlet property="signupView_PasswordInputField" destination="ow6-J4-WZj" id="0HT-p8-8Pk"/>
+                        <outlet property="signupView_UsernameInputField" destination="g24-mN-iSZ" id="h83-Ew-hYG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K2v-pY-f4H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
