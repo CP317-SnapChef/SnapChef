@@ -2,11 +2,14 @@
 //  LoginViewController.swift
 //  SnapChef
 //
-//  Created by Dylan Clarry and Bryan Mietkiewicz on 2018-11-17.
+//  Created by Dylan Clarry on 2018-11-17.
 //  Copyright © 2018 SnapChefTeam. All rights reserved.
 //
 
 import UIKit
+
+var username = "dc1324"
+var password = "password"
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -20,6 +23,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         loginView_UsernameInputField.delegate = self
         loginView_PasswordInputField.delegate = self
         Keyboard.sayHello()
+        print(username)
+        print(password)
         
         // keyboard listen events
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -42,6 +47,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func loginView_SignupBtn(_ sender: UIButton) {
         performSegue(withIdentifier: "segue_Login->Signup", sender: self)
+    }
+    
+    /* unwind segue */
+    @IBAction func PrepareUnwindSegue(segue: UIStoryboardSegue) {
+        
+    }
+    
+    override func unwind(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
+        let segue = UnwindSegueFromRight(identifier: unwindSegue.identifier, source: unwindSegue.source, destination: unwindSegue.destination)
+        segue.perform()
     }
     
     // MARK: functions

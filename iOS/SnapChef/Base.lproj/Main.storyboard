@@ -119,14 +119,14 @@
                     <connections>
                         <outlet property="loginView_PasswordInputField" destination="fLv-R1-Q21" id="EsM-pZ-bTs"/>
                         <outlet property="loginView_UsernameInputField" destination="nx1-x4-TR5" id="Bwi-yT-niW"/>
-                        <segue destination="39g-u7-DwU" kind="show" identifier="segue_Login-&gt;Signup" id="ncy-MB-I02"/>
+                        <segue destination="39g-u7-DwU" kind="custom" identifier="segue_Login-&gt;Signup" customClass="SegueFromRight" customModule="SnapChef" customModuleProvider="target" id="ncy-MB-I02"/>
                         <segue destination="tW6-r4-FRL" kind="show" identifier="segue_Login-&gt;Homepage" id="zmo-t1-dEi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v8q-O2-Dif" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="09H-85-gPU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2044" y="152"/>
+            <point key="canvasLocation" x="2046" y="152"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="hVw-oT-h0K">
@@ -257,9 +257,6 @@
                                         <integer key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="signupView_SignupBtn:" destination="39g-u7-DwU" eventType="touchUpInside" id="jlx-jr-6dr"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUD-L5-C5V">
                                 <rect key="frame" x="30" y="45" width="26" height="23"/>
@@ -269,7 +266,7 @@
                                 </constraints>
                                 <state key="normal" image="BackArrow"/>
                                 <connections>
-                                    <action selector="signupView_BackBtn:" destination="39g-u7-DwU" eventType="touchUpInside" id="Qil-hY-KKT"/>
+                                    <segue destination="RF7-tI-Nsi" kind="unwind" identifier="unwind_Login-&gt;Signup" customClass="UnwindSegueFromRight" customModule="SnapChef" customModuleProvider="target" unwindAction="PrepareUnwindSegueWithSegue:" id="vbu-Cg-a5Y"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -301,13 +298,12 @@
                         <outlet property="signupView_ConfirmPasswordInputField" destination="jG0-k3-aHf" id="7cb-EV-Tvn"/>
                         <outlet property="signupView_PasswordInputField" destination="ow6-J4-WZj" id="0HT-p8-8Pk"/>
                         <outlet property="signupView_UsernameInputField" destination="g24-mN-iSZ" id="h83-Ew-hYG"/>
-                        <segue destination="4RF-uV-nfj" kind="show" identifier="segue_Signup-&gt;Login" id="VuZ-xb-maI"/>
-                        <segue destination="tW6-r4-FRL" kind="show" identifier="segue_Signup-&gt;Homepage" id="8Zw-E4-bHK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K2v-pY-f4H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="RF7-tI-Nsi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2828" y="-619"/>
+            <point key="canvasLocation" x="2828" y="-615"/>
         </scene>
     </scenes>
     <resources>
@@ -315,7 +311,4 @@
         <image name="LogoNoBackground" width="364" height="599"/>
         <image name="Search" width="148" height="148"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="zmo-t1-dEi"/>
-    </inferredMetricsTieBreakers>
 </document>
