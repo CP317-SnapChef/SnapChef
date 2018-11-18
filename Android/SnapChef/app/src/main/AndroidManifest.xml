@@ -43,6 +43,9 @@
 
         <activity android:name=".SearchView"
             android:label="Search"></activity>
+
+        <activity android:name=".ViewRecipeView"
+            android:label="ViewRecipe"></activity>
     </application>
 
 </manifest>
