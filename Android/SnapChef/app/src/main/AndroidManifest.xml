@@ -40,6 +40,9 @@
 
         <activity android:name=".ReportErrorView"
             android:label="ReportError"></activity>
+
+        <activity android:name=".SearchView"
+            android:label="Search"></activity>
     </application>
 
 </manifest>

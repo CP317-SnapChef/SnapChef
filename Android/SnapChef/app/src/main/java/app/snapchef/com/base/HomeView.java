@@ -24,7 +24,8 @@ public class HomeView extends AppCompatActivity {
         searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // intent = new Intent(getApplicationContext(), .class);
+                 intent = new Intent(getApplicationContext(), SearchView.class);
+                 startActivity(intent);
             }
         });
 
