@@ -56,7 +56,7 @@
 
 
     <Button
-        android:id="@+id/changePasswordButton"
+        android:id="@+id/reportRecipeButton"
         android:layout_width="263dp"
         android:layout_height="wrap_content"
 
@@ -68,15 +68,15 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="180dp"
+        android:layout_marginBottom="96dp"
         android:background="@drawable/rounded_corner_button_gray"
         android:padding="10dp"
-        android:text="Report Recipe"
+        android:text="Report"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logOutButton"
         app:layout_constraintVertical_bias="0.144"
@@ -85,12 +85,36 @@
     <EditText
         android:id="@+id/reportRecipeTextField"
         android:layout_width="326dp"
-        android:layout_height="113dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="Whats wrong with this recipe?"
         android:inputType="textMultiLine"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="186dp"
+        app:layout_constraintBottom_toTopOf="@+id/reportRecipeButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Recipe thats being reported goes here"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view"
         tools:ignore="MissingConstraints" />
 
 
