@@ -124,7 +124,7 @@
         tools:ignore="HardcodedText" />
 
     <Button
-        android:id="@+id/reportErrorButton"
+        android:id="@+id/reportErrorButtonAccount"
         android:layout_width="263dp"
         android:layout_height="wrap_content"
 
