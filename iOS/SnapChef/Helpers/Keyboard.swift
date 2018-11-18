@@ -9,10 +9,7 @@
 import UIKit
 
 class Keyboard {
-    static func sayHello() {
-        print("hello from Keyboard")
-    }
-    
+    // hides keyboard
     static func hideKeyboard(inputField: UITextField) {
         inputField.resignFirstResponder()
     }

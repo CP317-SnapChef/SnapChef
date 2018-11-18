@@ -20,11 +20,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // delegate textfields
         loginView_UsernameInputField.delegate = self
         loginView_PasswordInputField.delegate = self
-        Keyboard.sayHello()
-        print(username)
-        print(password)
         
         // keyboard listen events
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
