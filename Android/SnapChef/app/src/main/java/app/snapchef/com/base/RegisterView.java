@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 public class RegisterView extends AppCompatActivity {
+    //TODO: Add "Privacy Policy" like in LoginView
+
     private ImageButton backBtn;
     private Intent intent;
     @Override

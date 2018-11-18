@@ -12,6 +12,9 @@ import android.view.View;
 import android.widget.Button;
 
 public class CreateRecipeView extends AppCompatActivity {
+    //TODO: Literally this entire View lol
+    //TODO: Remove the nav bar at the bottom after the back button is created at the top
+
     private static final String TAG = "CreateRecipeView";
     @Override
     protected void onCreate(Bundle savedInstanceState) {

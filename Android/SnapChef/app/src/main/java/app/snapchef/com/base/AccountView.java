@@ -14,6 +14,8 @@ import android.widget.ImageButton;
 import app.snapchef.com.base.R;
 
 public class AccountView extends AppCompatActivity {
+
+
 private ImageButton backBtn;
 private Button logout, reportError;
 private Intent intent;

@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class ReportErrorView extends AppCompatActivity {
+
     private Button reportBtn;
     private ImageButton backBtn;
     private Intent intent;
