@@ -76,19 +76,9 @@
             android:layout_height="wrap_content"
             android:hint="rounded textbox test"
             tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="61dp"
-            tools:ignore="MissingConstraints">
+            tools:layout_editor_absoluteY="61dp">
 
 
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/textBox1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/rounded_edit_text"
-                android:hint="hint"
-                android:padding="5dp"
-                app:layout_constraintBottom_toTopOf="@+id/scrollView"
-                app:layout_constraintEnd_toEndOf="parent" />
         </android.support.design.widget.TextInputLayout>
     </android.support.constraint.ConstraintLayout>
 

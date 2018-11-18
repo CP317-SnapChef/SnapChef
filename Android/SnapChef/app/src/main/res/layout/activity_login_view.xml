@@ -39,9 +39,8 @@
         app:fontFamily="@font/roboto_medium" />
 
     <ScrollView
-        android:id="@+id/login_form"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="88dp">
 
         <LinearLayout
             android:id="@+id/email_login_form"
@@ -85,16 +84,53 @@
 
             </android.support.design.widget.TextInputLayout>
 
-            <Button
-                android:id="@+id/email_sign_in_button"
-                style="?android:textAppearanceSmall"
-                android:layout_width="match_parent"
-                android:layout_height="63dp"
-                android:layout_marginTop="16dp"
-                android:backgroundTint="#FF5C08"
-                android:text="@string/action_sign_in"
-                android:textStyle="bold" />
-
         </LinearLayout>
     </ScrollView>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/buttonHolder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="163dp"
+            android:layout_height="91dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="83dp"
+            android:background="@drawable/rounded_corner_button"
+            android:padding="10dp"
+            android:text="@string/action_sign_in"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/registerButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/registerButton"
+            android:layout_width="163dp"
+            android:layout_height="91dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="83dp"
+            android:background="@drawable/rounded_corner_button"
+            android:padding="10dp"
+            android:text="@string/action_sign_up"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/loginButton"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
 </LinearLayout>
