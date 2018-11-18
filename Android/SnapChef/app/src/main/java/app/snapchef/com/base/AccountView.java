@@ -15,7 +15,7 @@ import app.snapchef.com.base.R;
 
 public class AccountView extends AppCompatActivity {
 private ImageButton backBtn;
-private Button logout;
+private Button logout, reportError;
 private Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +33,16 @@ private Intent intent;
                 startActivity(intent);
             }
         });
+
+        reportError = (Button) findViewById(R.id.reportErrorButtonAccount);
+        reportError.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intent =  new Intent(getApplicationContext(), ReportErrorView.class);
+                startActivity(intent);
+            }
+        });
+
         //go back to home screen if back button is pressed
         backBtn = (ImageButton) findViewById(R.id.backButtonAccount);
         backBtn.setOnClickListener(new View.OnClickListener() {

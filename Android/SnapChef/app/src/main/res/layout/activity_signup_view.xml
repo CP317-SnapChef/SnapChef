@@ -45,7 +45,7 @@
         tools:layout_editor_absoluteY="88dp" />
 
     <Button
-        android:id="@+id/changePasswordButton"
+        android:id="@+id/reportRecipeButton"
         android:layout_width="263dp"
         android:layout_height="wrap_content"
 

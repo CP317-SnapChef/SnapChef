@@ -52,7 +52,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/searchbutton"
-        tools:ignore="ContentDescription" />
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <ImageButton
         android:id="@+id/createRecipeButton"

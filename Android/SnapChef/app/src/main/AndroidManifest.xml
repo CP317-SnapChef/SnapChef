@@ -34,6 +34,12 @@
         <activity
             android:name=".RegisterView"
             android:label="Register"></activity>
+
+        <activity android:name=".ReportRecipeView"
+            android:label="ReportRecipe"></activity>
+
+        <activity android:name=".ReportErrorView"
+            android:label="ReportError"></activity>
     </application>
 
 </manifest>
