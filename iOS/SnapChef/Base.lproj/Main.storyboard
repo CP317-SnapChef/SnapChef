@@ -313,6 +313,11 @@
                                     <outlet property="recipeCell_ImageView" destination="oSI-OM-Bzp" id="I6K-g9-btb"/>
                                     <outlet property="recipeCell_RecipeAuthor" destination="IYQ-zR-A0w" id="cgH-c0-VYq"/>
                                     <outlet property="recipeCell_RecipeName" destination="xBF-QT-bcE" id="jVf-Un-ZlB"/>
+                                    <outlet property="recipeCell_Star1" destination="5hi-0k-Q6m" id="XTk-v9-ERp"/>
+                                    <outlet property="recipeCell_Star2" destination="3wF-FD-Zhn" id="slq-DY-0cX"/>
+                                    <outlet property="recipeCell_Star3" destination="IKW-Da-rxB" id="ikz-Uc-a32"/>
+                                    <outlet property="recipeCell_Star4" destination="ES2-Qu-3qz" id="Bzm-dn-D2P"/>
+                                    <outlet property="recipeCell_Star5" destination="zg0-Ik-j5T" id="HK4-0l-76E"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

@@ -45,8 +45,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func loginView_LoginBtn(_ sender: UIButton) {
         
         // test recipes
-        recipes += [Recipe(name: "Beef Ramen", author: "Dylan Clarry", image: "beeframen")]
-        recipes += [Recipe(name: "Beets", author: "Dr. Dre", image: "beets")]
+        recipes += [Recipe(name: "Beef Ramen", author: "Dylan Clarry", image: "beeframen", rating: 5.0)]
+        recipes += [Recipe(name: "Beets", author: "Dr. Dre", image: "beets", rating: 2.3)]
         
         // hide keyboard
         Keyboard.hideKeyboard(inputField: loginView_UsernameInputField)

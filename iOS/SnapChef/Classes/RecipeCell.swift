@@ -10,7 +10,14 @@ import UIKit
 
 class RecipeCell: UITableViewCell {
 
+    // stars
+    @IBOutlet weak var recipeCell_Star1: UIImageView!
+    @IBOutlet weak var recipeCell_Star2: UIImageView!
+    @IBOutlet weak var recipeCell_Star3: UIImageView!
+    @IBOutlet weak var recipeCell_Star4: UIImageView!
+    @IBOutlet weak var recipeCell_Star5: UIImageView!
     
+    // image and labels
     @IBOutlet weak var recipeCell_ImageView: UIImageView!
     @IBOutlet weak var recipeCell_RecipeName: UILabel!
     @IBOutlet weak var recipeCell_RecipeAuthor: UILabel!
