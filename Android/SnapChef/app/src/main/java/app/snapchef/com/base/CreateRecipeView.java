@@ -2,6 +2,7 @@ package app.snapchef.com.base;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
@@ -40,6 +41,8 @@ public class CreateRecipeView extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                //open camera or gallery
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(intent,0);
             }
         });
 

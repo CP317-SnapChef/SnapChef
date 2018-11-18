@@ -2,6 +2,7 @@ package app.snapchef.com.base;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
@@ -14,7 +15,7 @@ import android.widget.Spinner;
 //TODO: Add camera button
 public class SearchView extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private Spinner sortBy, filter;
-    private ImageButton backBtn;
+    private ImageButton backBtn, cameraBtn;
     private Button viewRecipeBtn;
     private Intent intent;
     @Override
@@ -34,6 +35,16 @@ public class SearchView extends AppCompatActivity implements AdapterView.OnItemS
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         filter.setAdapter(adapter2);
         filter.setOnItemSelectedListener(this);
+
+        //opens device camera
+        cameraBtn = (ImageButton) findViewById(R.id.cameraButton);
+        cameraBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(intent,0);
+            }
+        });
 
         backBtn = (ImageButton) findViewById(R.id.backButtonSearch);
         backBtn.setOnClickListener(new View.OnClickListener() {
