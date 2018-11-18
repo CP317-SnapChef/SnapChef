@@ -1,6 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF7800"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin">
 
-</android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/signUpText"
+            android:layout_width="217dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="90dp"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="92dp"
+            android:layout_marginEnd="45dp"
+            android:layout_marginRight="45dp"
+            android:text="@string/action_sign_up"
+            android:textColor="#FFFFFF"
+            android:textSize="50sp"
+            app:fontFamily="@font/roboto_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/backButtonAccount"
+            android:layout_width="39dp"
+            android:layout_height="42dp"
+            android:background="@null"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_arrow_back_black_24dp"
+            tools:ignore="ContentDescription,MissingConstraints,VectorDrawableCompat" />
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="336dp"
+            android:layout_height="357dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/signUpText">
+
+            <AutoCompleteTextView
+                android:id="@+id/email"
+                android:layout_width="217dp"
+                android:layout_height="47dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="59dp"
+                android:layout_marginRight="59dp"
+                android:layout_marginBottom="17dp"
+                android:background="#FFFFFF"
+                android:completionHint="Email"
+                android:hint="@string/prompt_email"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text=" Email"
+                app:layout_constraintBottom_toTopOf="@+id/userName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="spread_inside" />
+
+            <AutoCompleteTextView
+                android:id="@+id/userName"
+                android:layout_width="217dp"
+                android:layout_height="47dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="59dp"
+                android:layout_marginRight="59dp"
+                android:background="#FFFFFF"
+                android:completionHint="Username"
+                android:hint="@string/prompt_email"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text=" Username"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/email" />
+
+            <AutoCompleteTextView
+                android:id="@+id/password"
+                android:layout_width="217dp"
+                android:layout_height="47dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="59dp"
+                android:layout_marginRight="59dp"
+                android:background="#FFFFFF"
+                android:completionHint=" password"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text=" Password"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/userName" />
+
+            <AutoCompleteTextView
+                android:id="@+id/confirmPassword"
+                android:layout_width="217dp"
+                android:layout_height="47dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="59dp"
+                android:layout_marginRight="59dp"
+                android:background="#FFFFFF"
+                android:completionHint=" Confirm Password"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text=" Confirm Password"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/password" />
+
+            <Button
+                android:id="@+id/registerButton"
+                android:layout_width="217dp"
+                android:layout_height="47dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="59dp"
+                android:layout_marginRight="59dp"
+                android:background="@drawable/rounded_corner_button"
+                android:padding="10dp"
+                android:text="@string/action_sign_up"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/confirmPassword" />
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+</LinearLayout>
