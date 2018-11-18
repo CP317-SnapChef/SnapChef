@@ -35,7 +35,7 @@ public class HomeView extends AppCompatActivity {
         createRecipeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                intent = new Intent(getApplicationContext(), ViewRecipeView.class);
+                intent = new Intent(getApplicationContext(), CreateRecipeView.class);
                 startActivity(intent);
             }
         });

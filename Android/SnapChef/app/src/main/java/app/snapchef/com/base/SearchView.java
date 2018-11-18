@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 
@@ -14,6 +15,7 @@ import android.widget.Spinner;
 public class SearchView extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private Spinner sortBy, filter;
     private ImageButton backBtn;
+    private Button viewRecipeBtn;
     private Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,15 @@ public class SearchView extends AppCompatActivity implements AdapterView.OnItemS
             @Override
             public void onClick(View view) {
                 intent =  new Intent(getApplicationContext(), HomeView.class);
+                startActivity(intent);
+            }
+        });
+
+        viewRecipeBtn = (Button) findViewById(R.id.goToViewRecipeButton);
+        viewRecipeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intent =  new Intent(getApplicationContext(), ViewRecipeView.class);
                 startActivity(intent);
             }
         });

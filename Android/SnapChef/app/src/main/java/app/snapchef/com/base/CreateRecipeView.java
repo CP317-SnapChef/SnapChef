@@ -10,57 +10,49 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class CreateRecipeView extends AppCompatActivity {
     //TODO: Literally this entire View lol
     //TODO: Remove the nav bar at the bottom after the back button is created at the top
-
+    private ImageButton backBtn, cameraBtn;
+    private Button uploadBtn;
+    private Intent intent;
     private static final String TAG = "CreateRecipeView";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_recipe);
 
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
-        bottomNav.setOnNavigationItemSelectedListener(navListener);
-        bottomNav.getMenu().getItem(1).setChecked(true);
 
-        Log.d(TAG, "onCreate: Starting");
+        //go back to home screen if back button is pressed
+        backBtn = (ImageButton) findViewById(R.id.backButtonCreateRecipe);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intent =  new Intent(getApplicationContext(), HomeView.class);
+                startActivity(intent);
+            }
+        });
 
+        cameraBtn = (ImageButton) findViewById(R.id.uploadImageButton);
+        cameraBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               //open camera or gallery
+            }
+        });
+
+        uploadBtn = (Button) findViewById(R.id.uploadButton);
+        uploadBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //upload recipe
+            }
+        });
         
     }
 
-    private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener(){
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Intent intent = null;
-            switch (item.getItemId()) {
-                case R.id.navigation_account:
-                    intent = new Intent(getApplicationContext(), AccountView.class);
-                    break;
-
-                case R.id.navigation_home:
-                    intent  = new Intent(getApplicationContext(), HomeView.class);
-                    break;
-
-                case R.id.navigation_search:
-                    // intent = new Intent(getApplicationContext(), .class);
-                    break;
-
-                case R.id.navigation_add:
-                    intent = new Intent(getApplicationContext(), CreateRecipeView.class);
-                    break;
-
-
-                case R.id.navigation_text_search:
-                    // intent = new Intent(getApplicationContext(), .class);
-                    break;
-            }
-
-            startActivity(intent);
-            return true;
-        }
-    };
 
 
 

@@ -95,7 +95,7 @@
     </ScrollView>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/viewRecipeText"
         android:layout_width="168dp"
         android:layout_height="38dp"
         android:layout_marginStart="16dp"
