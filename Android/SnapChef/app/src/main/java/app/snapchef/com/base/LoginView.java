@@ -41,11 +41,8 @@ import static android.Manifest.permission.READ_CONTACTS;
 public class LoginView extends AppCompatActivity implements LoaderCallbacks<Cursor> {
     //TODO: Add a "Forgot Password?" text button and all stuff related to that
     //TODO: Add "Privacy Policy" text button and all stuff related to that
-    //TODO: Fix the type of fonts in the buttons to match the "SnapChef"
-    //TODO: Shrink everything down to fit nicely under the "SnapChef"
-
-
     //TODO: MAKE ROUNDED INPUT TEXT BOXES, THEY ARE NEEDED IN MOST OTHER VIEWS TO SO BE SURE TO CHECK EVERYTHING AFTER CREATING THEM
+    //TODO: Left-align the button text with padding
 
 
     /**
