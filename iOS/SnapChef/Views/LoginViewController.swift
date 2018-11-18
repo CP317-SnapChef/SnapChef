@@ -46,7 +46,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // hide keyboard
         Keyboard.hideKeyboard(inputField: loginView_UsernameInputField)
         
-        // get username and password text field values
+        // get username and password textfield values
         let usernameInput: String = loginView_UsernameInputField.text!
         let passwordInput: String = loginView_PasswordInputField.text!
         
@@ -66,17 +66,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         performSegue(withIdentifier: "segue_Login->Signup", sender: self)
     }
     
-    /* prepare unwind segue */
-    @IBAction func PrepareUnwindSegue(segue: UIStoryboardSegue) { }
-    
-    /* unwind segue */
-    override func unwind(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
-        let segue = UnwindSegueFromRight(identifier: unwindSegue.identifier, source: unwindSegue.source, destination: unwindSegue.destination)
-        segue.perform()
-    }
-    
     
     // MARK: functions
+    /* dismiss from signup view */
+    @IBAction func dismissSignupView(segue: UIStoryboardSegue) { }
+    
+    /* keyboard height adjustments */
     @objc func keyboardWillChange(notification: Notification) {
         let key = "UIKeyboardFrameEndUserInfoKey"
         guard let keyboardRect = (notification.userInfo?[key] as? NSValue)?.cgRectValue else { return }
@@ -94,3 +89,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return true
     }
 }
+
+
+/* prepare unwind segue */
+//@IBAction func PrepareUnwindSegue(segue: UIStoryboardSegue) { }
+
+/* unwind segue */
+//    override func unwind(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
+//        let segue = UnwindSegueFromRight(identifier: unwindSegue.identifier, source: unwindSegue.source, destination: unwindSegue.destination)
+//        segue.perform()
+//    }

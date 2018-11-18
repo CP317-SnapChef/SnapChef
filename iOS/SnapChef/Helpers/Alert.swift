@@ -23,4 +23,11 @@ class Alert {
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         view.present(alert, animated: true)
     }
+    
+    // alert for signup view blank
+    static func signupAlertBlank(view: UIViewController) {
+        let alert = UIAlertController(title: "Invalid.", message: "Empty fields.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        view.present(alert, animated: true)
+    }
 }

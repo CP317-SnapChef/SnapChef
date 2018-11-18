@@ -24,9 +24,42 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: actions
     
+    /* back button */
+    @IBAction func signupView_backBtn(_ sender: UIButton) {
+        // dismiss to login
+        performSegue(withIdentifier: "dismissSignupView", sender: self)
+    }
     /* signup button */
     @IBAction func signupView_SignupBtn(_ sender: UIButton) {
-        //performSegue(withIdentifier: "segue_Signup->Login", sender: self)
+        
+        // get username, password, and confirm password textfield values
+        let usernameInput: String = signupView_UsernameInputField.text!
+        let passwordInput: String = signupView_PasswordInputField.text!
+        let confirmPasswordInput: String = signupView_ConfirmPasswordInputField.text!
+        
+        // check if textfield values are not blank
+        if passwordInput != "" && confirmPasswordInput != "" && usernameInput != "" {
+            
+            // check if passwords match
+            if passwordInput == confirmPasswordInput {
+                print("equal")
+                
+                // create new user ***(must change in different context)
+                username = usernameInput
+                password = passwordInput
+                
+                // dismiss to login
+                performSegue(withIdentifier: "dismissSignupView", sender: self)
+            } else {
+                
+                // alert if passwords do not match
+                Alert.signupAlert(view: self)
+            }
+        } else {
+            // alert if there are empty fields
+            Alert.signupAlertBlank(view: self)
+        }
+        
     }
     
     /* UITextFieldDelegate functions */

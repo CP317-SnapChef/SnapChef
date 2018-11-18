@@ -257,6 +257,9 @@
                                         <integer key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signupView_SignupBtn:" destination="39g-u7-DwU" eventType="touchUpInside" id="QEK-Uv-f9u"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUD-L5-C5V">
                                 <rect key="frame" x="30" y="45" width="26" height="23"/>
@@ -266,7 +269,7 @@
                                 </constraints>
                                 <state key="normal" image="BackArrow"/>
                                 <connections>
-                                    <segue destination="RF7-tI-Nsi" kind="unwind" identifier="unwind_Login-&gt;Signup" customClass="UnwindSegueFromRight" customModule="SnapChef" customModuleProvider="target" unwindAction="PrepareUnwindSegueWithSegue:" id="vbu-Cg-a5Y"/>
+                                    <action selector="signupView_backBtn:" destination="39g-u7-DwU" eventType="touchUpInside" id="JFj-aL-1hA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -298,6 +301,7 @@
                         <outlet property="signupView_ConfirmPasswordInputField" destination="jG0-k3-aHf" id="7cb-EV-Tvn"/>
                         <outlet property="signupView_PasswordInputField" destination="ow6-J4-WZj" id="0HT-p8-8Pk"/>
                         <outlet property="signupView_UsernameInputField" destination="g24-mN-iSZ" id="h83-Ew-hYG"/>
+                        <segue destination="RF7-tI-Nsi" kind="unwind" identifier="dismissSignupView" customClass="UnwindSegueFromRight" customModule="SnapChef" customModuleProvider="target" unwindAction="dismissSignupViewWithSegue:" id="ajY-f4-H8r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K2v-pY-f4H" userLabel="First Responder" sceneMemberID="firstResponder"/>
