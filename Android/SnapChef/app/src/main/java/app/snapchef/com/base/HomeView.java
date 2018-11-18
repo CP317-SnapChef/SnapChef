@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 public class HomeView extends AppCompatActivity {
+
+
     private ImageButton searchBtn, createRecipeBtn, reportBtn, accountBtn;
     private Intent intent;
     @Override
