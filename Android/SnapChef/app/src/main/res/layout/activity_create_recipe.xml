@@ -76,7 +76,8 @@
             android:layout_height="wrap_content"
             android:hint="rounded textbox test"
             tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="61dp">
+            tools:layout_editor_absoluteY="61dp"
+            tools:ignore="MissingConstraints">
 
 
             <android.support.design.widget.TextInputEditText
