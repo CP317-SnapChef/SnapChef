@@ -26,7 +26,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     /* signup button */
     @IBAction func signupView_SignupBtn(_ sender: UIButton) {
-        performSegue(withIdentifier: "segue_Signup->Login", sender: self)
+        //performSegue(withIdentifier: "segue_Signup->Login", sender: self)
     }
     
     /* UITextFieldDelegate functions */

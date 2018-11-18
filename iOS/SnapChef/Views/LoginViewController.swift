@@ -40,24 +40,41 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: actions
+    
+    /* login button */
     @IBAction func loginView_LoginBtn(_ sender: UIButton) {
+        // hide keyboard
         Keyboard.hideKeyboard(inputField: loginView_UsernameInputField)
-        performSegue(withIdentifier: "segue_Login->Homepage", sender: self)
+        
+        // get username and password text field values
+        let usernameInput: String = loginView_UsernameInputField.text!
+        let passwordInput: String = loginView_PasswordInputField.text!
+        
+        // check if login credentials are correct
+        if usernameInput == username && passwordInput == password {
+            performSegue(withIdentifier: "segue_Login->Homepage", sender: self)
+        } else {
+            // alert if login credentials are incorrect
+            Alert.loginAlert(view: self)
+        }
     }
     
+    /* signup button */
     @IBAction func loginView_SignupBtn(_ sender: UIButton) {
+        // hide keyboard
+        Keyboard.hideKeyboard(inputField: loginView_UsernameInputField)
         performSegue(withIdentifier: "segue_Login->Signup", sender: self)
     }
     
-    /* unwind segue */
-    @IBAction func PrepareUnwindSegue(segue: UIStoryboardSegue) {
-        
-    }
+    /* prepare unwind segue */
+    @IBAction func PrepareUnwindSegue(segue: UIStoryboardSegue) { }
     
+    /* unwind segue */
     override func unwind(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
         let segue = UnwindSegueFromRight(identifier: unwindSegue.identifier, source: unwindSegue.source, destination: unwindSegue.destination)
         segue.perform()
     }
+    
     
     // MARK: functions
     @objc func keyboardWillChange(notification: Notification) {
