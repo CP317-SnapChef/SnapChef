@@ -83,18 +83,27 @@ public class LoginView extends AppCompatActivity implements LoaderCallbacks<Curs
             }
         });
 
-        Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
+        Button mEmailSignInButton = (Button) findViewById(R.id.loginButton);
         mEmailSignInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 //                attemptLogin();
                 //intent to go to main view
-                Intent LoginIntent = new Intent(getApplicationContext(), HomeView.class);
-                startActivity(LoginIntent);
+                Intent loginIntent = new Intent(getApplicationContext(), HomeView.class);
+                startActivity(loginIntent);
             }
         });
 
-        mLoginFormView = findViewById(R.id.login_form);
+        Button mEmailSignUpButton = (Button) findViewById(R.id.registerButton);
+        mEmailSignUpButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent registerIntent = new Intent(getApplicationContext(),RegisterView.class);
+                startActivity(registerIntent);
+            }
+        });
+
+       // mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
     }
 

@@ -31,6 +31,9 @@
         <activity
             android:name=".CreateRecipeView"
             android:label="CreateRecipe"></activity>
+        <activity
+            android:name=".RegisterView"
+            android:label="Register"></activity>
     </application>
 
 </manifest>
