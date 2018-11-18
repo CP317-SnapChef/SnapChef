@@ -34,7 +34,7 @@ private Intent intent;
             }
         });
         //go back to home screen if back button is pressed
-        backBtn = (ImageButton) findViewById(R.id.backButton);
+        backBtn = (ImageButton) findViewById(R.id.backButtonAccount);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
