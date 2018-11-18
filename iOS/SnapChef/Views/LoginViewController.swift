@@ -33,6 +33,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     deinit {
+        
         // stop keyboard listen events
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -43,6 +44,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     /* login button */
     @IBAction func loginView_LoginBtn(_ sender: UIButton) {
+        
         // hide keyboard
         Keyboard.hideKeyboard(inputField: loginView_UsernameInputField)
         
@@ -61,6 +63,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     /* signup button */
     @IBAction func loginView_SignupBtn(_ sender: UIButton) {
+        
         // hide keyboard
         Keyboard.hideKeyboard(inputField: loginView_UsernameInputField)
         performSegue(withIdentifier: "segue_Login->Signup", sender: self)
@@ -68,6 +71,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
     // MARK: functions
+    
     /* dismiss from signup view */
     @IBAction func dismissSignupView(segue: UIStoryboardSegue) { }
     
@@ -76,9 +80,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let key = "UIKeyboardFrameEndUserInfoKey"
         guard let keyboardRect = (notification.userInfo?[key] as? NSValue)?.cgRectValue else { return }
         
+        // adjust to height of keyboard
         if notification.name == UIResponder.keyboardWillShowNotification || notification.name == UIResponder.keyboardWillChangeFrameNotification {
             view.frame.origin.y = -keyboardRect.height / 2
         } else {
+            // reset height from keyboard
             view.frame.origin.y = 0
         }
     }

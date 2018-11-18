@@ -17,6 +17,8 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //
         signupView_UsernameInputField.delegate = self
         signupView_PasswordInputField.delegate = self
         signupView_ConfirmPasswordInputField.delegate = self
@@ -26,9 +28,11 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     /* back button */
     @IBAction func signupView_backBtn(_ sender: UIButton) {
+        
         // dismiss to login
         performSegue(withIdentifier: "dismissSignupView", sender: self)
     }
+    
     /* signup button */
     @IBAction func signupView_SignupBtn(_ sender: UIButton) {
         
@@ -51,7 +55,6 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                 // dismiss to login
                 performSegue(withIdentifier: "dismissSignupView", sender: self)
             } else {
-                
                 // alert if passwords do not match
                 Alert.signupAlert(view: self)
             }
