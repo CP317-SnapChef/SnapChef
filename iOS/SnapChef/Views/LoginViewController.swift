@@ -8,8 +8,8 @@
 
 import UIKit
 
-var username = "dc1324"
-var password = "password"
+var username = ""
+var password = ""
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -19,6 +19,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         // delegate textfields
         loginView_UsernameInputField.delegate = self
@@ -42,6 +43,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     /* login button */
     @IBAction func loginView_LoginBtn(_ sender: UIButton) {
+        
+        // test recipes
+        recipes += [Recipe(name: "Beef Ramen", author: "Dylan Clarry", image: "beeframen")]
+        recipes += [Recipe(name: "Beets", author: "Dr. Dre", image: "beets")]
         
         // hide keyboard
         Keyboard.hideKeyboard(inputField: loginView_UsernameInputField)
