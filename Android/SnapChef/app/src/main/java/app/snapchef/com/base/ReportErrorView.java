@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class ReportErrorView extends AppCompatActivity {
     private Button reportBtn;
@@ -26,6 +27,8 @@ public class ReportErrorView extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //send report
+                Toast toast = Toast.makeText(getApplicationContext(), "Error Report Submitted", Toast.LENGTH_SHORT);
+                toast.show();
 
             }
         });

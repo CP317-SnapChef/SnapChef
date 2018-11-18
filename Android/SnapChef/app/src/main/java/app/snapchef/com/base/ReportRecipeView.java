@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class ReportRecipeView extends AppCompatActivity {
     private Button reportBtn;
@@ -23,6 +24,9 @@ public class ReportRecipeView extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //send report
+
+                Toast toast = Toast.makeText(getApplicationContext(), "Recipe Reported", Toast.LENGTH_SHORT);
+                toast.show();
             }
         });
 
