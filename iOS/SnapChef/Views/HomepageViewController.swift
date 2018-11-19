@@ -14,10 +14,17 @@ var recipes = [Recipe]()
 class HomepageViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setCustomBackBtn()
     }
     
     // MARK: functions
+    
+    // customize navbar
+    func setCustomBackBtn() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationController?.navigationBar.backIndicatorImage = #imageLiteral(resourceName: "BackArrowExtraSmall")
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = #imageLiteral(resourceName: "BackArrowExtraSmall")
+    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -61,7 +68,7 @@ class HomepageViewController: UITableViewController {
             cell.recipeCell_Star2.image = #imageLiteral(resourceName: "NoYellowStar.png")
         }
         if recipe.rating < 1.0{
-            cell.recipeCell_Star1.image = #imageLiteral(resourceName: "HalfYellowStar")
+            cell.recipeCell_Star1.image = #imageLiteral(resourceName: "HalfYellowStar-1")
         }
         if recipe.rating < 0.3{
             cell.recipeCell_Star1.image = #imageLiteral(resourceName: "NoYellowStar.png")
@@ -75,5 +82,17 @@ class HomepageViewController: UITableViewController {
         tableView.rowHeight = 242
         
         return cell
+    }
+    
+    // MARK: actions
+    
+    /* account button */
+    @IBAction func homepageView_AccountBtn(_ sender: UIButton) {
+        performSegue(withIdentifier: "segue_Homepage->Account", sender: self)
+    }
+    
+    /* search button */
+    @IBAction func homepageView_SearchBtn(_ sender: UIButton) {
+        
     }
 }
