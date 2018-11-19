@@ -9,7 +9,6 @@
 import UIKit
 
 var cellIndex = 0
-var recipes = [Recipe]()
 
 class HomepageViewController: UITableViewController {
     override func viewDidLoad() {

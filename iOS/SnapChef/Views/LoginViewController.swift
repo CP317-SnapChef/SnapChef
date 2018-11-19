@@ -43,10 +43,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     /* login button */
     @IBAction func loginView_LoginBtn(_ sender: UIButton) {
-        
-        // test recipes
-        recipes += [Recipe(name: "Beef Ramen", author: "Dylan Clarry", image: "beeframen", rating: 5.0)]
-        recipes += [Recipe(name: "Beets", author: "Dr. Dre", image: "beets", rating: 2.3)]
+        testRecipes()
         
         // hide keyboard
         Keyboard.hideKeyboard(inputField: loginView_UsernameInputField)
@@ -98,13 +95,3 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return true
     }
 }
-
-
-/* prepare unwind segue */
-//@IBAction func PrepareUnwindSegue(segue: UIStoryboardSegue) { }
-
-/* unwind segue */
-//    override func unwind(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
-//        let segue = UnwindSegueFromRight(identifier: unwindSegue.identifier, source: unwindSegue.source, destination: unwindSegue.destination)
-//        segue.perform()
-//    }
