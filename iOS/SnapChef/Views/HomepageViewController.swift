@@ -11,6 +11,9 @@ import UIKit
 var cellIndex = 0
 
 class HomepageViewController: UITableViewController {
+    
+    // MARK: outlets
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setCustomBackBtn()
@@ -83,6 +86,10 @@ class HomepageViewController: UITableViewController {
         cell.recipeCell_ImageView.image = UIImage(named: recipe.image)
         cell.recipeCell_RecipeName.text = recipe.name
         cell.recipeCell_RecipeAuthor.text = "By: " + recipe.author
+        cell.recipeCell_Panel.layer.borderWidth = 1
+        //cell.recipeCell_Panel.layer.borderColor = UIColor.colorLightGrey.cgColor
+        cell.recipeCell_Panel.layer.borderColor = UIColor.colorMuskyGrey.cgColor
+        cell.recipeCell_Panel.layer.cornerRadius = 6
         
         tableView.rowHeight = 242
         
@@ -98,6 +105,6 @@ class HomepageViewController: UITableViewController {
     
     /* search button */
     @IBAction func homepageView_SearchBtn(_ sender: UIButton) {
-        
+        performSegue(withIdentifier: "segue_Homepage->Search", sender: self)
     }
 }

@@ -2,7 +2,7 @@
 //  ViewRecipeController.swift
 //  SnapChef
 //
-//  Created by Dylan Clarry on 2018-11-18.
+//  Created by Dylan Clarry and Bryn Mietkiewicz on 2018-11-18.
 //  Copyright © 2018 SnapChefTeam. All rights reserved.
 //
 
@@ -61,7 +61,7 @@ class ViewRecipeViewController: UIViewController{
     }
     func listInstructions(){
         var count = 1
-        viewRecipeView_RecipeInstructions.text  = "\n   Instructons:\n"
+        viewRecipeView_RecipeInstructions.text  = "\n   Instructions:\n"
         for instruction in recipe.instructions{
             viewRecipeView_RecipeInstructions.text += "\n   \(count). \(instruction)\n"
             count += 1
@@ -155,9 +155,13 @@ class ViewRecipeViewController: UIViewController{
     }
     
     // MARK: actions
+    
+    /* save recipe button */
     @IBAction func viewRecipeView_SaveThisRecipeBtn(_ sender: UIButton) {
     }
     
+    /* report recipe button */
     @IBAction func viewRecipeView_ReportRecipeBtn(_ sender: UIButton) {
+        performSegue(withIdentifier: "segue_ViewRecipe->ReportRecipe", sender: self)
     }
 }

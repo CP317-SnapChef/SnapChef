@@ -8,18 +8,18 @@
 
 import UIKit
 
-var username = ""
-var password = ""
+var username: String = ""
+var password: String = ""
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: outlets
+    @IBOutlet weak var loginView_Title: UILabel!
     @IBOutlet weak var loginView_UsernameInputField: UITextField!
     @IBOutlet weak var loginView_PasswordInputField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         // delegate textfields
         loginView_UsernameInputField.delegate = self

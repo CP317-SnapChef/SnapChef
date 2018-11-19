@@ -15,14 +15,15 @@ class AccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        accountView_Username.text = username
     }
     
     // MARK: actions
     
     /* logout button */
     @IBAction func accountView_LogoutBtn(_ sender: UIButton) {
-        
+        recipes = [Recipe]()
+        performSegue(withIdentifier: "segue_Account->Login", sender: self)
     }
     
     /* change password button */
