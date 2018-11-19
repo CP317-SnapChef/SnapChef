@@ -8,7 +8,7 @@
 
 import UIKit
 
-var index = 0
+var cellIndex = 0
 var recipes = [Recipe]()
 
 class HomepageViewController: UITableViewController {
@@ -24,6 +24,12 @@ class HomepageViewController: UITableViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationController?.navigationBar.backIndicatorImage = #imageLiteral(resourceName: "BackArrowExtraSmall")
         navigationController?.navigationBar.backIndicatorTransitionMaskImage = #imageLiteral(resourceName: "BackArrowExtraSmall")
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        cellIndex = indexPath.row
+        performSegue(withIdentifier: "segue_Homepage->ViewRecipe", sender: self)
+        
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
