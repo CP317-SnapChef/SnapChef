@@ -15,7 +15,15 @@ class AccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setCustomBackBtn()
         accountView_Username.text = username
+    }
+    
+    // customize navbar
+    func setCustomBackBtn() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationController?.navigationBar.backIndicatorImage = #imageLiteral(resourceName: "BackArrowExtraSmall")
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = #imageLiteral(resourceName: "BackArrowExtraSmall")
     }
     
     // MARK: actions
@@ -28,11 +36,11 @@ class AccountViewController: UIViewController {
     
     /* change password button */
     @IBAction func accountView_ChangePasswordBtn(_ sender: UIButton) {
-        
+        performSegue(withIdentifier: "segue_Account->ChangePassword", sender: self)
     }
     
     /* report error button */
     @IBAction func accountView_ReportErrorBtn(_ sender: UIButton) {
-        
+        performSegue(withIdentifier: "segue_Account->ReportError", sender: self)
     }
 }

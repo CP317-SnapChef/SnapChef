@@ -21,9 +21,9 @@ func testRecipes() {
     let ing2 = ["Toast", "Rotten Egg"]
     let inst2 = ["\"accidentally\" burn the toast", "cook rotten egg", "serve together"]
     
-    let d3 = "Nowadays, everybody wanna talk like they got something to say, but nothing comes out when they move they lips, it's just a bunch of jibberish, and motherf***ers act ilke they forgot about Dre"
+    let d3 = "Nowadays, everybody would like to talk as if to infer that they obtain information of great importance, but the act of speaking itself leaves no substantial impact in its current context. Instead, a hollow impression guised by clever diction conceals ones true intent, to portray a character who is seemingly absentminded of the fact that sir Andre Romelle Young is a talented, driven, and relevent individual which may metaphorically denote the destruction of ones false demeanor and exposing a sense of insecurity."
     let ing3 = ["2 beets solos", "1 beets studio", "5 beets pills", "1 m&m(s)"]
-    let inst3 = ["Go to university", "get a high paying job in tech", "buy expensive headphones and serve"]
+    let inst3 = ["Go to university", "Acquire a high paying job in tech", "Buy expensive headphones and serve"]
 
     recipes += [Recipe(rating: 5.0, name: "Beef Ramen", author: "Dylan Clarry", image: "beeframen", cookTime: 360, prepTime: 126, description: d1, serves: 2, ingredients: ing1, instructions: inst1)]
     recipes += [Recipe(rating: 1.4, name: "Beets", author: "Dr. Dre", image: "beets", cookTime: 560, prepTime: 127, description: d3, serves: 20, ingredients: ing3, instructions: inst3)]

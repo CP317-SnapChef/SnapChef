@@ -709,8 +709,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="accountView_Username" destination="hLG-CX-1vq" id="R5P-N3-kze"/>
-                        <segue destination="OIM-Rh-eB5" kind="show" identifier="segue_Account-&gt;ChangePassword" id="8Kr-uQ-M30"/>
-                        <segue destination="FXy-MT-B2y" kind="show" identifier="segue_Account-&gt;ReportError" id="ggJ-Lv-Pw3"/>
+                        <segue destination="OIM-Rh-eB5" kind="show" identifier="segue_Account-&gt;ReportError" id="8Kr-uQ-M30"/>
+                        <segue destination="FXy-MT-B2y" kind="show" identifier="segue_Account-&gt;ChangePassword" id="ggJ-Lv-Pw3"/>
                         <segue destination="4RF-uV-nfj" kind="custom" identifier="segue_Account-&gt;Login" customClass="SegueFromLeft" customModule="SnapChef" customModuleProvider="target" id="KRy-8j-ThY"/>
                     </connections>
                 </viewController>
