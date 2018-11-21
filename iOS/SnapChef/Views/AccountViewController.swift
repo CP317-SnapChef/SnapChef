@@ -28,6 +28,9 @@ class AccountViewController: UIViewController {
     
     // MARK: actions
     
+    /* dismiss from cahnge password view */
+    @IBAction func dismissChangePasswordView(segue: UIStoryboardSegue) {}
+    
     /* logout button */
     @IBAction func accountView_LogoutBtn(_ sender: UIButton) {
         recipes = [Recipe]()

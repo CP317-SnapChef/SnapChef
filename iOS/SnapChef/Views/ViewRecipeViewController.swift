@@ -33,12 +33,21 @@ class ViewRecipeViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadSample()
+        
+        // remove label on back button
+        setCustomBackBtn()
+        
+        // load recipe
+        loadRecipe()
     }
     
+    func setCustomBackBtn() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationController?.navigationBar.backIndicatorImage = #imageLiteral(resourceName: "BackArrowExtraSmall")
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = #imageLiteral(resourceName: "BackArrowExtraSmall")
+    }
     
-    func loadSample(){
-        
+    func loadRecipe(){
         viewRecipeView_RecipeImage.image = UIImage(named: recipe.image)
         viewRecipeView_RecipeAuthor.text = recipe.author
         viewRecipeView_RecipeName.text = recipe.name
@@ -48,11 +57,9 @@ class ViewRecipeViewController: UIViewController{
         servesThisMany()
         listIngredients()
         listInstructions()
-        
     }
     
     func listIngredients(){
-        
         viewRecipeView_RecipeIngredients.text = "\n   Ingredients:\n"
         for ingredient in recipe.ingredients{
             viewRecipeView_RecipeIngredients.text += "\n   \(ingredient)\n"
@@ -68,7 +75,6 @@ class ViewRecipeViewController: UIViewController{
         }
         highlightFirstLineInTextView(textView: viewRecipeView_RecipeInstructions)
     }
-    
     
     func servesThisMany(){
         if recipe.serves > 1 {
@@ -118,7 +124,6 @@ class ViewRecipeViewController: UIViewController{
                 viewRecipeView_RecipePrepTime.text = String(recipe.prepTime / 60) + " hour"
             }else{
                 viewRecipeView_RecipePrepTime.text = String(recipe.prepTime / 60) + " hours "
-                
             }
         }
         else{

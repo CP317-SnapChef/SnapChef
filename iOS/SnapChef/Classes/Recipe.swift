@@ -29,6 +29,7 @@ func testRecipes() {
     recipes += [Recipe(rating: 1.4, name: "Beets", author: "Dr. Dre", image: "beets", cookTime: 560, prepTime: 127, description: d3, serves: 20, ingredients: ing3, instructions: inst3)]
     recipes += [Recipe(rating: 1.0, name: "Burnt toast and a rotten egg", author: "Bryan Mietkiewicz", image: "burnttoast", cookTime: 20, prepTime: 2, description: d2, serves: 3, ingredients: ing2, instructions: inst2)]
     recipes += [Recipe(rating: 3.4, name: "Turducken", author: "Anonymous", cookTime: 121)]
+    recipes += [Recipe(rating: 3.4, name: "Turducken", author: "Anonymous", cookTime: 121)]
 }
 
 class Recipe{
