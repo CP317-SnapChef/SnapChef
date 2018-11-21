@@ -31,7 +31,8 @@
             android:label="@string/account_name"></activity>
         <activity
             android:name=".CreateRecipeView"
-            android:label="CreateRecipe"></activity>
+            android:label="CreateRecipe"
+            android:windowSoftInputMode="adjustPan"></activity>
         <activity
             android:name=".RegisterView"
             android:label="Register"></activity>
@@ -48,5 +49,6 @@
         <activity android:name=".ViewRecipeView"
             android:label="ViewRecipe"></activity>
     </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
 </manifest>

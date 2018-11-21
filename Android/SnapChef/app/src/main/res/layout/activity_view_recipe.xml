@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="match_parent">
 
 
     <View
@@ -11,9 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:background="@color/colorButtonAccent"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="0dp" />
 
     <ImageButton
         android:id="@+id/backButtonViewRecipe"
@@ -24,17 +24,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_arrow_back_black_24dp"
         tools:ignore="ContentDescription,MissingConstraints,VectorDrawableCompat" />
-
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
     <ScrollView
         android:id="@+id/scroller"
-        android:layout_width="368dp"
-        android:layout_height="484dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="75dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -43,14 +40,15 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="800dp"
             android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/foodTempImage"
-                android:layout_width="365dp"
-                android:layout_height="243dp"
-                android:scaleType="fitStart"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:contentDescription="TODO"
+                android:scaleType="fitXY"
                 app:srcCompat="@drawable/foodtemp"
                 tools:layout_editor_absoluteX="10dp"
                 tools:layout_editor_absoluteY="92dp" />
@@ -59,15 +57,28 @@
                 android:id="@+id/foodTitleTemp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingTop="15dp"
                 android:text="Chicken Noodle Soup"
                 android:textColor="@android:color/black"
-                android:textSize="24sp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/roboto_medium" />
+
+            <TextView
+                android:id="@+id/foodAuthorTemp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="By: Dylan Thomas"
+                android:textColor="@android:color/black"
                 app:fontFamily="@font/roboto_medium" />
 
             <TextView
                 android:id="@+id/foodDesTemp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
                 android:text="Its just soup, you can't possibly mess this up. If you do I feel sorry for you"
                 android:textColor="@android:color/black"
                 app:fontFamily="@font/roboto_medium" />
@@ -76,23 +87,52 @@
                 android:id="@+id/foodInfoTemp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Prep time, ingrediants and stuff goes here"
-                android:layout_marginTop="30dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:text="Prep Time:   360 Minutes\nCook Time:  5 Minutes\nServes:         4 People"
                 android:textColor="@android:color/black"
                 android:textSize="18sp"
-                android:textStyle="italic"
+                app:fontFamily="@font/roboto_medium" />
+
+            <TextView
+                android:id="@+id/foodIngredientsTemp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#EFEAF7"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:text="Ingredients\n2 Chicken Breasts\n1 Cup Noodles\n1 Dash Soup"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                app:fontFamily="@font/roboto_medium" />
+
+
+            <TextView
+                android:id="@+id/foodInstructionsTemp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:text="Instructions\n1. Cook the chicken \n2. Cook the noodles \n3. Saute and add soup"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
                 app:fontFamily="@font/roboto_medium" />
 
             <Button
                 android:id="@+id/reportRecipeButtonViewRecipe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="130dp"
-                android:layout_marginRight="8dp"
                 android:background="#EFEAF7"
-                android:text="Report this Recipe" />
+                android:drawableLeft="@drawable/reportsymbol_50"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:text="Report this Recipe"
+                android:textSize="18sp" />
+
+
         </LinearLayout>
     </ScrollView>
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/viewRecipeText"
@@ -111,7 +151,6 @@
         app:layout_constraintHorizontal_bias="0.92"
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toTopOf="parent" />
-
 
 
 </android.support.constraint.ConstraintLayout>

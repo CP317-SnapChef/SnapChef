@@ -4,7 +4,8 @@
     <string name="home_name">Home</string>
     <string name="account_name">Account</string>
     <string name="create_recipe_name">Create Recipe</string>
-
+    <string name="facebook_app_id">291424624829878</string>
+    <string name="fb_login_protocol_scheme">fb291424624829878</string>
 
     <!-- AccountView Strings -->
     <string name="user_name">User</string>
