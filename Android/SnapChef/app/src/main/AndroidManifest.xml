@@ -8,6 +8,10 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.camera2" />
 
+    <!-- To connect to AWS Backend -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -37,18 +41,22 @@
             android:name=".RegisterView"
             android:label="Register"></activity>
 
-        <activity android:name=".ReportRecipeView"
+        <activity
+            android:name=".ReportRecipeView"
             android:label="ReportRecipe"></activity>
 
-        <activity android:name=".ReportErrorView"
+        <activity
+            android:name=".ReportErrorView"
             android:label="ReportError"></activity>
 
-        <activity android:name=".SearchView"
+        <activity
+            android:name=".SearchView"
             android:label="Search"></activity>
 
-        <activity android:name=".ViewRecipeView"
+        <activity
+            android:name=".ViewRecipeView"
             android:label="ViewRecipe"></activity>
     </application>
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
