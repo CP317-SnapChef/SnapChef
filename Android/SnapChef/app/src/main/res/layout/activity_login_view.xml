@@ -12,6 +12,7 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:background="#FF7800"
     tools:context=".LoginView"
+    android:focusableInTouchMode="true"
     app:fontFamily="@font/roboto_medium">
 
     <!-- Login progress -->
@@ -89,33 +90,34 @@
 
     <LinearLayout
         android:id="@+id/buttonHolder"
-        android:layout_width="249dp"
-        android:layout_height="wrap_content"
-        android:gravity ="center"
-        android:paddingTop="10dp"
-        android:orientation="horizontal">
+        android:layout_width="251dp"
+        android:layout_height="65dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
 
         <Button
             android:id="@+id/loginButton"
-            android:layout_width="0dp"
+            android:layout_width="20dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/rounded_corner_button"
             android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_corner_button"
             android:text="@string/action_sign_in"
             android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            android:layout_weight="1" />
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/registerButton"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
+            android:layout_weight="1"
             android:background="@drawable/rounded_corner_button"
             android:text="@string/action_sign_up"
             android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            android:layout_weight="1" />
+            android:textSize="20sp" />
     </LinearLayout>
 
 </LinearLayout>

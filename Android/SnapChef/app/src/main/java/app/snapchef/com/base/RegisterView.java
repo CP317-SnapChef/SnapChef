@@ -32,8 +32,7 @@ public class RegisterView extends AppCompatActivity {
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                intent =  new Intent(getApplicationContext(), LoginView.class);
-                startActivity(intent);
+                onBackPressed();
             }
         });
     }

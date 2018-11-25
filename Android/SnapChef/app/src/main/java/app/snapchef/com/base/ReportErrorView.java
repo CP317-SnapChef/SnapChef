@@ -39,8 +39,7 @@ public class ReportErrorView extends AppCompatActivity {
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                intent = new Intent(getApplicationContext(), AccountView.class);
-                startActivity(intent);
+                onBackPressed();
             }
         });
     }

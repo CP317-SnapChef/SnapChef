@@ -31,8 +31,7 @@ public class CreateRecipeView extends AppCompatActivity {
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                intent =  new Intent(getApplicationContext(), HomeView.class);
-                startActivity(intent);
+                onBackPressed();
             }
         });
 

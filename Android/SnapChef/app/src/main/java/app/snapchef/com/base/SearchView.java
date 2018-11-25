@@ -50,8 +50,7 @@ public class SearchView extends AppCompatActivity implements AdapterView.OnItemS
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                intent =  new Intent(getApplicationContext(), HomeView.class);
-                startActivity(intent);
+                onBackPressed();
             }
         });
 
