@@ -28,6 +28,7 @@
 		69FDADA021A15F010011478D /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FDAD9F21A15F010011478D /* HomepageViewController.swift */; };
 		69FDADA221A1E2410011478D /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FDADA121A1E2410011478D /* Recipe.swift */; };
 		69FDADA821A208420011478D /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FDADA721A208420011478D /* RecipeCell.swift */; };
+		D0A7A90521AA2770009A5C97 /* SavedRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A7A90421AA2770009A5C97 /* SavedRecipeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		69FDAD9F21A15F010011478D /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
 		69FDADA121A1E2410011478D /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		69FDADA721A208420011478D /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
+		D0A7A90421AA2770009A5C97 /* SavedRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRecipeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				69A3C5CE21A29A1D00FD1E74 /* ChangePasswordViewController.swift */,
 				69A3C5D021A29ACC00FD1E74 /* ReportRecipeViewController.swift */,
 				69F824F421A32200008E7A8E /* SearchViewController.swift */,
+				D0A7A90421AA2770009A5C97 /* SavedRecipeViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				699C6DE021A0EFF5001587A7 /* SegueFromRight.swift in Sources */,
 				699C6DDB21A0B28D001587A7 /* Keyboard.swift in Sources */,
 				69A3C5CD21A299C900FD1E74 /* ReportErrorViewController.swift in Sources */,
+				D0A7A90521AA2770009A5C97 /* SavedRecipeViewController.swift in Sources */,
 				69FDADA821A208420011478D /* RecipeCell.swift in Sources */,
 				69FDADA021A15F010011478D /* HomepageViewController.swift in Sources */,
 				69A3C5CF21A29A1D00FD1E74 /* ChangePasswordViewController.swift in Sources */,
