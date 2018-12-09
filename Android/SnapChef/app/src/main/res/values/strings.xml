@@ -41,15 +41,15 @@
         <item>Sort By</item>
         <item>New</item>
         <item>Highest Rated</item>
-        <item>Something Else</item>
+        <item>Alphabetical</item>
         <item>Another Option</item>
     </string-array>
 
     <string-array name="filter">
         <item>Filter</item>
-        <item>Option1</item>
-        <item>Option2</item>
-        <item>Option3</item>
+        <item>Vegetarian</item>
+        <item>Vegan</item>
+        <item>Peanut Free</item>
         <item>Option4</item>
     </string-array>
 

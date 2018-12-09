@@ -58,8 +58,8 @@ public class SearchView extends AppCompatActivity implements AdapterView.OnItemS
         viewRecipeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                intent =  new Intent(getApplicationContext(), ViewRecipeView.class);
-                startActivity(intent);
+               intent =  new Intent(getApplicationContext(), ViewRecipeView.class);
+               startActivity(intent);
             }
         });
     }
