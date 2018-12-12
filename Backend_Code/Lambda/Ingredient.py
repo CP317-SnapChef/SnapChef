@@ -62,8 +62,8 @@ testMeasure = "Grams"
 try:
     
 
-    peanut =  Ingredient(testIngredient,testMeasure,testQuantity);
-    print(peanut.ingredientName,peanut.measureUnit,peanut.quantity)
+    garlic =  Ingredient(testIngredient,testMeasure,testQuantity);
+    print(garlic.ingredientName,garlic.measureUnit,garlic.quantity)
 except AttributeError:
     print ("Not found")
     
