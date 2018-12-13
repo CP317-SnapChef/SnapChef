@@ -15,7 +15,7 @@ public class ViewRecipeView extends AppCompatActivity {
     private ImageButton backBtn;
     private Button reportBtn;
     private Intent intent;
-    private TextView txtview;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,7 @@ public class ViewRecipeView extends AppCompatActivity {
 
 
         TextView tv1 = (TextView)findViewById(R.id.foodTitleTemp);
-        tv1.setText("Scrambled Eggs");
+        tv1.setText(apiTESTActivity.recipeobj.getRecipeName());
 
         //go back to home screen if back button is pressed
         backBtn = (ImageButton) findViewById(R.id.backButtonViewRecipe);
@@ -43,8 +43,8 @@ public class ViewRecipeView extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        txtview = findViewById(R.id.foodTitleTemp);
-        txtview.setText(apiTESTActivity.recipeobj.getRecipeName());
+
+
     }
 }
 

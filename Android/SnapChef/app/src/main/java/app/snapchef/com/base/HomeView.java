@@ -16,11 +16,16 @@ public class HomeView extends AppCompatActivity {
 
     private ImageButton searchBtn, createRecipeBtn, reportBtn, accountBtn;
     private Intent intent;
+    private apiTESTActivity.RetrieveFeedTask refresh;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_home_view);
+
+
+
 
         searchBtn = (ImageButton)findViewById(R.id.searchButton);
         searchBtn.setOnClickListener(new View.OnClickListener() {

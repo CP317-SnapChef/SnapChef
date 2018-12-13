@@ -47,7 +47,7 @@ import java.net.URL;
 
 
 public class apiTESTActivity extends AppCompatActivity {
-    public static Recipe recipeobj;
+    public static Recipe recipeobj = new Recipe("","","","","");
     TextView responseView;
     ProgressBar progressBar;
     static final String API_URL = "https://1y81ltee41.execute-api.us-east-1.amazonaws.com/default/BackendLambda";
@@ -66,8 +66,8 @@ public class apiTESTActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 new RetrieveFeedTask().execute();
-            }
-        });
+        }
+    });
 
         mQueue = Volley.newRequestQueue(this);
 
@@ -98,7 +98,7 @@ public class apiTESTActivity extends AppCompatActivity {
                                 recipeobj.setIngredients(ingredients);
                                 recipeobj.setInstructions(instructions);
 
-                                responseView.append(recipeName + ", " + author + ", " + description + ", " + ingredients+ ", " + instructions +"\n\n");
+                                responseView.append(recipeobj.getRecipeName() + ", " + recipeobj.getAuthor() + ", " + recipeobj.getDescription() + ", " + recipeobj.getIngredients()+ ", " + recipeobj.getInstructions() +"\n\n");
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -113,7 +113,6 @@ public class apiTESTActivity extends AppCompatActivity {
         });
         mQueue.add(request);
     }
-
     class RetrieveFeedTask extends AsyncTask<Void, Void, String> {
 
         private Exception exception;
