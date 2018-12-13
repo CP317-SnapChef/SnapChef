@@ -63,9 +63,9 @@ public class apiTESTActivity extends AppCompatActivity {
 
         Button queryButton = (Button) findViewById(R.id.queryButton);
         queryButton.setOnClickListener(new View.OnClickListener() {
-           @Override
+            @Override
             public void onClick(View v) {
-               new RetrieveFeedTask().execute();
+                new RetrieveFeedTask().execute();
             }
         });
 
@@ -149,8 +149,6 @@ public class apiTESTActivity extends AppCompatActivity {
             responseView.setText(response);
             // TODO: check this.exception
             // TODO: do something with the feed
-
-            jsonParse();
 
 //            try {
 //                JSONObject object = (JSONObject) new JSONTokener(response).nextValue();
