@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class ViewRecipeView extends AppCompatActivity {
     //TODO: Again... literally this entire view, but it should be similar to CreateRecipeView
@@ -19,6 +20,9 @@ public class ViewRecipeView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_recipe);
 
+
+        TextView tv1 = (TextView)findViewById(R.id.foodTitleTemp);
+        tv1.setText("Scrambled Eggs");
 
         //go back to home screen if back button is pressed
         backBtn = (ImageButton) findViewById(R.id.backButtonViewRecipe);
@@ -39,3 +43,5 @@ public class ViewRecipeView extends AppCompatActivity {
         });
     }
 }
+
+
