@@ -167,9 +167,8 @@
                 android:gravity="bottom"
                 android:text="Beef Ramen\n By: Dylan Thomas"
                 android:textAlignment="gravity"
-
-
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                />
 
             <RatingBar
                 android:id="@+id/ratingBar"
@@ -179,7 +178,9 @@
                 android:layout_gravity="right"
                 android:numStars="5"
                 android:progressTint="	#FFC100"
-                android:rating="5" />
+                android:rating="5"
+                tools:layout_editor_absoluteX="287dp"
+                tools:layout_editor_absoluteY="275dp" />
 
         </LinearLayout>
     </ScrollView>
