@@ -1,5 +1,6 @@
 package app.snapchef.com.base;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -47,7 +48,7 @@ import java.net.URL;
 
 
 public class apiTESTActivity extends AppCompatActivity {
-    public static Recipe recipeobj;
+    public static Recipe recipeobj = new Recipe("","","","","");
     TextView responseView;
     ProgressBar progressBar;
     static final String API_URL = "https://1y81ltee41.execute-api.us-east-1.amazonaws.com/default/BackendLambda";
@@ -62,16 +63,21 @@ public class apiTESTActivity extends AppCompatActivity {
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
         Button queryButton = (Button) findViewById(R.id.queryButton);
-        queryButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new RetrieveFeedTask().execute();
-            }
-        });
+       // queryButton.setOnClickListener(new View.OnClickListener() {
+          //  @Override
+           // public void onClick(View v) {
+
+        new RetrieveFeedTask().execute();
+           // }
+        //});
 
         mQueue = Volley.newRequestQueue(this);
-
+        setContentView(R.layout.activity_home_view);
+        Intent intent = new Intent(getApplicationContext(), HomeView.class);
+        startActivity(intent);
     }
+
+
 
     private void jsonParse() {
 
