@@ -58,6 +58,15 @@ public class HomeView extends AppCompatActivity {
             }
         });
 
+        Button apiButton = (Button) findViewById(R.id.apiBtn);
+        apiButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intent = new Intent(getApplicationContext(), apiTESTActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 

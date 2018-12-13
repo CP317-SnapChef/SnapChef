@@ -40,6 +40,10 @@ import java.util.List;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
+import com.amazonaws.mobileconnectors.lambdainvoker.*;
+import com.amazonaws.auth.CognitoCachingCredentialsProvider;
+import com.amazonaws.regions.Regions;
+
 /**
  * A login screen that offers login via email/password.
  */

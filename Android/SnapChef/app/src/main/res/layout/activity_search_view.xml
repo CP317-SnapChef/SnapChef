@@ -42,7 +42,6 @@
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintStart_toEndOf="@+id/backButtonSearch"
         app:layout_constraintTop_toTopOf="parent"
@@ -167,25 +166,13 @@
                 android:gravity="bottom"
                 android:text="Beef Ramen\n By: Dylan Thomas"
                 android:textAlignment="gravity"
-                android:textSize="18sp"
-                />
-
-            <RatingBar
-                android:id="@+id/ratingBar"
-                style="@style/Widget.AppCompat.RatingBar.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:numStars="5"
-                android:progressTint="	#FFC100"
-                android:rating="5"
-                tools:layout_editor_absoluteX="287dp"
-                tools:layout_editor_absoluteY="275dp" />
+                android:textSize="18sp" />
 
         </LinearLayout>
     </ScrollView>
 
     <android.support.design.widget.TabLayout
+        android:id="@+id/tabLayout"
         android:layout_width="368dp"
         android:layout_height="51dp"
         android:layout_marginStart="8dp"
@@ -206,16 +193,20 @@
         tools:ignore="MissingConstraints">
 
         <android.support.design.widget.TabItem
+            android:id="@+id/allRecipes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="All Recipes" />
 
 
         <android.support.design.widget.TabItem
+            android:id="@+id/savedRecipes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Saved Recipes" />
     </android.support.design.widget.TabLayout>
+
+
 
 
 </android.support.constraint.ConstraintLayout>

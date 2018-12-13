@@ -11,6 +11,8 @@
     <!-- To connect to AWS Backend -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -24,39 +26,36 @@
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".HomeView"
-            android:label="@string/home_name"></activity>
+            android:label="@string/home_name" />
         <activity
             android:name=".AccountView"
-            android:label="@string/account_name"></activity>
+            android:label="@string/account_name" />
         <activity
             android:name=".CreateRecipeView"
             android:label="CreateRecipe"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".RegisterView"
-            android:label="Register"></activity>
-
+            android:label="Register" />
         <activity
             android:name=".ReportRecipeView"
-            android:label="ReportRecipe"></activity>
-
+            android:label="ReportRecipe" />
         <activity
             android:name=".ReportErrorView"
-            android:label="ReportError"></activity>
-
+            android:label="ReportError" />
         <activity
             android:name=".SearchView"
-            android:label="Search"></activity>
-
+            android:label="Search" />
         <activity
             android:name=".ViewRecipeView"
-            android:label="ViewRecipe"></activity>
+            android:label="ViewRecipe" />
+        <activity android:name="app.snapchef.com.base.apiTESTActivity"></activity>
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
