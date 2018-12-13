@@ -1,5 +1,6 @@
 package app.snapchef.com.base;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -62,16 +63,21 @@ public class apiTESTActivity extends AppCompatActivity {
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
         Button queryButton = (Button) findViewById(R.id.queryButton);
-        queryButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new RetrieveFeedTask().execute();
-        }
-    });
+       // queryButton.setOnClickListener(new View.OnClickListener() {
+          //  @Override
+           // public void onClick(View v) {
+
+        new RetrieveFeedTask().execute();
+           // }
+        //});
 
         mQueue = Volley.newRequestQueue(this);
-
+        setContentView(R.layout.activity_home_view);
+        Intent intent = new Intent(getApplicationContext(), HomeView.class);
+        startActivity(intent);
     }
+
+
 
     private void jsonParse() {
 
@@ -98,7 +104,7 @@ public class apiTESTActivity extends AppCompatActivity {
                                 recipeobj.setIngredients(ingredients);
                                 recipeobj.setInstructions(instructions);
 
-                                responseView.append(recipeobj.getRecipeName() + ", " + recipeobj.getAuthor() + ", " + recipeobj.getDescription() + ", " + recipeobj.getIngredients()+ ", " + recipeobj.getInstructions() +"\n\n");
+                                responseView.append(recipeName + ", " + author + ", " + description + ", " + ingredients+ ", " + instructions +"\n\n");
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -113,6 +119,7 @@ public class apiTESTActivity extends AppCompatActivity {
         });
         mQueue.add(request);
     }
+
     class RetrieveFeedTask extends AsyncTask<Void, Void, String> {
 
         private Exception exception;
