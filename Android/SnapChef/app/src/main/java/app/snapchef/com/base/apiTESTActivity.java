@@ -75,14 +75,14 @@ public class apiTESTActivity extends AppCompatActivity {
 
     private void jsonParse() {
 
-        String url = "https://api.myjson.com/bins/133dxo";
+        String url = "https://api.myjson.com/bins/19cni4";
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            JSONArray jsonArray = response.getJSONArray("");
+                            JSONArray jsonArray = response.getJSONArray("recipes");
 
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject recipe = jsonArray.getJSONObject(i);
@@ -91,8 +91,9 @@ public class apiTESTActivity extends AppCompatActivity {
                                 String author = recipe.getString("author");
                                 String description = recipe.getString("description");
                                 String ingredients = recipe.getString("ingredients");
+                                String instructions = recipe.getString("instructions");
 
-                                responseView.append(recipeName + ", " + author + ", " + description + ", " + ingredients+ "\n\n");
+                                responseView.append(recipeName + ", " + author + ", " + description + ", " + ingredients+ ", " + instructions +"\n\n");
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -146,7 +147,7 @@ public class apiTESTActivity extends AppCompatActivity {
             }
             progressBar.setVisibility(View.GONE);
             Log.i("INFO", response);
-            responseView.setText(response);
+            //responseView.setText(response);
             // TODO: check this.exception
             // TODO: do something with the feed
 
