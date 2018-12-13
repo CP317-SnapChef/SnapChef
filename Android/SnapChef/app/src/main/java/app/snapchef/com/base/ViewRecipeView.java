@@ -15,6 +15,8 @@ public class ViewRecipeView extends AppCompatActivity {
     private ImageButton backBtn;
     private Button reportBtn;
     private Intent intent;
+    private TextView txtview;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +43,8 @@ public class ViewRecipeView extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        txtview = findViewById(R.id.foodTitleTemp);
+        txtview.setText(apiTESTActivity.recipeobj.getRecipeName());
     }
 }
 
