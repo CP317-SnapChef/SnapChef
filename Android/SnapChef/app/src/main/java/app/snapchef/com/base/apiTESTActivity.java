@@ -47,7 +47,7 @@ import java.net.URL;
 
 
 public class apiTESTActivity extends AppCompatActivity {
-
+    public static Recipe recipeobj;
     TextView responseView;
     ProgressBar progressBar;
     static final String API_URL = "https://1y81ltee41.execute-api.us-east-1.amazonaws.com/default/BackendLambda";
@@ -92,6 +92,11 @@ public class apiTESTActivity extends AppCompatActivity {
                                 String description = recipe.getString("description");
                                 String ingredients = recipe.getString("ingredients");
                                 String instructions = recipe.getString("instructions");
+                                recipeobj.setRecipeName(recipeName);
+                                recipeobj.setAuthor(author);
+                                recipeobj.setDescription(description);
+                                recipeobj.setIngredients(ingredients);
+                                recipeobj.setInstructions(instructions);
 
                                 responseView.append(recipeName + ", " + author + ", " + description + ", " + ingredients+ ", " + instructions +"\n\n");
                             }
@@ -146,10 +151,12 @@ public class apiTESTActivity extends AppCompatActivity {
                 response = "THERE WAS AN ERROR";
             }
             progressBar.setVisibility(View.GONE);
-            Log.i("INFO", response);
+            //Log.i("INFO", response);
             //responseView.setText(response);
             // TODO: check this.exception
             // TODO: do something with the feed
+
+            jsonParse();
 
 //            try {
 //                JSONObject object = (JSONObject) new JSONTokener(response).nextValue();

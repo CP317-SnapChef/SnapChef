@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class ViewRecipeView extends AppCompatActivity {
     //TODO: Again... literally this entire view, but it should be similar to CreateRecipeView
@@ -14,6 +15,8 @@ public class ViewRecipeView extends AppCompatActivity {
     private ImageButton backBtn;
     private Button reportBtn;
     private Intent intent;
+    private TextView txtview;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,5 +40,7 @@ public class ViewRecipeView extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        txtview = findViewById(R.id.foodTitleTemp);
+        txtview.setText(apiTESTActivity.recipeobj.getRecipeName());
     }
 }
