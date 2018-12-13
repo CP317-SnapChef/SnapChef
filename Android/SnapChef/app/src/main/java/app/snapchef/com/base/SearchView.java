@@ -13,14 +13,15 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.json.JSONTokener;
-
 import android.os.AsyncTask;
 import android.widget.TextView;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -81,6 +82,8 @@ public class SearchView extends AppCompatActivity implements AdapterView.OnItemS
             }
         });
 
+
+
 //        Button apiButton = (Button) findViewById(R.id.apiButton);
 //        apiButton.setOnClickListener(new View.OnClickListener(){
 //            @Override
@@ -128,6 +131,10 @@ public class SearchView extends AppCompatActivity implements AdapterView.OnItemS
 //        Log.i("INFO",response);
 //        responseView.setText(response);
 //    }
+
+
+
+
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {

@@ -28,6 +28,13 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -44,6 +51,7 @@ public class apiTESTActivity extends AppCompatActivity {
     TextView responseView;
     ProgressBar progressBar;
     static final String API_URL = "https://1y81ltee41.execute-api.us-east-1.amazonaws.com/default/BackendLambda";
+    private RequestQueue mQueue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,11 +63,49 @@ public class apiTESTActivity extends AppCompatActivity {
 
         Button queryButton = (Button) findViewById(R.id.queryButton);
         queryButton.setOnClickListener(new View.OnClickListener() {
-            @Override
+           @Override
             public void onClick(View v) {
-                new RetrieveFeedTask().execute();
+               new RetrieveFeedTask().execute();
             }
         });
+
+        mQueue = Volley.newRequestQueue(this);
+
+    }
+
+    private void jsonParse() {
+
+        String url = "https://api.myjson.com/bins/133dxo";
+
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            JSONArray jsonArray = response.getJSONArray("");
+
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject recipe = jsonArray.getJSONObject(i);
+
+                                String recipeName = recipe.getString("recipe");
+                                String author = recipe.getString("author");
+                                String description = recipe.getString("description");
+                                String ingredients = recipe.getString("ingredients");
+
+                                responseView.append(recipeName + ", " + author + ", " + description + ", " + ingredients+ "\n\n");
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                responseView.append("oof");
+                error.printStackTrace();
+            }
+        });
+        mQueue.add(request);
     }
 
     class RetrieveFeedTask extends AsyncTask<Void, Void, String> {
@@ -103,6 +149,8 @@ public class apiTESTActivity extends AppCompatActivity {
             responseView.setText(response);
             // TODO: check this.exception
             // TODO: do something with the feed
+
+            jsonParse();
 
 //            try {
 //                JSONObject object = (JSONObject) new JSONTokener(response).nextValue();
