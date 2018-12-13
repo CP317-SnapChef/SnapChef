@@ -15,6 +15,7 @@ public class ViewRecipeView extends AppCompatActivity {
     private ImageButton backBtn;
     private Button reportBtn;
     private Intent intent;
+    private TextView tv1;
 
 
     @Override
@@ -23,8 +24,21 @@ public class ViewRecipeView extends AppCompatActivity {
         setContentView(R.layout.activity_view_recipe);
 
 
-        TextView tv1 = (TextView)findViewById(R.id.foodTitleTemp);
-        tv1.setText(apiTESTActivity.recipeobj.getRecipeName());
+        tv1 = (TextView)findViewById(R.id.foodTitleTemp);
+        tv1.setText(apiTESTActivity.recipeList[0].getRecipeName());
+
+        tv1 = (TextView)findViewById(R.id.foodAuthorTemp);
+        tv1.setText(apiTESTActivity.recipeList[0].getAuthor());
+
+        tv1 = (TextView)findViewById(R.id.foodDesTemp);
+        tv1.setText(apiTESTActivity.recipeList[0].getDescription());
+
+        tv1 = (TextView)findViewById(R.id.foodIngredientsTemp);
+        tv1.setText(apiTESTActivity.recipeList[0].getIngredients());
+
+        tv1 = (TextView)findViewById(R.id.foodInstructionsTemp);
+        tv1.setText(apiTESTActivity.recipeList[0].getInstructions());
+
 
         //go back to home screen if back button is pressed
         backBtn = (ImageButton) findViewById(R.id.backButtonViewRecipe);

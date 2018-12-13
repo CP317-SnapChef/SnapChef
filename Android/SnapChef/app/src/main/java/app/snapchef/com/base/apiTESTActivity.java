@@ -49,6 +49,7 @@ import java.net.URL;
 
 public class apiTESTActivity extends AppCompatActivity {
     public static Recipe recipeobj = new Recipe("","","","","");
+    public static Recipe recipeList[];
     TextView responseView;
     ProgressBar progressBar;
     static final String API_URL = "https://1y81ltee41.execute-api.us-east-1.amazonaws.com/default/BackendLambda";
@@ -89,7 +90,7 @@ public class apiTESTActivity extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
                         try {
                             JSONArray jsonArray = response.getJSONArray("recipes");
-
+                            recipeList = new Recipe[jsonArray.length()];
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject recipe = jsonArray.getJSONObject(i);
 
@@ -103,6 +104,8 @@ public class apiTESTActivity extends AppCompatActivity {
                                 recipeobj.setDescription(description);
                                 recipeobj.setIngredients(ingredients);
                                 recipeobj.setInstructions(instructions);
+
+                                recipeList[i] = recipeobj;
 
                                 responseView.append(recipeName + ", " + author + ", " + description + ", " + ingredients+ ", " + instructions +"\n\n");
                             }

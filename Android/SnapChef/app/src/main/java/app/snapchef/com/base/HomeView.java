@@ -15,6 +15,7 @@ public class HomeView extends AppCompatActivity {
 
 
     private ImageButton searchBtn, createRecipeBtn, reportBtn, accountBtn;
+    private Button viewButton;
     private Intent intent;
     private apiTESTActivity.RetrieveFeedTask refresh;
     
@@ -63,11 +64,12 @@ public class HomeView extends AppCompatActivity {
             }
         });
 
-        Button apiButton = (Button) findViewById(R.id.apiBtn);
-        apiButton.setOnClickListener(new View.OnClickListener() {
+        viewButton = (Button)findViewById(R.id.viewRecipe);
+        //viewButton.setText(apiTESTActivity.recipeList[0].getRecipeName());
+        viewButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                intent = new Intent(getApplicationContext(), apiTESTActivity.class);
+            public void onClick(View v) {
+                intent = new Intent(getApplicationContext(),ViewRecipeView.class);
                 startActivity(intent);
             }
         });
