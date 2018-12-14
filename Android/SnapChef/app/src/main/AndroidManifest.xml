@@ -51,7 +51,8 @@
             android:label="ReportError" />
         <activity
             android:name=".SearchView"
-            android:label="Search" />
+            android:label="Search"
+            android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".ViewRecipeView"
             android:label="ViewRecipe" />

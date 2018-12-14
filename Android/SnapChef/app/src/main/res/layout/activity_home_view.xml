@@ -147,19 +147,41 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="HardcodedText,ObsoleteLayoutParam" />
 
+            <Button
+                android:id="@+id/viewRecipe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Scrambled eggs 1"
+                app:layout_constraintBottom_toBottomOf="@+id/scrollView4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/scrollView4" />
+
+            <Button
+                android:id="@+id/viewRecipe2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Scrambled eggs 2"
+                app:layout_constraintBottom_toBottomOf="@+id/scrollView4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/scrollView4" />
+
+            <Button
+                android:id="@+id/viewRecipe3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Scrambled eggs 3"
+                app:layout_constraintBottom_toBottomOf="@+id/scrollView4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/scrollView4" />
+
 
         </LinearLayout>
     </ScrollView>
-
-    <Button
-        android:id="@+id/viewRecipe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="API"
-        app:layout_constraintBottom_toBottomOf="@+id/scrollView4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/scrollView4" />
 
 </android.support.constraint.ConstraintLayout>

@@ -3,6 +3,8 @@ package app.snapchef.com.base;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
@@ -129,6 +131,27 @@ public class LoginView extends AppCompatActivity implements LoaderCallbacks<Curs
 
        // mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+    }
+
+    //Exit the app if android back button is pressed
+    public void onBackPressed(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Exit the App");
+        builder.setMessage("Do you want to exit SnapChef? ");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                Intent a = new Intent(Intent.ACTION_MAIN);
+                a.addCategory(Intent.CATEGORY_HOME);
+                a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(a);
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                //Returns to app
+            }
+        });
+        builder.show();
     }
 
     private void populateAutoComplete() {

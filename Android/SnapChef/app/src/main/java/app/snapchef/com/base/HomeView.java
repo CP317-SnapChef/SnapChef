@@ -15,9 +15,10 @@ public class HomeView extends AppCompatActivity {
 
 
     private ImageButton searchBtn, createRecipeBtn, reportBtn, accountBtn;
-    private Button viewButton;
+    private Button viewButton, viewButton2, viewButton3;
     private Intent intent;
     private apiTESTActivity.RetrieveFeedTask refresh;
+    public static int chooseRecipe = 0;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,13 +70,40 @@ public class HomeView extends AppCompatActivity {
         viewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                chooseRecipe = 0;
                 intent = new Intent(getApplicationContext(),ViewRecipeView.class);
                 startActivity(intent);
             }
         });
 
+        viewButton2 = (Button)findViewById(R.id.viewRecipe2);
+        //viewButton.setText(apiTESTActivity.recipeList[0].getRecipeName());
+        viewButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                chooseRecipe = 1;
+                intent = new Intent(getApplicationContext(),ViewRecipeView.class);
+                startActivity(intent);
+            }
+        });
 
+        viewButton3 = (Button)findViewById(R.id.viewRecipe3);
+        //viewButton.setText(apiTESTActivity.recipeList[0].getRecipeName());
+        viewButton3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                chooseRecipe = 2;
+                intent = new Intent(getApplicationContext(),ViewRecipeView.class);
+                startActivity(intent);
+            }
+        });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        //Nothing happens so it doesn't go back to login view.
+        //User needs to press the logout button to logout
     }
 
 
