@@ -134,6 +134,7 @@
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="329dp"
+
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -163,7 +164,8 @@
         app:tabIndicatorColor="#000000"
         app:tabSelectedTextColor="#000000"
         app:tabTextColor="#000000"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        app:tabBackground="@drawable/tab_color_select">
 
         <android.support.design.widget.TabItem
             android:id="@+id/allRecipes"

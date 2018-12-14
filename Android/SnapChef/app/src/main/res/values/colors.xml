@@ -8,4 +8,7 @@
     <color name="colorAccent">#D81B60</color>
     <color name="colorButtonBackground">#FF5C08</color>
     <color name="colorButtonAccent">#FF7800</color>
+    <color name="tab_not_selected">#EFEAF7</color>
+    <color name="white">#f9f9f9</color>
+
 </resources>
