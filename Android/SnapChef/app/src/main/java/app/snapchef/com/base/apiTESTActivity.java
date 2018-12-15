@@ -2,6 +2,7 @@ package app.snapchef.com.base;
 
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -48,23 +49,25 @@ import java.net.URL;
 
 
 public class apiTESTActivity extends AppCompatActivity {
-    public static Recipe recipeobj = new Recipe("", "", "");
+    public static Recipe recipeobj;
     public static Recipe recipeList[];
-    TextView responseView;
-    ProgressBar progressBar;
+     TextView responseView;
+     ProgressBar progressBar;
     static final String API_URL = "https://1y81ltee41.execute-api.us-east-1.amazonaws.com/default/BackendLambda";
     private RequestQueue mQueue;
-    SearchView sView = new SearchView();
-
+    public static String names[] = {""};
+    public static String ingredients_[] = {""};
+    public static int chooseView;
+    Handler handler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_api_test);
 
-        responseView = (TextView) findViewById(R.id.responseView);
+        //responseView = (TextView) findViewById(R.id.responseView);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
-        Button queryButton = (Button) findViewById(R.id.queryButton);
+        //Button queryButton = (Button) findViewById(R.id.queryButton);
        // queryButton.setOnClickListener(new View.OnClickListener() {
           //  @Override
            // public void onClick(View v) {
@@ -74,41 +77,57 @@ public class apiTESTActivity extends AppCompatActivity {
         //});
 
         mQueue = Volley.newRequestQueue(this);
-//        setContentView(R.layout.activity_home_view);
-//        Intent intent = new Intent(getApplicationContext(), SearchView.class);
-//        startActivity(intent);
+
+        handler=new Handler();
+        Runnable r=new Runnable() {
+            public void run() {
+                if (chooseView == 0){
+                    Intent intent = new Intent(getApplicationContext(), HomeView.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(getApplicationContext(), SearchView.class);
+                    startActivity(intent);
+                    overridePendingTransition(0,0);
+                }
+            }
+        };
+        handler.postDelayed(r, 1500);
+
     }
 
 
-
     private void jsonParse() {
-
-        responseView.setText(sView.url);
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, sView.url, null,
+        //responseView.setText(SearchView.url);
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, SearchView.url, null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
+
                         try {
                             JSONArray jsonArray = response.getJSONArray("recipes");
                             recipeList = new Recipe[jsonArray.length()];
+                            ingredients_ = new String[recipeList.length];
+                            names = new String[recipeList.length];
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject recipe = jsonArray.getJSONObject(i);
 
                                 String recipeName = recipe.getString("recipe");
-//                                String author = recipe.getString("author");
-//                                String description = recipe.getString("description");
+                                String rating = recipe.getString("rating");
                                 String ingredients = recipe.getString("ingredients");
                                 String instructions = recipe.getString("instructions");
+
+                                recipeobj = new Recipe("", "", "","");
                                 recipeobj.setRecipeName(recipeName);
-//                                recipeobj.setAuthor(author);
-//                                recipeobj.setDescription(description);
+                                recipeobj.setRating(rating);
                                 recipeobj.setIngredients(ingredients);
                                 recipeobj.setInstructions(instructions);
 
                                 recipeList[i] = recipeobj;
+                                names[i] = recipeList[i].getRecipeName();
+                                ingredients_[i] = recipeList[i].getIngredients();
 
-
-                                responseView.append(recipeName + ", " + ingredients + ", " + instructions + "\n\n");
+                                //responseView.append(recipeName + ", " + rating + ", " + ingredients + ", " + instructions + "\n\n");
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -120,6 +139,7 @@ public class apiTESTActivity extends AppCompatActivity {
                 responseView.append("oof");
                 error.printStackTrace();
             }
+
         });
         mQueue.add(request);
     }
@@ -130,7 +150,7 @@ public class apiTESTActivity extends AppCompatActivity {
 
         protected void onPreExecute() {
             progressBar.setVisibility(View.VISIBLE);
-            responseView.setText("");
+//            responseView.setText("");
         }
 
         protected String doInBackground(Void... urls) {
