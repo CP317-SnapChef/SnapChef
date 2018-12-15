@@ -48,10 +48,13 @@ public class SearchView extends AppCompatActivity implements AdapterView.OnItemS
     private Button viewRecipeBtn;
     private Intent intent;
     TextView responseView;
-    static final String API_URL = "https://1y81ltee41.execute-api.us-east-1.amazonaws.com/default/BackendLambda";
+    public static final String API_URL = "https://hen5wqy033.execute-api.us-east-2.amazonaws.com/default/SnapChefDBConnection?operation=getRecipes&ingredient=CHANGE;";
+    public static String url = API_URL;
     MaterialSearchView searchView;
     ListView lstView;
-    String names[] = new String[apiTESTActivity.recipeList.length];
+    String names[] = {""};
+    String ingredients[] = {""};
+    //String names[];
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,9 +102,6 @@ public class SearchView extends AppCompatActivity implements AdapterView.OnItemS
       //  });
 
 
-        for (int i = 0; i < apiTESTActivity.recipeList.length; i++){
-            names[i] = apiTESTActivity.recipeList[i].getRecipeName();
-        }
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("                           Search All Recipes");
@@ -129,13 +129,28 @@ public class SearchView extends AppCompatActivity implements AdapterView.OnItemS
         searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
+
                 if (query != null && !query.isEmpty()){
                     List<String> lstFound = new ArrayList<String>();
-                    for(String item:names){
-                        if(item.contains(query)){
-                            lstFound.add(item);
-                        }
+                    url = API_URL.replace("CHANGE",query);
+                    apiTESTActivity.chooseView = 1;
+                    intent = new Intent(getApplicationContext(), apiTESTActivity.class);
+                    startActivity(intent);
+                    Log.i("dank",url);
+                    ingredients = new String[apiTESTActivity.recipeList.length];
+                    names = new String[apiTESTActivity.recipeList.length];
+                    for (int i = 0; i < apiTESTActivity.recipeList.length; i++){
+                        ingredients[i] = apiTESTActivity.recipeList[i].getIngredients();
+                        names[i] = apiTESTActivity.recipeList[i].getRecipeName();
                     }
+                    int i = 0;
+                    for(String item:ingredients){
+                        if(item.contains(query)){
+                            lstFound.add(names[i]);
+                        }
+                        i++;
+                    }
+
                     ArrayAdapter adapter3 = new ArrayAdapter(SearchView.this,android.R.layout.simple_list_item_1,lstFound);
                     lstView.setAdapter(adapter3);
                 }
@@ -148,20 +163,7 @@ public class SearchView extends AppCompatActivity implements AdapterView.OnItemS
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                if (newText != null && !newText.isEmpty()){
-                    List<String> lstFound = new ArrayList<String>();
-                    for(String item:names){
-                        if(item.contains(newText)){
-                            lstFound.add(item);
-                        }
-                    }
-                    ArrayAdapter adapter3 = new ArrayAdapter(SearchView.this,android.R.layout.simple_list_item_1,lstFound);
-                    lstView.setAdapter(adapter3);
-                }
-                else{
-                    ArrayAdapter adapter3 = new ArrayAdapter(SearchView.this,android.R.layout.simple_list_item_1,names);
-                    lstView.setAdapter(adapter3);
-                }
+
                 return true;
             }
         });

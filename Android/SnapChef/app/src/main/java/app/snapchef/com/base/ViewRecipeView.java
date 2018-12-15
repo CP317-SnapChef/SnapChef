@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -26,10 +27,7 @@ public class ViewRecipeView extends AppCompatActivity {
         tv1.setText(apiTESTActivity.recipeList[HomeView.chooseRecipe].getRecipeName());
 
         tv1 = (TextView)findViewById(R.id.foodAuthorTemp);
-        tv1.setText(apiTESTActivity.recipeList[HomeView.chooseRecipe].getAuthor());
-
-        tv1 = (TextView)findViewById(R.id.foodDesTemp);
-        tv1.setText(apiTESTActivity.recipeList[HomeView.chooseRecipe].getDescription());
+        tv1.setText(apiTESTActivity.recipeList[HomeView.chooseRecipe].getRating());
 
         tv1 = (TextView)findViewById(R.id.foodIngredientsTemp);
         tv1.setText(apiTESTActivity.recipeList[HomeView.chooseRecipe].getIngredients());
