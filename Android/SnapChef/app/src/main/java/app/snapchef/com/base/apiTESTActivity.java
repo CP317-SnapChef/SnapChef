@@ -83,9 +83,8 @@ public class apiTESTActivity extends AppCompatActivity {
 
     private void jsonParse() {
 
-        String url = "https://hen5wqy033.execute-api.us-east-2.amazonaws.com/default/SnapChefDBConnection?operation=getRecipes&ingredient=" + sView.getIngredient();
-
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+        responseView.setText(sView.url);
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, sView.url, null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
@@ -96,8 +95,8 @@ public class apiTESTActivity extends AppCompatActivity {
                                 JSONObject recipe = jsonArray.getJSONObject(i);
 
                                 String recipeName = recipe.getString("recipe");
-                                String author = recipe.getString("author");
-                                String description = recipe.getString("description");
+//                                String author = recipe.getString("author");
+//                                String description = recipe.getString("description");
                                 String ingredients = recipe.getString("ingredients");
                                 String instructions = recipe.getString("instructions");
                                 recipeobj.setRecipeName(recipeName);
@@ -107,6 +106,7 @@ public class apiTESTActivity extends AppCompatActivity {
                                 recipeobj.setInstructions(instructions);
 
                                 recipeList[i] = recipeobj;
+
 
                                 responseView.append(recipeName + ", " + ingredients + ", " + instructions + "\n\n");
                             }
@@ -167,6 +167,7 @@ public class apiTESTActivity extends AppCompatActivity {
             // TODO: do something with the feed
 
             jsonParse();
+
 
 //            try {
 //                JSONObject object = (JSONObject) new JSONTokener(response).nextValue();

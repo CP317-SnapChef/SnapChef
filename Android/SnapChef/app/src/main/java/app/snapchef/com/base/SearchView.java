@@ -49,7 +49,8 @@ public class SearchView extends AppCompatActivity implements AdapterView.OnItemS
     private Button viewRecipeBtn;
     private Intent intent;
     TextView responseView;
-    static final String API_URL = "https://1y81ltee41.execute-api.us-east-1.amazonaws.com/default/BackendLambda";
+    public static final String API_URL = "https://hen5wqy033.execute-api.us-east-2.amazonaws.com/default/SnapChefDBConnection?operation=getRecipes&ingredient=CHANGE;";
+    public static String url = API_URL;
     MaterialSearchView searchView;
     ListView lstView;
     String names[] = new String[100];
@@ -129,9 +130,12 @@ public class SearchView extends AppCompatActivity implements AdapterView.OnItemS
             @Override
             public boolean onQueryTextSubmit(String query) {
                 if (query != null && !query.isEmpty()) {
-                    ingredient = query.toLowerCase();
-                    Intent intent = new Intent(getApplicationContext(), apiTESTActivity.class);
-                    startActivity(intent);
+//                    ingredient = query.toLowerCase();
+                    url = API_URL.replace("CHANGE", query.toLowerCase());
+                    Log.i("lmao", url);
+                    Intent i = new Intent(getApplicationContext(), apiTESTActivity.class);
+//                    intent.putExtra("url",API_URL);
+                    startActivity(i);
                 }
 
 //                    for (int i = 0; i < apiTESTActivity.recipeList.length; i++){
