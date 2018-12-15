@@ -51,22 +51,6 @@ class Ingredient (object):
         return
     
     
-    
-'''
-Main
-'''
-
-testIngredient = "Garlic"
-testQuantity = 7
-testMeasure = "Grams"
-try:
-    
-
-    garlic =  Ingredient(testIngredient,testMeasure,testQuantity);
-    print(garlic.ingredientName,garlic.measureUnit,garlic.quantity)
-except AttributeError:
-    print ("Not found")
-    
-    
+   
     
     
