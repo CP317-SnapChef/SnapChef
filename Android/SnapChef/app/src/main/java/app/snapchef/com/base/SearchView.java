@@ -43,6 +43,7 @@ import java.util.List;
 
 //TODO: Add camera button
 public class SearchView extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    public String ingredient;
     private Spinner sortBy, filter;
     private ImageButton backBtn, cameraBtn;
     private Button viewRecipeBtn;
@@ -52,9 +53,7 @@ public class SearchView extends AppCompatActivity implements AdapterView.OnItemS
     public static String url = API_URL;
     MaterialSearchView searchView;
     ListView lstView;
-    String names[] = {""};
-    String ingredients[] = {""};
-    //String names[];
+    String names[] = new String[100];
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,14 +101,15 @@ public class SearchView extends AppCompatActivity implements AdapterView.OnItemS
       //  });
 
 
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("                           Search All Recipes");
         toolbar.setTitleTextColor(Color.parseColor("#FFFFFF"));
 
-        lstView = (ListView)findViewById(R.id.listView);
-        ArrayAdapter adapter3 = new ArrayAdapter(this,android.R.layout.simple_list_item_1,names);
-        lstView.setAdapter(adapter3);
+//        lstView = (ListView)findViewById(R.id.listView);
+//        ArrayAdapter adapter3 = new ArrayAdapter(this,android.R.layout.simple_list_item_1,names);
+//        lstView.setAdapter(adapter3);
 
         searchView = (MaterialSearchView)findViewById(R.id.search_view);
         searchView.setOnSearchViewListener(new MaterialSearchView.SearchViewListener() {
@@ -120,75 +120,84 @@ public class SearchView extends AppCompatActivity implements AdapterView.OnItemS
 
             @Override
             public void onSearchViewClosed() {
-                lstView = (ListView)findViewById(R.id.listView);
-                ArrayAdapter adapter3 = new ArrayAdapter(SearchView.this,android.R.layout.simple_list_item_1,names);
-                lstView.setAdapter(adapter3);
+//                lstView = (ListView)findViewById(R.id.listView);
+//                ArrayAdapter adapter3 = new ArrayAdapter(SearchView.this,android.R.layout.simple_list_item_1,names);
+//                lstView.setAdapter(adapter3);
             }
         });
 
         searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-
-                if (query != null && !query.isEmpty()){
-                    List<String> lstFound = new ArrayList<String>();
-                    url = API_URL.replace("CHANGE",query);
-                    apiTESTActivity.chooseView = 1;
-                    intent = new Intent(getApplicationContext(), apiTESTActivity.class);
-                    startActivity(intent);
-                    Log.i("dank",url);
-                    ingredients = new String[apiTESTActivity.recipeList.length];
-                    names = new String[apiTESTActivity.recipeList.length];
-                    for (int i = 0; i < apiTESTActivity.recipeList.length; i++){
-                        ingredients[i] = apiTESTActivity.recipeList[i].getIngredients();
-                        names[i] = apiTESTActivity.recipeList[i].getRecipeName();
-                    }
-                    int i = 0;
-                    for(String item:ingredients){
-                        if(item.contains(query)){
-                            lstFound.add(names[i]);
-                        }
-                        i++;
-                    }
-
-                    ArrayAdapter adapter3 = new ArrayAdapter(SearchView.this,android.R.layout.simple_list_item_1,lstFound);
-                    lstView.setAdapter(adapter3);
+                if (query != null && !query.isEmpty()) {
+//                    ingredient = query.toLowerCase();
+                    url = API_URL.replace("CHANGE", query.toLowerCase());
+                    Log.i("lmao", url);
+                    Intent i = new Intent(getApplicationContext(), apiTESTActivity.class);
+//                    intent.putExtra("url",API_URL);
+                    startActivity(i);
                 }
-                else{
-                    ArrayAdapter adapter3 = new ArrayAdapter(SearchView.this,android.R.layout.simple_list_item_1,names);
-                    lstView.setAdapter(adapter3);
-                }
+
+//                    for (int i = 0; i < apiTESTActivity.recipeList.length; i++){
+//                        names[i] = apiTESTActivity.recipeList[i].getRecipeName();
+//                    }
+//                    List<String> lstFound = new ArrayList<String>();
+//                    for(String item:names){
+//                        if(item.contains(query)){
+//                            lstFound.add(item);
+//                        }
+//                    }
+//                    ArrayAdapter adapter3 = new ArrayAdapter(SearchView.this,android.R.layout.simple_list_item_1,lstFound);
+//                    lstView.setAdapter(adapter3);
+//                }
+//                else{
+//                    ArrayAdapter adapter3 = new ArrayAdapter(SearchView.this,android.R.layout.simple_list_item_1,names);
+//                    lstView.setAdapter(adapter3);
+//                }
                 return true;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
-
+//                if (newText != null && !newText.isEmpty()){
+//                    List<String> lstFound = new ArrayList<String>();
+//                    for(String item:names){
+//                        if(item.contains(newText)){
+//                            lstFound.add(item);
+//                        }
+//                    }
+//                    ArrayAdapter adapter3 = new ArrayAdapter(SearchView.this,android.R.layout.simple_list_item_1,lstFound);
+//                    lstView.setAdapter(adapter3);
+//                }
+//                else{
+//                    ArrayAdapter adapter3 = new ArrayAdapter(SearchView.this,android.R.layout.simple_list_item_1,names);
+//                    lstView.setAdapter(adapter3);
+//                }
                 return true;
             }
         });
 
-        lstView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    if (i == 0) {
-                        HomeView.chooseRecipe = 0;
-                        intent = new Intent(SearchView.this, ViewRecipeView.class);
-                        startActivity(intent);
-                    }
-                    else if (i == 1){
-                        HomeView.chooseRecipe = 1;
-                        intent = new Intent(SearchView.this, ViewRecipeView.class);
-                        startActivity(intent);
-                    }
-                    else if ( i == 2){
-                        HomeView.chooseRecipe = 2;
-                        intent = new Intent(SearchView.this, ViewRecipeView.class);
-                        startActivity(intent);
-                }
-
-            }
-        });
+//        lstView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                    if (i == 0) {
+//                        HomeView.chooseRecipe = 0;
+//                        intent = new Intent(SearchView.this, ViewRecipeView.class);
+//                        startActivity(intent);
+//                    }
+//                    else if (i == 1){
+//                        HomeView.chooseRecipe = 1;
+//                        intent = new Intent(SearchView.this, ViewRecipeView.class);
+//                        startActivity(intent);
+//                    }
+//                    else if ( i == 2){
+//                        HomeView.chooseRecipe = 2;
+//                        intent = new Intent(SearchView.this, ViewRecipeView.class);
+//                        startActivity(intent);
+//                }
+//
+//            }
+//        });
 
 
 
@@ -201,7 +210,9 @@ public class SearchView extends AppCompatActivity implements AdapterView.OnItemS
 //        });
     }
 
-
+    public String getIngredient() {
+        return this.ingredient;
+    }
 
 //
 //    class RetrieveFeedTask extends AsyncTask<Void, Void, String> {

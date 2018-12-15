@@ -2,14 +2,16 @@ package app.snapchef.com.base;
 
 public class Recipe {
     private String recipeName;
-    private String rating;
+    private String author;
+    private String description;
     private String ingredients;
     private String instructions;
 
 
-    public Recipe(String recipeName, String rating, String ingredients, String instructions) {
+    public Recipe(String recipeName, String ingredients, String instructions) {
         this.recipeName = recipeName;
-        this.rating = rating;
+//        this.author = author;
+//        this.description = description;
         this.ingredients = ingredients;
         this.instructions = instructions;
     }
@@ -18,9 +20,13 @@ public class Recipe {
         this.recipeName = recipeName;
     }
 
-    public void setRating(String rating) {
-        this.rating = rating;
-    }
+//    public void setAuthor(String author) {
+//        this.author = author;
+//    }
+//
+//    public void setDescription(String description) {
+//        this.description = description;
+//    }
 
     public void setIngredients(String ingredients) {
         this.ingredients = ingredients;
@@ -34,9 +40,13 @@ public class Recipe {
         return this.recipeName;
     }
 
-    public String getRating() {
-        return this.rating;
-    }
+//    public String getAuthor() {
+//        return this.author;
+//    }
+//
+//    public String getDescription() {
+//        return this.description;
+//    }
 
     public String getIngredients() {
         return this.ingredients;

@@ -48,13 +48,14 @@ import java.net.URL;
 
 
 public class apiTESTActivity extends AppCompatActivity {
-    public static Recipe recipeobj;
+    public static Recipe recipeobj = new Recipe("", "", "");
     public static Recipe recipeList[];
     TextView responseView;
     ProgressBar progressBar;
     static final String API_URL = "https://1y81ltee41.execute-api.us-east-1.amazonaws.com/default/BackendLambda";
     private RequestQueue mQueue;
-    public static int chooseView;
+    SearchView sView = new SearchView();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,27 +72,19 @@ public class apiTESTActivity extends AppCompatActivity {
         new RetrieveFeedTask().execute();
            // }
         //});
-        mQueue = Volley.newRequestQueue(this);
-        if (chooseView == 0) {
-            setContentView(R.layout.activity_home_view);
-            Intent intent = new Intent(getApplicationContext(), HomeView.class);
-            startActivity(intent);
-        }
-        else{
-            setContentView(R.layout.activity_search_view);
-            Intent intent = new Intent(getApplicationContext(), SearchView.class);
-            startActivity(intent);
-        }
 
+        mQueue = Volley.newRequestQueue(this);
+//        setContentView(R.layout.activity_home_view);
+//        Intent intent = new Intent(getApplicationContext(), SearchView.class);
+//        startActivity(intent);
     }
 
 
 
     private void jsonParse() {
 
-
-
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET,SearchView.url, null,
+        responseView.setText(sView.url);
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, sView.url, null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
@@ -102,20 +95,20 @@ public class apiTESTActivity extends AppCompatActivity {
                                 JSONObject recipe = jsonArray.getJSONObject(i);
 
                                 String recipeName = recipe.getString("recipe");
-                                String rating = recipe.getString("rating");
-                                String instructions = recipe.getString("instructions");
+//                                String author = recipe.getString("author");
+//                                String description = recipe.getString("description");
                                 String ingredients = recipe.getString("ingredients");
-
-                                recipeobj = new Recipe("","","","");
-
+                                String instructions = recipe.getString("instructions");
                                 recipeobj.setRecipeName(recipeName);
-                                recipeobj.setRating(rating);
+//                                recipeobj.setAuthor(author);
+//                                recipeobj.setDescription(description);
                                 recipeobj.setIngredients(ingredients);
                                 recipeobj.setInstructions(instructions);
 
                                 recipeList[i] = recipeobj;
 
-                                responseView.append(recipeName + ", \n" + rating  + ", \n" + ingredients+ ", " + instructions +"\n\n");
+
+                                responseView.append(recipeName + ", " + ingredients + ", " + instructions + "\n\n");
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -174,6 +167,7 @@ public class apiTESTActivity extends AppCompatActivity {
             // TODO: do something with the feed
 
             jsonParse();
+
 
 //            try {
 //                JSONObject object = (JSONObject) new JSONTokener(response).nextValue();
