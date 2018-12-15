@@ -48,12 +48,13 @@ import java.net.URL;
 
 
 public class apiTESTActivity extends AppCompatActivity {
-    public static Recipe recipeobj = new Recipe("","","","","");
+    public static Recipe recipeobj = new Recipe("", "", "");
     public static Recipe recipeList[];
     TextView responseView;
     ProgressBar progressBar;
     static final String API_URL = "https://1y81ltee41.execute-api.us-east-1.amazonaws.com/default/BackendLambda";
     private RequestQueue mQueue;
+    SearchView sView = new SearchView();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,16 +74,16 @@ public class apiTESTActivity extends AppCompatActivity {
         //});
 
         mQueue = Volley.newRequestQueue(this);
-        setContentView(R.layout.activity_home_view);
-        Intent intent = new Intent(getApplicationContext(), HomeView.class);
-        startActivity(intent);
+//        setContentView(R.layout.activity_home_view);
+//        Intent intent = new Intent(getApplicationContext(), SearchView.class);
+//        startActivity(intent);
     }
 
 
 
     private void jsonParse() {
 
-        String url = "https://api.myjson.com/bins/19cni4";
+        String url = "https://hen5wqy033.execute-api.us-east-2.amazonaws.com/default/SnapChefDBConnection?operation=getRecipes&ingredient=" + sView.getIngredient();
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
@@ -100,14 +101,14 @@ public class apiTESTActivity extends AppCompatActivity {
                                 String ingredients = recipe.getString("ingredients");
                                 String instructions = recipe.getString("instructions");
                                 recipeobj.setRecipeName(recipeName);
-                                recipeobj.setAuthor(author);
-                                recipeobj.setDescription(description);
+//                                recipeobj.setAuthor(author);
+//                                recipeobj.setDescription(description);
                                 recipeobj.setIngredients(ingredients);
                                 recipeobj.setInstructions(instructions);
 
                                 recipeList[i] = recipeobj;
 
-                                responseView.append(recipeName + ", " + author + ", " + description + ", " + ingredients+ ", " + instructions +"\n\n");
+                                responseView.append(recipeName + ", " + ingredients + ", " + instructions + "\n\n");
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();

@@ -8,10 +8,10 @@ public class Recipe {
     private String instructions;
 
 
-    public Recipe(String recipeName, String author, String description, String ingredients, String instructions) {
+    public Recipe(String recipeName, String ingredients, String instructions) {
         this.recipeName = recipeName;
-        this.author = author;
-        this.description = description;
+//        this.author = author;
+//        this.description = description;
         this.ingredients = ingredients;
         this.instructions = instructions;
     }
@@ -20,13 +20,13 @@ public class Recipe {
         this.recipeName = recipeName;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
+//    public void setAuthor(String author) {
+//        this.author = author;
+//    }
+//
+//    public void setDescription(String description) {
+//        this.description = description;
+//    }
 
     public void setIngredients(String ingredients) {
         this.ingredients = ingredients;
@@ -40,13 +40,13 @@ public class Recipe {
         return this.recipeName;
     }
 
-    public String getAuthor() {
-        return this.author;
-    }
-
-    public String getDescription() {
-        return this.description;
-    }
+//    public String getAuthor() {
+//        return this.author;
+//    }
+//
+//    public String getDescription() {
+//        return this.description;
+//    }
 
     public String getIngredients() {
         return this.ingredients;
