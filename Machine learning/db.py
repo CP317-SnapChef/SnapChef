@@ -3,7 +3,7 @@
 -------------------------------------------------------  
 db.py
 -------------------------------------------------------  
-Author:  Arjun Ananth, Adam Gumieniak, Brian Hane, Zhengern Yuan
+Author:  Arjun Ananth, Adam Gumieniak, Brian Hane, Zhengwen Yuan
 Description: Creates a connection to database, extracts ingredient array, then queries database for recipe containing ingredient list
 Version: _updated_="2017-12-07"
 -------------------------------------------------------  
