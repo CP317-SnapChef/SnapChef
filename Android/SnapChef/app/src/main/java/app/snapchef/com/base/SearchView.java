@@ -53,11 +53,14 @@ public class SearchView extends AppCompatActivity implements AdapterView.OnItemS
     TextView responseView;
     public static final String API_URL = "https://hen5wqy033.execute-api.us-east-2.amazonaws.com/default/SnapChefDBConnection?operation=getRecipes&ingredient=CHANGE;(SWITCH)";
     public static String url = API_URL;
+    public static final String NAME_URL = "https://hen5wqy033.execute-api.us-east-2.amazonaws.com/default/SnapChefDBConnection?operation=getRecipeInfo&ingredient=SWITCH";
+
     MaterialSearchView searchView;
     ListView lstView;
 
     private String ingr = "&ingredient=";
     private String splits[];
+    private String splits1[];
     private String nameQ = "";
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -127,18 +130,44 @@ public class SearchView extends AppCompatActivity implements AdapterView.OnItemS
             @Override
             public boolean onQueryTextSubmit(String query) {
                 HomeView.chooseView = 1;
-                splits = query.split(",");
-                if (query != null && !query.isEmpty()) {
-                    url = API_URL.replace("CHANGE", splits[0].toLowerCase());
-                    for(int i = 1;i<splits.length;i++){
-                        nameQ = nameQ + ingr + splits[i] + ";";
-                    }
-                    url = url.replace("SWITCH",nameQ.toLowerCase());
 
-                    apiTESTActivity.chooseView = 1;
-                    Intent i = new Intent(getApplicationContext(), apiTESTActivity.class);
-                    startActivity(i);
-                    overridePendingTransition(0,0);
+
+                if (query != null && !query.isEmpty()) {
+                    if(query.contains("name:")){//search by name
+                        splits = query.split(":");
+                        nameQ = splits[1];
+                        splits1 = nameQ.split(" ");
+                        nameQ = "";
+                        for(int i = 0;i<splits1.length;i++){
+                            if(i == splits1.length-1){
+                                nameQ = nameQ + splits1[i];
+                            }else{
+                                nameQ = nameQ + splits1[i] + "%20";
+                            }
+
+                        }
+
+                        url = NAME_URL.replace("SWITCH",nameQ.toLowerCase());
+                        Log.i("dank",url);
+                        apiTESTActivity.chooseView = 1;
+                        Intent i = new Intent(getApplicationContext(), apiTESTActivity.class);
+                        startActivity(i);
+                        overridePendingTransition(0, 0);
+
+                    }else {//search by ingredients
+                        splits = query.split(",");
+
+                        url = API_URL.replace("CHANGE", splits[0].toLowerCase());
+                        for (int i = 1; i < splits.length; i++) {
+                            nameQ = nameQ + ingr + splits[i] + ";";
+                        }
+                        url = url.replace("SWITCH", nameQ.toLowerCase());
+
+                        apiTESTActivity.chooseView = 1;
+                        Intent i = new Intent(getApplicationContext(), apiTESTActivity.class);
+                        startActivity(i);
+                        overridePendingTransition(0, 0);
+                    }
                     List<String> lstFound = new ArrayList<String>();
 
                     int ind = 0;
