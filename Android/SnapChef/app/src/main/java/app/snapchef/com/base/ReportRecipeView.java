@@ -27,11 +27,21 @@ public class ReportRecipeView extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_report_recipe_view);
 
-        tv1 = (TextView)findViewById(R.id.tempTextView);
-        tv1.setText(recipeList[HomeView.chooseRecipe].getRecipeName());
+        if (HomeView.chooseView == 0){
+            tv1 = (TextView)findViewById(R.id.tempTextView);
+            tv1.setText(CreateRecipeView.savedRecipes[HomeView.chooseRecipe].getRecipeName());
 
-        rate = (RatingBar) findViewById(R.id.ratingBar2);
-        rate.setRating(Float.parseFloat(recipeList[HomeView.chooseRecipe].getRating()));
+            rate = (RatingBar) findViewById(R.id.ratingBar2);
+            rate.setRating(Float.parseFloat(CreateRecipeView.savedRecipes[HomeView.chooseRecipe].getRating()));
+        }
+        else{
+            tv1 = (TextView)findViewById(R.id.tempTextView);
+            tv1.setText(recipeList[HomeView.chooseRecipe].getRecipeName());
+
+            rate = (RatingBar) findViewById(R.id.ratingBar2);
+            rate.setRating(Float.parseFloat(recipeList[HomeView.chooseRecipe].getRating()));
+        }
+
 
 
         reportBtn = (Button)findViewById(R.id.reportRecipeButton);

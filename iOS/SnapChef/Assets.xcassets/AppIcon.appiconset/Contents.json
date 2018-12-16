@@ -1,9 +1,8 @@
 {
   "images" : [
     {
-      "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "logo.png",
+      "size" : "20x20",
       "scale" : "2x"
     },
     {

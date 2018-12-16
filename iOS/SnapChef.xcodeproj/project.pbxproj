@@ -8,27 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		6987DF1621913061000BB4B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6987DF1521913061000BB4B5 /* AppDelegate.swift */; };
+		6987DF1821913061000BB4B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6987DF1721913061000BB4B5 /* ViewController.swift */; };
+		6987DF1B21913061000BB4B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6987DF1921913061000BB4B5 /* Main.storyboard */; };
 		6987DF1D21913063000BB4B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6987DF1C21913063000BB4B5 /* Assets.xcassets */; };
 		6987DF2021913063000BB4B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6987DF1E21913063000BB4B5 /* LaunchScreen.storyboard */; };
 		6987DF2B21913063000BB4B5 /* SnapChefTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6987DF2A21913063000BB4B5 /* SnapChefTests.swift */; };
 		6987DF3621913063000BB4B5 /* SnapChefUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6987DF3521913063000BB4B5 /* SnapChefUITests.swift */; };
-		699C6DD5219FE4D8001587A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 699C6DD3219FE4D8001587A7 /* Main.storyboard */; };
-		699C6DD721A09846001587A7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699C6DD621A09846001587A7 /* LoginViewController.swift */; };
-		699C6DD921A098F1001587A7 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699C6DD821A098F1001587A7 /* SignupViewController.swift */; };
-		699C6DDB21A0B28D001587A7 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699C6DDA21A0B28D001587A7 /* Keyboard.swift */; };
-		699C6DE021A0EFF5001587A7 /* SegueFromRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699C6DDF21A0EFF5001587A7 /* SegueFromRight.swift */; };
-		699C6DE221A1060B001587A7 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699C6DE121A1060B001587A7 /* Alert.swift */; };
-		69A3C5C921A2488C00FD1E74 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A3C5C821A2488C00FD1E74 /* AccountViewController.swift */; };
-		69A3C5CB21A2649900FD1E74 /* ViewRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A3C5CA21A2649900FD1E74 /* ViewRecipeViewController.swift */; };
-		69A3C5CD21A299C900FD1E74 /* ReportErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A3C5CC21A299C900FD1E74 /* ReportErrorViewController.swift */; };
-		69A3C5CF21A29A1D00FD1E74 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A3C5CE21A29A1D00FD1E74 /* ChangePasswordViewController.swift */; };
-		69A3C5D121A29ACC00FD1E74 /* ReportRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A3C5D021A29ACC00FD1E74 /* ReportRecipeViewController.swift */; };
-		69F824F521A32200008E7A8E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F824F421A32200008E7A8E /* SearchViewController.swift */; };
-		69F824F721A37118008E7A8E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F824F621A37118008E7A8E /* Extensions.swift */; };
-		69FDADA021A15F010011478D /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FDAD9F21A15F010011478D /* HomepageViewController.swift */; };
-		69FDADA221A1E2410011478D /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FDADA121A1E2410011478D /* Recipe.swift */; };
-		69FDADA821A208420011478D /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FDADA721A208420011478D /* RecipeCell.swift */; };
-		D0A7A90521AA2770009A5C97 /* SavedRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A7A90421AA2770009A5C97 /* SavedRecipeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +36,8 @@
 /* Begin PBXFileReference section */
 		6987DF1221913061000BB4B5 /* SnapChef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapChef.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6987DF1521913061000BB4B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6987DF1721913061000BB4B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6987DF1A21913061000BB4B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6987DF1C21913063000BB4B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6987DF1F21913063000BB4B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6987DF2121913063000BB4B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,23 +47,6 @@
 		6987DF3121913063000BB4B5 /* SnapChefUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnapChefUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6987DF3521913063000BB4B5 /* SnapChefUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapChefUITests.swift; sourceTree = "<group>"; };
 		6987DF3721913063000BB4B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		699C6DD4219FE4D8001587A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		699C6DD621A09846001587A7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		699C6DD821A098F1001587A7 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
-		699C6DDA21A0B28D001587A7 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
-		699C6DDF21A0EFF5001587A7 /* SegueFromRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueFromRight.swift; sourceTree = "<group>"; };
-		699C6DE121A1060B001587A7 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
-		69A3C5C821A2488C00FD1E74 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
-		69A3C5CA21A2649900FD1E74 /* ViewRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRecipeViewController.swift; sourceTree = "<group>"; };
-		69A3C5CC21A299C900FD1E74 /* ReportErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportErrorViewController.swift; sourceTree = "<group>"; };
-		69A3C5CE21A29A1D00FD1E74 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
-		69A3C5D021A29ACC00FD1E74 /* ReportRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportRecipeViewController.swift; sourceTree = "<group>"; };
-		69F824F421A32200008E7A8E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		69F824F621A37118008E7A8E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		69FDAD9F21A15F010011478D /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
-		69FDADA121A1E2410011478D /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
-		69FDADA721A208420011478D /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
-		D0A7A90421AA2770009A5C97 /* SavedRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRecipeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,11 +97,9 @@
 		6987DF1421913061000BB4B5 /* SnapChef */ = {
 			isa = PBXGroup;
 			children = (
-				699C6DDE21A0EFD9001587A7 /* Segues */,
-				699C6DDD21A0EFB3001587A7 /* Classes */,
-				699C6DDC21A0EE96001587A7 /* Views */,
 				6987DF1521913061000BB4B5 /* AppDelegate.swift */,
-				699C6DD3219FE4D8001587A7 /* Main.storyboard */,
+				6987DF1721913061000BB4B5 /* ViewController.swift */,
+				6987DF1921913061000BB4B5 /* Main.storyboard */,
 				6987DF1C21913063000BB4B5 /* Assets.xcassets */,
 				6987DF1E21913063000BB4B5 /* LaunchScreen.storyboard */,
 				6987DF2121913063000BB4B5 /* Info.plist */,
@@ -155,43 +123,6 @@
 				6987DF3721913063000BB4B5 /* Info.plist */,
 			);
 			path = SnapChefUITests;
-			sourceTree = "<group>";
-		};
-		699C6DDC21A0EE96001587A7 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				699C6DD621A09846001587A7 /* LoginViewController.swift */,
-				699C6DD821A098F1001587A7 /* SignupViewController.swift */,
-				69FDAD9F21A15F010011478D /* HomepageViewController.swift */,
-				69A3C5C821A2488C00FD1E74 /* AccountViewController.swift */,
-				69A3C5CA21A2649900FD1E74 /* ViewRecipeViewController.swift */,
-				69A3C5CC21A299C900FD1E74 /* ReportErrorViewController.swift */,
-				69A3C5CE21A29A1D00FD1E74 /* ChangePasswordViewController.swift */,
-				69A3C5D021A29ACC00FD1E74 /* ReportRecipeViewController.swift */,
-				69F824F421A32200008E7A8E /* SearchViewController.swift */,
-				D0A7A90421AA2770009A5C97 /* SavedRecipeViewController.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		699C6DDD21A0EFB3001587A7 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				699C6DDA21A0B28D001587A7 /* Keyboard.swift */,
-				699C6DE121A1060B001587A7 /* Alert.swift */,
-				69FDADA121A1E2410011478D /* Recipe.swift */,
-				69FDADA721A208420011478D /* RecipeCell.swift */,
-				69F824F621A37118008E7A8E /* Extensions.swift */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		699C6DDE21A0EFD9001587A7 /* Segues */ = {
-			isa = PBXGroup;
-			children = (
-				699C6DDF21A0EFF5001587A7 /* SegueFromRight.swift */,
-			);
-			path = Segues;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,9 +229,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				699C6DD5219FE4D8001587A7 /* Main.storyboard in Resources */,
 				6987DF2021913063000BB4B5 /* LaunchScreen.storyboard in Resources */,
 				6987DF1D21913063000BB4B5 /* Assets.xcassets in Resources */,
+				6987DF1B21913061000BB4B5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,23 +256,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69F824F521A32200008E7A8E /* SearchViewController.swift in Sources */,
-				69A3C5D121A29ACC00FD1E74 /* ReportRecipeViewController.swift in Sources */,
-				699C6DD721A09846001587A7 /* LoginViewController.swift in Sources */,
-				699C6DE021A0EFF5001587A7 /* SegueFromRight.swift in Sources */,
-				699C6DDB21A0B28D001587A7 /* Keyboard.swift in Sources */,
-				69A3C5CD21A299C900FD1E74 /* ReportErrorViewController.swift in Sources */,
-				D0A7A90521AA2770009A5C97 /* SavedRecipeViewController.swift in Sources */,
-				69FDADA821A208420011478D /* RecipeCell.swift in Sources */,
-				69FDADA021A15F010011478D /* HomepageViewController.swift in Sources */,
-				69A3C5CF21A29A1D00FD1E74 /* ChangePasswordViewController.swift in Sources */,
-				699C6DD921A098F1001587A7 /* SignupViewController.swift in Sources */,
-				69A3C5C921A2488C00FD1E74 /* AccountViewController.swift in Sources */,
-				69F824F721A37118008E7A8E /* Extensions.swift in Sources */,
-				699C6DE221A1060B001587A7 /* Alert.swift in Sources */,
-				69A3C5CB21A2649900FD1E74 /* ViewRecipeViewController.swift in Sources */,
+				6987DF1821913061000BB4B5 /* ViewController.swift in Sources */,
 				6987DF1621913061000BB4B5 /* AppDelegate.swift in Sources */,
-				69FDADA221A1E2410011478D /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,20 +293,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		6987DF1921913061000BB4B5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6987DF1A21913061000BB4B5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		6987DF1E21913063000BB4B5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				6987DF1F21913063000BB4B5 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		699C6DD3219FE4D8001587A7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				699C6DD4219FE4D8001587A7 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -517,7 +433,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SA8T2RF33P;
 				INFOPLIST_FILE = SnapChef/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -535,7 +450,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SA8T2RF33P;
 				INFOPLIST_FILE = SnapChef/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

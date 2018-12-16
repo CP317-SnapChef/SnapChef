@@ -80,21 +80,23 @@ public class apiTESTActivity extends AppCompatActivity {
 
         mQueue = Volley.newRequestQueue(this);
 
+        if (chooseView == 0){
+            Intent intent = new Intent(getApplicationContext(), HomeView.class);
+            startActivity(intent);
+        }
+
         handler=new Handler();
         Runnable r=new Runnable() {
             public void run() {
-                if (chooseView == 0){
-                    Intent intent = new Intent(getApplicationContext(), HomeView.class);
-                    startActivity(intent);
-                }
-                else {
+
+                if (chooseView == 1) {
                     Intent intent = new Intent(getApplicationContext(), SearchView.class);
                     startActivity(intent);
                     overridePendingTransition(0,0);
                 }
             }
         };
-        handler.postDelayed(r, 1500);
+        handler.postDelayed(r, 1800);
 
     }
 

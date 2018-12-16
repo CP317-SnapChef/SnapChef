@@ -11,14 +11,13 @@ public class Ingredient {
 	private int amount = -1;
 	private String unit = "";
 	
-	//Constructor
+	// Constructor
 	public Ingredient (String ingredientName, int amount, String unit) {
 		this.ingredientName = ingredientName;
 		this.amount = amount;
 		this.unit = unit;
 	}
 	
-	//Main
 	public static void main(final String[] args) {
 		//Testing
 		String iName = "peanut";

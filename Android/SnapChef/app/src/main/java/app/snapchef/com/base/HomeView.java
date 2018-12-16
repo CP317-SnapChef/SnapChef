@@ -10,18 +10,22 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ListView;
 
 public class HomeView extends AppCompatActivity {
 
 
     private ImageButton searchBtn, createRecipeBtn, reportBtn, accountBtn;
-    private Button viewButton, viewButton2, viewButton3;
     private Intent intent;
     private apiTESTActivity.RetrieveFeedTask refresh;
     public static int chooseRecipe = 0;
-    
+    ListView lstView;
+    public static int index = 0;
+    public static int chooseView = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +33,23 @@ public class HomeView extends AppCompatActivity {
         setContentView(R.layout.activity_home_view);
 
 
+        lstView = (ListView)findViewById(R.id.listView2);
+        ArrayAdapter adapter3 = new ArrayAdapter(this,android.R.layout.simple_list_item_1,CreateRecipeView.savedRecipeNames);
+        lstView.setAdapter(adapter3);
+
+        lstView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                for(int j = 0; j < index; j++){
+                    if (i == j) {
+                        chooseView = 0;
+                        HomeView.chooseRecipe = j;
+                        intent = new Intent(getApplicationContext(), ViewRecipeView.class);
+                        startActivity(intent);
+                    }
+                }
+            }
+        });
 
 
         searchBtn = (ImageButton)findViewById(R.id.searchButton);
@@ -67,38 +88,6 @@ public class HomeView extends AppCompatActivity {
             }
         });
 
-//        viewButton = (Button)findViewById(R.id.viewRecipe);
-//        //viewButton.setText(apiTESTActivity.recipeList[0].getRecipeName());
-//        viewButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                chooseRecipe = 0;
-//                intent = new Intent(getApplicationContext(),ViewRecipeView.class);
-//                startActivity(intent);
-//            }
-//        });
-//
-//        viewButton2 = (Button)findViewById(R.id.viewRecipe2);
-//        //viewButton.setText(apiTESTActivity.recipeList[0].getRecipeName());
-//        viewButton2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                chooseRecipe = 1;
-//                intent = new Intent(getApplicationContext(),ViewRecipeView.class);
-//                startActivity(intent);
-//            }
-//        });
-//
-//        viewButton3 = (Button)findViewById(R.id.viewRecipe3);
-//        //viewButton.setText(apiTESTActivity.recipeList[0].getRecipeName());
-//        viewButton3.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                chooseRecipe = 2;
-//                intent = new Intent(getApplicationContext(),ViewRecipeView.class);
-//                startActivity(intent);
-//            }
-//        });
 
     }
 

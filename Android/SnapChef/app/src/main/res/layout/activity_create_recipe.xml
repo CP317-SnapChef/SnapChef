@@ -117,62 +117,11 @@
                 android:inputType="textPersonName" />
 
             <TextView
-                android:id="@+id/prepTimeText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Prep Time"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                app:fontFamily="@font/roboto_medium" />
-
-            <EditText
-                android:id="@+id/prepTimeTextField"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Enter Prep Time"
-                android:inputType="textPersonName" />
-
-            <TextView
-                android:id="@+id/cookTimeText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Cook Time"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                app:fontFamily="@font/roboto_medium" />
-
-            <EditText
-                android:id="@+id/cookTimeTextField"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Enter Cook Time"
-                android:inputType="textPersonName" />
-
-            <TextView
-                android:id="@+id/servesText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Serves"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                app:fontFamily="@font/roboto_medium" />
-
-            <EditText
-                android:id="@+id/servesTextField"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Number of People"
-                android:inputType="number" />
-
-            <TextView
                 android:id="@+id/ingrediantsText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Ingrediants"
                 android:layout_marginTop="40dp"
+                android:text="Ingredients"
                 android:textColor="@android:color/black"
                 android:textSize="18sp"
                 app:fontFamily="@font/roboto_medium" />
@@ -203,23 +152,6 @@
                 android:hint="Enter Instructions"
                 android:inputType="textMultiLine" />
 
-            <TextView
-                android:id="@+id/descriptionText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Description (Optional)"
-                android:layout_marginTop="40dp"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                app:fontFamily="@font/roboto_medium" />
-
-            <EditText
-                android:id="@+id/descriptionTextField"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Enter Description"
-                android:inputType="textMultiLine" />
         </LinearLayout>
     </ScrollView>
 
