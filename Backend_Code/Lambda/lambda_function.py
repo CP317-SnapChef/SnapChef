@@ -31,6 +31,7 @@ def lambda_handler(event, context):
     operation = event["queryStringParameters"]["operation"]
     ingredients = event["multiValueQueryStringParameters"]["ingredient"]
     
+    #Gets information for one recipe
     if (operation == "getRecipes"):
         
         try:
@@ -74,6 +75,54 @@ def lambda_handler(event, context):
                     "isBase64Encoded": False
                 };
     
+        finally:
+            #close connection
+            con.close();
+        
+    #Gets information for one recipe
+    elif (operation == "getRecipeInfo"): 
+        
+        try:
+    
+            with con.cursor() as cursor:
+            
+                #SQL statement
+                sql = "SELECT DISTINCT recipeName, Rating, instructions FROM SnapChef.TEST WHERE recipeName = " + "'" + "".join(event["multiValueQueryStringParameters"]["ingredient"]) + "'"
+                print(sql)
+                #Initialize Return Object
+                recipes = []; 
+                #Execute Query
+                cursor.execute(sql)
+                
+                keys=["recipe","rating","instructions"]
+                
+                #translating rows to dictionary
+                for row in cursor:
+                    newRecipes=dict(zip(keys,row))
+                    
+                    with con.cursor() as temp_cursor:
+                        
+                        sql_getIngredients = "SELECT ingredientName FROM SnapChef.TEST WHERE recipeName = " + "\'"+newRecipes["recipe"]+"\'"
+                        temp_cursor.execute(sql_getIngredients)
+                            
+                        recipeIngredients=""
+                        for row in temp_cursor: 
+                            recipeIngredients += row[0]+"\n " #there is only one column
+                            
+                    newRecipes["ingredients"]=recipeIngredients
+                    
+                    recipes.append(newRecipes)
+                    
+                recipes_json = {"recipes": recipes};
+                response = {
+                    "statusCode": 200,
+                    "headers": {
+                        "my_header": "my_value"
+                    },
+                    "body": json.dumps(recipes_json),
+                    "isBase64Encoded": False
+                };
+                
         finally:
             #close connection
             con.close();

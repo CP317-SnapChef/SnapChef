@@ -1,3 +1,11 @@
+"""  
+-------------------------------------------------------  
+aws.py
+-------------------------------------------------------  
+Author:  Arjun Ananth, Adam Gumieniak, Brian Hane, Zhengern Yuan
+Version: _updated_="2017-12-07"
+-------------------------------------------------------  
+"""
 import boto3, os, db
 
 fileName='dog.jpg'
@@ -5,7 +13,15 @@ bucket='snapchef-deployments-mobilehub-1070441847'
 
 client=boto3.client('rekognition')
 s3 = boto3.client('s3')
+"""
+-------------------------------------------------------
+The function calls on Image Rekognition to the contents of the image (is it a carrot? etc)
 
+Parameters:
+	key - string name of the s3 file to scan using Rekognition
+
+-------------------------------------------------------
+"""
 def scanFile(key):
 	response = client.detect_labels(Image={'S3Object':{'Bucket':bucket,'Name':key}})
 	
@@ -15,13 +31,29 @@ def scanFile(key):
 		
 	return result
 		
+"""
+-------------------------------------------------------
+The function uploads an image file into S3 Cloud Storage
 
+Parameters
+	path - string path & filename of the file to uplaod to S3
+	key - string key that will be used to name the file when uploaded
+-------------------------------------------------------
+"""
 def uploadFile(path,key):
 	data = open(path, 'rb')
 	s3.put_object(Body=data, Bucket=bucket, Key=key)
 	data.close()
-		
-def getKeys():
+"""
+-------------------------------------------------------
+The function scans the specified S3 bucket and returns all the keys
+
+Parameters
+
+	bucket - string name of the bucket within S3 to scan
+-------------------------------------------------------
+"""		
+def getKeys(bucket):
 	response = s3.list_objects(
 		Bucket=bucket,
 		#Delimiter='string', #character to group keys
@@ -36,15 +68,31 @@ def getKeys():
 		keys.append(obj['Key'])
 		
 	return keys
-		
-def deleteByKey(key):
+"""
+-------------------------------------------------------
+The function removes images off S3 by specific key
+
+Parameters
+	bucket - string name of the bucket to remove from
+	key - string key name of the file to remove
+-------------------------------------------------------
+"""
+def deleteByKey(bucket, key):
 	
 	s3.delete_object(
 		Bucket=bucket,
 		Key=key
 	)
-	
-def deleteByKeys(keys):
+"""
+-------------------------------------------------------
+The function deletes multiple images off S3 by specific list of keys
+
+Parameters
+	bucket - string name of the bucket to remove from
+	keys - list of string key names of files to delete off the S3
+-------------------------------------------------------
+"""	
+def deleteByKeys(bucket, keys):
 
 	delete = {'Objects':[]}
 	
@@ -56,7 +104,16 @@ def deleteByKeys(keys):
 		Delete=delete
 	)
 	
+"""
+-------------------------------------------------------
+The function outputs results into a csv file
 
+Parameters
+	file - open csv file to write to
+	key - string key name of S3 file that was scanned 
+	results - list of strings of results from the scan
+-------------------------------------------------------
+"""	
 def writeToCSV(file, key, results):
 	
 	file.write(key + ',')
@@ -64,8 +121,16 @@ def writeToCSV(file, key, results):
 		file.write(result + ',')
 		
 	file.write('\n')
-	
-def writeMatrixToCSV(file, matrix, matrixCount):
+"""
+-------------------------------------------------------
+The function outputs matrix results into a csv file
+
+Parameters
+	file - open csv file to write to
+	matrix - matrix of results of all the objects scanned in the S3
+-------------------------------------------------------
+"""	
+def writeMatrixToCSV(file, matrix):
 		
 	max = 0
 	
@@ -80,8 +145,20 @@ def writeMatrixToCSV(file, matrix, matrixCount):
 			else:
 				file.write(',')
 		file.write('\n')
-	
-	
+"""	
+-------------------------------------------------------
+The function takes the results output by Rekognition of a scanned file from S3 and places them into a matrix 
+The results must be placed into the same row of the matrix if the filen is the same type of object as was previously scanned
+This relies on naming convention of the scanned files - each type of object (ex. all images of beef) would have the same prefix (the type 
+of object it is i.e. beef), followed by a digit from 0-9 to avoid file naming errors. 
+
+Parameters
+	file - open csv file to write to
+	key - string key name of the object whose results are being added to the matrix
+	matrix - matrix of results of all the objects scanned in the S3
+	matrixCount - length of the outer list
+-------------------------------------------------------
+"""		
 def addToMatrix(matrix, key, results,matrixCount):
 	
 	if matrixCount == 0:
@@ -95,6 +172,15 @@ def addToMatrix(matrix, key, results,matrixCount):
 			matrixCount+=1
 	return matrixCount
 
+
+"""	
+-------------------------------------------------------
+This function scans an entire local directory of images and tests each one using Rekognition and outputs the result to a file
+
+Parameters
+	path - string path to the directory containing all the images
+-------------------------------------------------------
+"""	
 def testDirectory(path):
 	
 	dir = os.listdir(path)
@@ -109,13 +195,21 @@ def testDirectory(path):
 		
 		deleteByKey(key)
 		
-		#writeToCSV(output, key, results)
 		matrixCount = addToMatrix(matrix, key,results,matrixCount)
 		
 	
 	writeMatrixToCSV(output,matrix , matrixCount)
 	output.close()
-	
+
+"""	
+-------------------------------------------------------
+This function tests the result of a Rekognition scan against a list of discarded results (ex. images of steak will return food and meat,
+however these resutls are to be discarded.
+
+Parameters
+	path - string path to the directory containing all the images
+-------------------------------------------------------
+"""	
 def return_result(results, discard_list):
 	
 		
@@ -126,7 +220,18 @@ def return_result(results, discard_list):
 	
 	return '*Not Recognized*'
 	
+"""
+-------------------------------------------------------
+The function is the main test driver of the program to ensure all the functions are working 
 
+Parameters
+	pics - list of picture names to be tested with the image recognition
+		if the directory conatining the pictures is not the working directory then the names must include the path as well
+	discard_file_path - string path and file name of the csv containing all the discarded results
+	extras_file_path - string path and file name of the csv containing the extras and condiments not to be recognized by image
+			    and queried from the database
+-------------------------------------------------------
+"""
 def driver(pics, discard_file_path, extras_file_path):
 
 	ingredients = []
@@ -179,5 +284,3 @@ def driver(pics, discard_file_path, extras_file_path):
 	for x in recipes:
 		print(x)
 		
-	
-driver(['bread.jpg', 'egg.jpg'], 'DiscardPile.csv', 'condiments and extras.csv')
