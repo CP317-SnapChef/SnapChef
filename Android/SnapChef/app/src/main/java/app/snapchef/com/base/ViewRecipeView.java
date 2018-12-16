@@ -7,7 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.RatingBar;
 import android.widget.TextView;
+
+import static app.snapchef.com.base.apiTESTActivity.recipeList;
 
 public class ViewRecipeView extends AppCompatActivity {
     //TODO: Again... literally this entire view, but it should be similar to CreateRecipeView
@@ -16,6 +19,7 @@ public class ViewRecipeView extends AppCompatActivity {
     private Button reportBtn;
     private Intent intent;
     private TextView tv1;
+    private RatingBar rate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,19 +27,16 @@ public class ViewRecipeView extends AppCompatActivity {
         setContentView(R.layout.activity_view_recipe);
 
         tv1 = (TextView)findViewById(R.id.foodTitleTemp);
-        tv1.setText(apiTESTActivity.recipeList[HomeView.chooseRecipe].getRecipeName());
+        tv1.setText(recipeList[HomeView.chooseRecipe].getRecipeName());
 
-        tv1 = (TextView)findViewById(R.id.foodAuthorTemp);
-        tv1.setText(apiTESTActivity.recipeList[HomeView.chooseRecipe].getAuthor());
-
-        tv1 = (TextView)findViewById(R.id.foodDesTemp);
-        tv1.setText(apiTESTActivity.recipeList[HomeView.chooseRecipe].getDescription());
+        rate = (RatingBar) findViewById(R.id.ratingBar);
+        rate.setRating(Float.parseFloat(recipeList[HomeView.chooseRecipe].getRating()));
 
         tv1 = (TextView)findViewById(R.id.foodIngredientsTemp);
-        tv1.setText(apiTESTActivity.recipeList[HomeView.chooseRecipe].getIngredients());
+        tv1.setText(recipeList[HomeView.chooseRecipe].getIngredients());
 
         tv1 = (TextView)findViewById(R.id.foodInstructionsTemp);
-        tv1.setText(apiTESTActivity.recipeList[HomeView.chooseRecipe].getInstructions());
+        tv1.setText(recipeList[HomeView.chooseRecipe].getInstructions());
 
         //go back to home screen if back button is pressed
         backBtn = (ImageButton) findViewById(R.id.backButtonViewRecipe);

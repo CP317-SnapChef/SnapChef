@@ -64,35 +64,14 @@
                 android:textStyle="bold"
                 app:fontFamily="@font/roboto_medium" />
 
-            <TextView
-                android:id="@+id/foodAuthorTemp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:text="By: Dylan Thomas"
-                android:textColor="@android:color/black"
-                app:fontFamily="@font/roboto_medium" />
-
-            <TextView
-                android:id="@+id/foodDesTemp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="15dp"
-                android:paddingBottom="15dp"
-                android:text="Its just soup, you can't possibly mess this up. If you do I feel sorry for you"
-                android:textColor="@android:color/black"
-                app:fontFamily="@font/roboto_medium" />
-
-            <TextView
-                android:id="@+id/foodInfoTemp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="15dp"
-                android:paddingBottom="15dp"
-                android:text="Prep Time:   360 Minutes\nCook Time:  5 Minutes\nServes:         4 People"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                app:fontFamily="@font/roboto_medium" />
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:numStars="5"
+                android:progressTint="#FFC100"
+                android:rating="0" />
 
             <TextView
                 android:id="@+id/foodIngredientsTemp"

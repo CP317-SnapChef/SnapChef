@@ -42,10 +42,10 @@
 
     <ImageButton
         android:id="@+id/searchButton"
-        android:layout_width="118dp"
+        android:layout_width="123dp"
         android:layout_height="111dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
         android:layout_marginTop="88dp"
         android:background="@null"
         android:scaleType="centerCrop"
@@ -56,17 +56,17 @@
 
     <ImageButton
         android:id="@+id/createRecipeButton"
-        android:layout_width="118dp"
+        android:layout_width="123dp"
         android:layout_height="111dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="88dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginRight="36dp"
+        android:layout_marginTop="87dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
         android:background="@null"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.656"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/searchButton"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/createrecipe"
@@ -76,8 +76,8 @@
         android:id="@+id/reportButton"
         android:layout_width="123dp"
         android:layout_height="111dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
         android:layout_marginTop="8dp"
         android:background="@null"
         android:scaleType="centerCrop"
@@ -93,12 +93,12 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginRight="35dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
         android:background="@null"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.689"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/reportButton"
         app:layout_constraintTop_toBottomOf="@+id/createRecipeButton"
         app:srcCompat="@drawable/account"
@@ -131,7 +131,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="42dp"
                 android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="16dp"
@@ -147,38 +147,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="HardcodedText,ObsoleteLayoutParam" />
 
-            <Button
-                android:id="@+id/viewRecipe"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="Scrambled eggs 1"
-                app:layout_constraintBottom_toBottomOf="@+id/scrollView4"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/scrollView4" />
-
-            <Button
-                android:id="@+id/viewRecipe2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="Scrambled eggs 2"
-                app:layout_constraintBottom_toBottomOf="@+id/scrollView4"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/scrollView4" />
-
-            <Button
-                android:id="@+id/viewRecipe3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="Scrambled eggs 3"
-                app:layout_constraintBottom_toBottomOf="@+id/scrollView4"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/scrollView4" />
 
 
         </LinearLayout>
