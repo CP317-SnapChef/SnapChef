@@ -1,12 +1,8 @@
-//written by Jun Cao, Erman Dinsel, Stuart Isley
-
 package app.snapchef.com.base;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
@@ -24,39 +20,25 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.KeyEvent;
-import android.widget.AutoCompleteTextView;
-import android.widget.Button;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import com.amazonaws.mobile.client.AWSMobileClient;
-import com.amazonaws.mobile.client.AWSStartupHandler;
-import com.amazonaws.mobile.client.AWSStartupResult;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
-import com.amazonaws.mobileconnectors.lambdainvoker.*;
-import com.amazonaws.auth.CognitoCachingCredentialsProvider;
-import com.amazonaws.regions.Regions;
-
 /**
  * A login screen that offers login via email/password.
  */
 public class LoginView extends AppCompatActivity implements LoaderCallbacks<Cursor> {
-    //TODO: Add a "Forgot Password?" text button and all stuff related to that
-    //TODO: Add "Privacy Policy" text button and all stuff related to that
-    //TODO: MAKE ROUNDED INPUT TEXT BOXES, THEY ARE NEEDED IN MOST OTHER VIEWS TO SO BE SURE TO CHECK EVERYTHING AFTER CREATING THEM
-    //TODO: Left-align the button text with padding
-
 
     /**
      * Id to identity READ_CONTACTS permission request.
@@ -84,17 +66,7 @@ public class LoginView extends AppCompatActivity implements LoaderCallbacks<Curs
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Establishes connection to AWS, acts as an interface for services
-        AWSMobileClient.getInstance().initialize(this, new AWSStartupHandler() {
-            @Override
-            public void onComplete(AWSStartupResult awsStartupResult) {
-                Log.d("YourMainActivity", "AWSMobileClient is instantiated and you are connected to AWS!");
-            }
-        }).execute();
-
         setContentView(R.layout.activity_login_view);
-
-
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
@@ -111,49 +83,19 @@ public class LoginView extends AppCompatActivity implements LoaderCallbacks<Curs
             }
         });
 
-        Button mEmailSignInButton = (Button) findViewById(R.id.loginButton);
+        Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
         mEmailSignInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 //                attemptLogin();
                 //intent to go to main view
-                Intent loginIntent = new Intent(getApplicationContext(), HomeView.class);
-                startActivity(loginIntent);
+                Intent LoginIntent = new Intent(getApplicationContext(), HomeView.class);
+                startActivity(LoginIntent);
             }
         });
 
-        Button mEmailSignUpButton = (Button) findViewById(R.id.registerButton);
-        mEmailSignUpButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent registerIntent = new Intent(getApplicationContext(),RegisterView.class);
-                startActivity(registerIntent);
-            }
-        });
-
-       // mLoginFormView = findViewById(R.id.login_form);
+        mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
-    }
-
-    //Exit the app if android back button is pressed
-    public void onBackPressed(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Exit the App");
-        builder.setMessage("Do you want to exit SnapChef? ");
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                Intent a = new Intent(Intent.ACTION_MAIN);
-                a.addCategory(Intent.CATEGORY_HOME);
-                a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(a);
-            }
-        });
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                //Returns to app
-            }
-        });
-        builder.show();
     }
 
     private void populateAutoComplete() {

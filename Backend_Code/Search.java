@@ -24,10 +24,12 @@ public class Search {
     public ArrayList<Recipe> searchRecipe(){
         ArrayList recipeList = new ArrayList<Recipe>();
       if(this.ifIngredient == true){
-          
+            /* Add the lambda function to search the databsse by the ingredient names
+            ,create recipe objects and add them to the arraylist 
+          */
       }  
       else{
-          
+          // Add the lambda function to search the databse by the name of recipe
       }
       return recipeList;
     }
