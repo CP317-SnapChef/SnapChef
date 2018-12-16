@@ -124,6 +124,7 @@ public class SearchView extends AppCompatActivity implements AdapterView.OnItemS
         searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
+                HomeView.chooseView = 1;
                 splits = query.split(",");
                 if (query != null && !query.isEmpty()) {
                     url = API_URL.replace("CHANGE", splits[0].toLowerCase());
