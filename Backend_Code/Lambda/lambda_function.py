@@ -3,18 +3,18 @@
 Created on Dec. 11, 2018
 
 @author: Brandon Benoit, Gong-Fan Bao, Sriram Vasuthevan
-@version: 2018-12-14
+@version: 2018-12-15
 '''
 
 import json
 import pymysql
 import pymysql.cursors
-
+from Database_Credential import Database_Credential 
+ 
 host_address = 'snapchefdbinstance.chvgyyoopqkx.us-east-2.rds.amazonaws.com' #endpoint
 DB_name = "snapchefdbinstance" #the db name
-
-name = "backend" #host username
-passwrd = "coachrocky" #get pass
+name = Database_Credential.username #host username
+passwrd = Database_Credential.password #get pass
   
 def lambda_handler(event, context):
     response = None;
@@ -26,9 +26,8 @@ def lambda_handler(event, context):
                       user = name,
                       password = passwrd);
     
-    #Use Case statements to determine operation
     
-    
+    #Gets the operation and the ingredients from the API Parameters
     operation = event["queryStringParameters"]["operation"]
     ingredients = event["multiValueQueryStringParameters"]["ingredient"]
     
@@ -38,35 +37,25 @@ def lambda_handler(event, context):
     
             with con.cursor() as cursor:
             
-                #SQL
-                sql = "SELECT recipeName, Rating, instructions FROM SnapChef.TEST WHERE ingredientName IN "+ genIngredientsQuery(ingredients) +"  GROUP BY recipeName HAVING COUNT(*) = "+str(len(ingredients))
-                #ingredientName IN , change milk and butter to whichever ingredients the user enters
-                #change COUNT to number of ingredients entered
-                
+                #SQL statement
+                sql = genIngredientsQuery(ingredients)
+                print(sql)
                 #Initialize Return Object
                 recipes = []; 
-                    
                 #Execute Query
                 cursor.execute(sql)
                 
-                print("cursor.description: ", cursor.description)
-                print()
+                keys=["recipe","rating","instructions"]
                 
                 #translating rows to dictionary
                 for row in cursor:
-                    print(row)
-                    newRecipes={}
-                    newRecipes["recipe"]=row[0]
-                    newRecipes["rating"]=row[1]
-                    newRecipes["instructions"]=row[2]
+                    newRecipes=dict(zip(keys,row))
                     
                     with con.cursor() as temp_cursor:
                         
                         sql_getIngredients = "SELECT ingredientName FROM SnapChef.TEST WHERE recipeName = " + "\'"+newRecipes["recipe"]+"\'"
                         temp_cursor.execute(sql_getIngredients)
                             
-                        print("cursor.description: ", cursor.description)
-                        print()
                         recipeIngredients=""
                         for row in temp_cursor: 
                             recipeIngredients += row[0]+"\n " #there is only one column
@@ -81,7 +70,7 @@ def lambda_handler(event, context):
                     "headers": {
                         "my_header": "my_value"
                     },
-                    "body": json.dumps(recipes),
+                    "body": json.dumps(recipes_json),
                     "isBase64Encoded": False
                 };
     
@@ -91,11 +80,12 @@ def lambda_handler(event, context):
         
     return response;
     
-def genIngredientsQuery(Ingredients):
-    Query="("
-    for i in Ingredients:
+def genIngredientsQuery(ingredients):
+    #Converts a list of Ingredients in an SQL query
+    Query="SELECT recipeName, Rating, instructions FROM SnapChef.TEST WHERE ingredientName IN ("
+    for i in ingredients:
         Query+="\'"+i+"\',"
     Query=Query[:-1]
-    Query+=")"
+    Query+=") GROUP BY recipeName HAVING COUNT(*) = "+str(len(ingredients))
     return Query
         
