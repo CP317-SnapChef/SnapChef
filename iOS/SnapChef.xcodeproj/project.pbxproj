@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		695A9EBC21C62B7B007F1C58 /* dropDownBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695A9EBB21C62B7B007F1C58 /* dropDownBtn.swift */; };
 		6987DF1621913061000BB4B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6987DF1521913061000BB4B5 /* AppDelegate.swift */; };
 		6987DF1D21913063000BB4B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6987DF1C21913063000BB4B5 /* Assets.xcassets */; };
 		6987DF2021913063000BB4B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6987DF1E21913063000BB4B5 /* LaunchScreen.storyboard */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		695A9EBB21C62B7B007F1C58 /* dropDownBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dropDownBtn.swift; sourceTree = "<group>"; };
 		6987DF1221913061000BB4B5 /* SnapChef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapChef.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6987DF1521913061000BB4B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6987DF1C21913063000BB4B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				69FDADA121A1E2410011478D /* Recipe.swift */,
 				69FDADA721A208420011478D /* RecipeCell.swift */,
 				69F824F621A37118008E7A8E /* Extensions.swift */,
+				695A9EBB21C62B7B007F1C58 /* dropDownBtn.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				699C6DD721A09846001587A7 /* LoginViewController.swift in Sources */,
 				699C6DE021A0EFF5001587A7 /* SegueFromRight.swift in Sources */,
 				699C6DDB21A0B28D001587A7 /* Keyboard.swift in Sources */,
+				695A9EBC21C62B7B007F1C58 /* dropDownBtn.swift in Sources */,
 				69A3C5CD21A299C900FD1E74 /* ReportErrorViewController.swift in Sources */,
 				D0A7A90521AA2770009A5C97 /* SavedRecipeViewController.swift in Sources */,
 				69FDADA821A208420011478D /* RecipeCell.swift in Sources */,
