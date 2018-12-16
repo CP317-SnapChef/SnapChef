@@ -48,7 +48,8 @@ public class SearchView extends AppCompatActivity implements AdapterView.OnItemS
     private Button viewRecipeBtn;
     private Intent intent;
     TextView responseView;
-    static final String API_URL = "https://1y81ltee41.execute-api.us-east-1.amazonaws.com/default/BackendLambda";
+
+    //static final String API_URL = "https://1y81ltee41.execute-api.us-east-1.amazonaws.com/default/BackendLambda";
     MaterialSearchView searchView;
     ListView lstView;
     String names[] = new String[apiTESTActivity.recipeList.length];
@@ -150,6 +151,8 @@ public class SearchView extends AppCompatActivity implements AdapterView.OnItemS
             public boolean onQueryTextChange(String newText) {
                 if (newText != null && !newText.isEmpty()){
                     List<String> lstFound = new ArrayList<String>();
+                    //change url string, then call intent
+
                     for(String item:names){
                         if(item.contains(newText)){
                             lstFound.add(item);
