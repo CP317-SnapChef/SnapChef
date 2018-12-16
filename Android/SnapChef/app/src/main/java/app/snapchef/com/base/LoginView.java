@@ -116,7 +116,8 @@ public class LoginView extends AppCompatActivity implements LoaderCallbacks<Curs
 //                attemptLogin();
                 //intent to go to main view
                 apiTESTActivity.chooseView = 0;
-                Intent loginIntent = new Intent(getApplicationContext(), HomeView.class);
+                SearchView.url = SearchView.API_URL.replace("CHANGE", "salt");
+                Intent loginIntent = new Intent(getApplicationContext(), apiTESTActivity.class);
                 startActivity(loginIntent);
             }
         });

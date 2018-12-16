@@ -104,84 +104,44 @@
         app:srcCompat="@drawable/account"
         tools:ignore="ContentDescription" />
 
-    <ScrollView
-        android:id="@+id/scrollView4"
-        android:layout_width="374dp"
-        android:layout_height="239dp"
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:text="New Recipes"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:fontFamily="@font/roboto_medium"
+        app:layout_constraintBottom_toTopOf="@+id/listView2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/reportButton"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintVertical_bias="1.0" />
 
+    <ListView
+        android:id="@+id/listView2"
+        android:layout_width="match_parent"
+        android:layout_height="202dp"
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="left"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/newRecipesText"
-                style="A"
-                android:layout_width="wrap_content"
-                android:layout_height="42dp"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:text="New Recipes"
-                android:textColor="#000000"
-                android:textSize="24sp"
-                app:fontFamily="@font/roboto_medium"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.501"
-                app:layout_constraintStart_toStartOf="@+id/view"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="HardcodedText,ObsoleteLayoutParam" />
-
-            <Button
-                android:id="@+id/viewRecipe"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="Scrambled eggs 1"
-                app:layout_constraintBottom_toBottomOf="@+id/scrollView4"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/scrollView4" />
-
-            <Button
-                android:id="@+id/viewRecipe2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="Scrambled eggs 2"
-                app:layout_constraintBottom_toBottomOf="@+id/scrollView4"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/scrollView4" />
-
-            <Button
-                android:id="@+id/viewRecipe3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="Scrambled eggs 3"
-                app:layout_constraintBottom_toBottomOf="@+id/scrollView4"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/scrollView4" />
-
-
-        </LinearLayout>
-    </ScrollView>
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:divider="#806326"
+        android:dividerHeight="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reportButton"
+        app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>
