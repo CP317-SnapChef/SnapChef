@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.RequiresApi;
 import android.support.annotation.UiThread;
-import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -24,7 +23,6 @@ import android.widget.ListView;
 import android.widget.Spinner;
 
 import android.os.AsyncTask;
-import android.widget.TabHost;
 import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
@@ -51,10 +49,15 @@ public class SearchView extends AppCompatActivity implements AdapterView.OnItemS
     private ImageButton backBtn, cameraBtn;
     private Intent intent;
     TextView responseView;
-    public static final String API_URL = "https://hen5wqy033.execute-api.us-east-2.amazonaws.com/default/SnapChefDBConnection?operation=getRecipes&ingredient=CHANGE;";
+    public static final String API_URL = "https://hen5wqy033.execute-api.us-east-2.amazonaws.com/default/SnapChefDBConnection?operation=getRecipes&ingredient=CHANGE;(SWITCH)";
     public static String url = API_URL;
     MaterialSearchView searchView;
     ListView lstView;
+
+    private String ingr = "&ingredient=";
+    private String splits[];
+    private String nameQ = "";
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,10 +124,15 @@ public class SearchView extends AppCompatActivity implements AdapterView.OnItemS
         searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
+                splits = query.split(",");
                 if (query != null && !query.isEmpty()) {
-                    url = API_URL.replace("CHANGE", query.toLowerCase());
+                    url = API_URL.replace("CHANGE", splits[0].toLowerCase());
+                    for(int i = 1;i<splits.length;i++){
+                        nameQ = nameQ + ingr + splits[i] + ";";
+                    }
+                    url = url.replace("SWITCH",nameQ.toLowerCase());
+
                     apiTESTActivity.chooseView = 1;
-                    HomeView.chooseView = 1;
                     Intent i = new Intent(getApplicationContext(), apiTESTActivity.class);
                     startActivity(i);
                     overridePendingTransition(0,0);
@@ -137,7 +145,6 @@ public class SearchView extends AppCompatActivity implements AdapterView.OnItemS
                         }
                         ind++;
                     }
-
                     ArrayAdapter adapter3 = new ArrayAdapter(SearchView.this,android.R.layout.simple_list_item_1,lstFound);
                     lstView.setAdapter(adapter3);
                 }

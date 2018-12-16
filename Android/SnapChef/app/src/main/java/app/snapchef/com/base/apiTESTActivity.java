@@ -51,8 +51,8 @@ import java.net.URL;
 public class apiTESTActivity extends AppCompatActivity {
     public static Recipe recipeobj;
     public static Recipe recipeList[];
-     TextView responseView;
-     ProgressBar progressBar;
+    TextView responseView;
+    ProgressBar progressBar;
     static final String API_URL = "https://1y81ltee41.execute-api.us-east-1.amazonaws.com/default/BackendLambda";
     private RequestQueue mQueue;
     public static String names[] = {""};
@@ -68,12 +68,12 @@ public class apiTESTActivity extends AppCompatActivity {
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
         //Button queryButton = (Button) findViewById(R.id.queryButton);
-       // queryButton.setOnClickListener(new View.OnClickListener() {
-          //  @Override
-           // public void onClick(View v) {
+        // queryButton.setOnClickListener(new View.OnClickListener() {
+        //  @Override
+        // public void onClick(View v) {
 
         new RetrieveFeedTask().execute();
-           // }
+        // }
         //});
 
         mQueue = Volley.newRequestQueue(this);
