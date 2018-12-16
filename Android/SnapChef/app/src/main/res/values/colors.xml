@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimary">#f4aa42</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="grayLight">#324D5D</color>
+    <color name="startOrange">#ff5d0a</color>
+    <color name="endOrange">#ff9900</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="colorButtonBackground">#FF5C08</color>
+    <color name="colorButtonAccent">#FF7800</color>
+    <color name="tab_not_selected">#EFEAF7</color>
+    <color name="white">#f9f9f9</color>
+
 </resources>

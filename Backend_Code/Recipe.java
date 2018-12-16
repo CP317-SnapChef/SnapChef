@@ -3,30 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package snapchef;
+package snapchef_backend;
 
 import java.util.ArrayList;
 
 /**
- *Recipe Class
  *
- * @author Jot, Gong-Fan Bao
- * @version 2018-11-21
+ * @author Jot
  */
 public class Recipe {
- private String recipeName = "";
- private double rating = -1;
- private int prepTime = 0;
- private int cookTime = 0;
- private int servings = 0;
- ArrayList<Ingredient> ingredients = new ArrayList<Ingredient>();
- ArrayList<String> instructions = new ArrayList<String>();
- private String description = "";
+ private String recipeName;
+ private double rating;
+ private int prepTime;
+ private int cookTime;
+ private int servings;
+ ArrayList ingredients = new ArrayList<Ingredients>();
+ ArrayList instructions = new ArrayList<String>();
+ private String description;
  private Boolean isPeanutFree;
  private Boolean isVegetarian;
  private Boolean isVegan;
- 
- 	//Constructor
+
     public Recipe(String recipeName, double rating, int prepTime, int cookTime, int servings, String description, Boolean isPeanutFree, Boolean isVegetarian, Boolean isVegan) {
         this.recipeName = recipeName;
         this.rating = rating;
@@ -39,7 +36,6 @@ public class Recipe {
         this.isVegan = isVegan;
     }
 
-    //Setters
     public void setRecipeName(String recipeName) {
         this.recipeName = recipeName;
     }
@@ -60,11 +56,11 @@ public class Recipe {
         this.servings = servings;
     }
 
-    public void setIngredients(ArrayList<Ingredient> ingredients) {
+    public void setIngredients(ArrayList ingredients) {
         this.ingredients = ingredients;
     }
 
-    public void setInstructions(ArrayList<String> instructions) {
+    public void setInstructions(ArrayList instructions) {
         this.instructions = instructions;
     }
 
@@ -84,49 +80,48 @@ public class Recipe {
         this.isVegan = isVegan;
     }
 
-    //Getters
     public String getRecipeName() {
-        return this.recipeName;
+        return recipeName;
     }
 
     public double getRating() {
-        return this.rating;
+        return rating;
     }
 
     public int getPrepTime() {
-        return this.prepTime;
+        return prepTime;
     }
 
     public int getCookTime() {
-        return this.cookTime;
+        return cookTime;
     }
 
     public int getServings() {
-        return this.servings;
+        return servings;
     }
 
-    public ArrayList<Ingredient> getIngredients() {
-        return this.ingredients;
+    public ArrayList getIngredients() {
+        return ingredients;
     }
 
-    public ArrayList<String> getInstructions() {
-        return this.instructions;
+    public ArrayList getInstructions() {
+        return instructions;
     }
 
     public String getDescription() {
-        return this.description;
+        return description;
     }
 
     public Boolean getIsPeanutFree() {
-        return this.isPeanutFree;
+        return isPeanutFree;
     }
 
     public Boolean getIsVegetarian() {
-        return this.isVegetarian;
+        return isVegetarian;
     }
 
     public Boolean getIsVegan() {
-        return this.isVegan;
+        return isVegan;
     }
  
  

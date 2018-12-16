@@ -1,9 +1,25 @@
 <resources>
     <string name="app_name">SnapChef</string>
+    <string name="login_name">Login</string>
+    <string name="home_name">Home</string>
+    <string name="account_name">Account</string>
+    <string name="create_recipe_name">Create Recipe</string>
+    <string name="facebook_app_id">291424624829878</string>
+    <string name="fb_login_protocol_scheme">fb291424624829878</string>
+
+    <!-- AccountView Strings -->
+    <string name="user_name">User</string>
+
+    <!-- Strings for buttons -->
+    <string name="logout_button">Logout</string>
+    <string name="error_button">Report Error</string>
+    <string name="pw_button">Change Password</string>
+
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
-    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in">Login</string>
+    <string name="action_sign_up">Sign Up</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
@@ -12,4 +28,29 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <!-- Strings related to bottom navigation bar -->
+    <string name="title_account">Account</string>
+    <string name="title_home">Home</string>
+    <string name="title_search">Search Image</string>
+    <string name="title_text_search">Search</string>
+    <string name="title_add">New Recipe</string>
+    <string name="go_to_create_recipe_view_test_button">Go To Create Recipe View Test Button</string>
+
+    <!-- Strings related to search view spinners -->
+    <string-array name="sort_by">
+        <item>Sort By</item>
+        <item>New</item>
+        <item>Highest Rated</item>
+        <item>Alphabetical</item>
+        <item>Another Option</item>
+    </string-array>
+
+    <string-array name="filter">
+        <item>Filter</item>
+        <item>Vegetarian</item>
+        <item>Vegan</item>
+        <item>Peanut Free</item>
+        <item>Option4</item>
+    </string-array>
+
 </resources>

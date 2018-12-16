@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@color/colorButtonAccent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <ImageButton
+        android:id="@+id/backButtonViewRecipe"
+        android:layout_width="76dp"
+        android:layout_height="69dp"
+        android:background="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow_back_black_24dp"
+        tools:ignore="ContentDescription,MissingConstraints,VectorDrawableCompat" />
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+    <ScrollView
+        android:id="@+id/scroller"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="800dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/foodTempImage"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:contentDescription="TODO"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/foodtemp"
+                tools:layout_editor_absoluteX="10dp"
+                tools:layout_editor_absoluteY="92dp" />
+
+            <TextView
+                android:id="@+id/foodTitleTemp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:text="Chicken Noodle Soup"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/roboto_medium" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:numStars="5"
+                android:progressTint="#FFC100"
+                android:rating="0" />
+
+            <TextView
+                android:id="@+id/foodIngredientsTemp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#EFEAF7"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:text="Ingredients\n2 Chicken Breasts\n1 Cup Noodles\n1 Dash Soup"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                app:fontFamily="@font/roboto_medium" />
+
+
+            <TextView
+                android:id="@+id/foodInstructionsTemp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:text="Instructions\n1. Cook the chicken \n2. Cook the noodles \n3. Saute and add soup"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                app:fontFamily="@font/roboto_medium" />
+
+            <Button
+                android:id="@+id/reportRecipeButtonViewRecipe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#EFEAF7"
+                android:drawableLeft="@drawable/reportsymbol_50"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:text="Report this Recipe"
+                android:textSize="18sp" />
+
+
+        </LinearLayout>
+    </ScrollView>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/viewRecipeText"
+        android:layout_width="168dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:text="View Recipe"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:fontFamily="@font/roboto_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.92"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>
