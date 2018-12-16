@@ -1,3 +1,11 @@
+"""  
+-------------------------------------------------------  
+aws.py
+-------------------------------------------------------  
+Author:  Arjun Ananth, Adam Gumieniak, Brian Hane, Zhengern Yuan
+Version: _updated_="2017-12-07"
+-------------------------------------------------------  
+"""
 import boto3, os, db
 
 fileName='dog.jpg'
@@ -5,7 +13,11 @@ bucket='snapchef-deployments-mobilehub-1070441847'
 
 client=boto3.client('rekognition')
 s3 = boto3.client('s3')
-
+"""
+-------------------------------------------------------
+The function calls on Image Rekognition to the contents of the image (is it a carrot? etc)
+-------------------------------------------------------
+"""
 def scanFile(key):
 	response = client.detect_labels(Image={'S3Object':{'Bucket':bucket,'Name':key}})
 	
@@ -15,12 +27,20 @@ def scanFile(key):
 		
 	return result
 		
-
+"""
+-------------------------------------------------------
+The function uploads an image file into S3 Cloud Storage
+-------------------------------------------------------
+"""
 def uploadFile(path,key):
 	data = open(path, 'rb')
 	s3.put_object(Body=data, Bucket=bucket, Key=key)
 	data.close()
-		
+"""
+-------------------------------------------------------
+The function calls on Image Rekognition to the contents of the image (is it a carrot? etc)
+-------------------------------------------------------
+"""		
 def getKeys():
 	response = s3.list_objects(
 		Bucket=bucket,
@@ -36,14 +56,22 @@ def getKeys():
 		keys.append(obj['Key'])
 		
 	return keys
-		
+"""
+-------------------------------------------------------
+The function removes images off S3 by specific key
+-------------------------------------------------------
+"""
 def deleteByKey(key):
 	
 	s3.delete_object(
 		Bucket=bucket,
 		Key=key
 	)
-	
+"""
+-------------------------------------------------------
+The function deletes multiple images off S3 by specific list of keys
+-------------------------------------------------------
+"""	
 def deleteByKeys(keys):
 
 	delete = {'Objects':[]}
@@ -56,7 +84,11 @@ def deleteByKeys(keys):
 		Delete=delete
 	)
 	
-
+"""
+-------------------------------------------------------
+The function outputs results into a csv file
+-------------------------------------------------------
+"""	
 def writeToCSV(file, key, results):
 	
 	file.write(key + ',')
@@ -64,7 +96,11 @@ def writeToCSV(file, key, results):
 		file.write(result + ',')
 		
 	file.write('\n')
-	
+"""
+-------------------------------------------------------
+The function outputs matrix results into a csv file
+-------------------------------------------------------
+"""	
 def writeMatrixToCSV(file, matrix, matrixCount):
 		
 	max = 0
@@ -126,7 +162,11 @@ def return_result(results, discard_list):
 	
 	return '*Not Recognized*'
 	
-
+"""
+-------------------------------------------------------
+The function outputs results into a csv file
+-------------------------------------------------------
+"""
 def driver(pics, discard_file_path, extras_file_path):
 
 	ingredients = []
