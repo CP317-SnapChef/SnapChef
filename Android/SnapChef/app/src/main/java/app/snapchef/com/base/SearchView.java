@@ -47,7 +47,6 @@ public class SearchView extends AppCompatActivity implements AdapterView.OnItemS
     public String ingredient;
     private Spinner sortBy, filter;
     private ImageButton backBtn, cameraBtn;
-    private Button viewRecipeBtn;
     private Intent intent;
     TextView responseView;
     public static final String API_URL = "https://hen5wqy033.execute-api.us-east-2.amazonaws.com/default/SnapChefDBConnection?operation=getRecipes&ingredient=CHANGE;";
@@ -92,16 +91,6 @@ public class SearchView extends AppCompatActivity implements AdapterView.OnItemS
                 startActivity(intent);
             }
         });
-
-        // viewRecipeBtn = (Button) findViewById(R.id.goToViewRecipeButton);
-        // viewRecipeBtn.setOnClickListener(new View.OnClickListener() {
-        //  @Override
-        //    public void onClick(View view) {
-        //      intent =  new Intent(getApplicationContext(), ViewRecipeView.class);
-        //        startActivity(intent);
-        // }
-        //  });
-
 
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -176,27 +165,18 @@ public class SearchView extends AppCompatActivity implements AdapterView.OnItemS
             }
         });
 
-//        lstView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                    if (i == 0) {
-//                        HomeView.chooseRecipe = 0;
-//                        intent = new Intent(SearchView.this, ViewRecipeView.class);
-//                        startActivity(intent);
-//                    }
-//                    else if (i == 1){
-//                        HomeView.chooseRecipe = 1;
-//                        intent = new Intent(SearchView.this, ViewRecipeView.class);
-//                        startActivity(intent);
-//                    }
-//                    else if ( i == 2){
-//                        HomeView.chooseRecipe = 2;
-//                        intent = new Intent(SearchView.this, ViewRecipeView.class);
-//                        startActivity(intent);
-//                }
-//
-//            }
-//        });
+        lstView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+           public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                for(int j = 0; j < apiTESTActivity.names.length; j++){
+                    if (i == j) {
+                        HomeView.chooseRecipe = j;
+                        intent = new Intent(SearchView.this, ViewRecipeView.class);
+                        startActivity(intent);
+                    }
+                }
+            }
+        });
 
 
 
@@ -286,6 +266,12 @@ public class SearchView extends AppCompatActivity implements AdapterView.OnItemS
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        intent = new Intent(getApplicationContext(),HomeView.class);
+        startActivity(intent);
     }
 
 

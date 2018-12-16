@@ -37,6 +37,27 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Report a Problem"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:fontFamily="@font/roboto_medium"
+        app:layout_constraintBottom_toTopOf="@+id/reportRecipeTextField"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="1.0" />
+
     <ImageButton
         android:id="@+id/backButtonReportRecipe"
         android:layout_width="76dp"
@@ -108,14 +129,38 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="Recipe thats being reported goes here"
+        android:text="Recipe Name"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:fontFamily="@font/roboto_medium"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view"
         tools:ignore="MissingConstraints" />
+
+    <RatingBar
+        android:id="@+id/ratingBar2"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:numStars="5"
+        android:progressTint="#FCC100"
+        android:rating="0"
+        app:layout_constraintBottom_toTopOf="@+id/reportRecipeTextField"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tempTextView"
+        app:layout_constraintVertical_bias="0.358" />
 
 
 </android.support.constraint.ConstraintLayout>

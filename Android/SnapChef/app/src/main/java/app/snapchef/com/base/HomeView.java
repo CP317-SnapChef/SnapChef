@@ -51,7 +51,7 @@ public class HomeView extends AppCompatActivity {
         reportBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                intent = new Intent(getApplicationContext(), ReportRecipeView.class);
+                intent = new Intent(getApplicationContext(), ReportErrorView.class);
                 startActivity(intent);
             }
         });
