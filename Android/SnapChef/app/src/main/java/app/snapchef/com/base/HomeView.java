@@ -1,3 +1,5 @@
+//written by Jun Cao, Erman Dinsel, Stuart Isley
+
 package app.snapchef.com.base;
 
 import android.content.Intent;
