@@ -82,6 +82,7 @@ public class apiTESTActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), HomeView.class);
             startActivity(intent);
         }
+
         handler=new Handler();
         Runnable r=new Runnable() {
             public void run() {
@@ -93,7 +94,7 @@ public class apiTESTActivity extends AppCompatActivity {
                 }
             }
         };
-        handler.postDelayed(r, 1500);
+        handler.postDelayed(r, 1800);
 
     }
 

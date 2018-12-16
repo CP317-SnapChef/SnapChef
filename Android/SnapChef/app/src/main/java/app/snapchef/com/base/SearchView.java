@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.RequiresApi;
 import android.support.annotation.UiThread;
+import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -23,6 +24,7 @@ import android.widget.ListView;
 import android.widget.Spinner;
 
 import android.os.AsyncTask;
+import android.widget.TabHost;
 import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
@@ -53,7 +55,6 @@ public class SearchView extends AppCompatActivity implements AdapterView.OnItemS
     public static String url = API_URL;
     MaterialSearchView searchView;
     ListView lstView;
-
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,6 +124,7 @@ public class SearchView extends AppCompatActivity implements AdapterView.OnItemS
                 if (query != null && !query.isEmpty()) {
                     url = API_URL.replace("CHANGE", query.toLowerCase());
                     apiTESTActivity.chooseView = 1;
+                    HomeView.chooseView = 1;
                     Intent i = new Intent(getApplicationContext(), apiTESTActivity.class);
                     startActivity(i);
                     overridePendingTransition(0,0);
@@ -135,6 +137,7 @@ public class SearchView extends AppCompatActivity implements AdapterView.OnItemS
                         }
                         ind++;
                     }
+
                     ArrayAdapter adapter3 = new ArrayAdapter(SearchView.this,android.R.layout.simple_list_item_1,lstFound);
                     lstView.setAdapter(adapter3);
                 }
